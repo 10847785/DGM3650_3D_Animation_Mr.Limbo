@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
 //Name: Mr.Limbo_Scene.ma
-//Last modified: Tue, Oct 26, 2021 02:23:29 PM
+//Last modified: Mon, Nov 01, 2021 01:30:55 PM
 //Codeset: 1252
 file -rdi 1 -ns "Mr_Limbo_Table1" -rfn "Mr_Limbo_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/git/DGM3650_3D_Animation_Mr.Limbo/Mr.Limbo_Table.ma";
@@ -37,18 +37,18 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19042)";
-fileInfo "UUID" "CCA246B2-43F8-855E-B5DF-8995B1E37336";
+fileInfo "UUID" "36004785-4021-C468-5397-6AABA25205EE";
 createNode transform -s -n "persp";
 	rename -uid "4CF4501C-4E3E-9D63-E74D-A5A01DC99A53";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 792.09737313305573 316.1519084879148 618.66593177751383 ;
-	setAttr ".r" -type "double3" -6.9383527297904539 48.600000000002687 -6.0118282466985039e-16 ;
+	setAttr ".t" -type "double3" 577.61643928614012 192.97994826387963 908.81301362666989 ;
+	setAttr ".r" -type "double3" -0.33835272979411213 33.000000000001329 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "01F9766E-4609-8C91-9459-C98349CC9CF1";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 993.24078356210214;
+	setAttr ".coi" 962.74967003620873;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -97,7 +97,7 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 40.975609756097562;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
@@ -46508,19 +46508,19 @@ createNode mesh -n "Dial_Medium6Shape" -p "|TV_Medium1|Dial_Medium6";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9848CF1D-489B-7D33-DEA2-9792AAB4B8E9";
+	rename -uid "08D94228-4C8E-7A09-E7F1-2189CCEAADDA";
 	setAttr -s 127 ".lnk";
 	setAttr -s 127 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "758CBBDF-40E7-6888-1384-C781E4830F43";
+	rename -uid "D48E2941-45B1-7DCC-C3F8-EBB778942F90";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "A9702790-4EA8-1736-90E8-F780D73B5562";
+	rename -uid "ABDFE43C-4C64-8575-B366-A7B1AE6B9295";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "D8568FE8-472C-D715-9C70-A19958C2F728";
+	rename -uid "C085A2D0-4EED-3005-5C9F-C5BCE9539849";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "24D2B9D4-4A6E-F87C-5AA1-CBAC78668764";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "9D1D5DF9-4B28-010E-957A-69B14B0511A1";
+	rename -uid "AFD7FA1A-4320-26A4-16BF-13A1EB44AC5B";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "7E72AA68-496E-43E8-0C5D-4688F69E1DB6";
 	setAttr ".g" yes;
@@ -46530,7 +46530,7 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 676\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n"
 		+ "            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n"
 		+ "            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n"
@@ -46540,7 +46540,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n"
 		+ "            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n"
 		+ "            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n"
-		+ "            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 676\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
+		+ "            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1119\n            -height 675\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
 		+ "            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n"
 		+ "            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n"
@@ -46566,13 +46566,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n"
 		+ "                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n"
 		+ "                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 676\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 676\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 675\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 675\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "24882FDC-47F9-2B20-6205-8EB191E2D0D2";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 121 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 200 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode lambert -n "Sky";
 	rename -uid "BA6B3AF2-4C9F-0624-76E2-4EA9FED05442";
@@ -46734,7 +46734,7 @@ createNode reference -n "FloorWoodRN";
 lockNode -l 1 ;
 createNode reference -n "TV_SetsRN";
 	rename -uid "92DB9AF9-421F-2B6C-5F58-A38595C8B86A";
-	setAttr -s 530 ".phl";
+	setAttr -s 536 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -47265,10 +47265,16 @@ createNode reference -n "TV_SetsRN";
 	setAttr ".phl[528]" 0;
 	setAttr ".phl[529]" 0;
 	setAttr ".phl[530]" 0;
+	setAttr ".phl[531]" 0;
+	setAttr ".phl[532]" 0;
+	setAttr ".phl[533]" 0;
+	setAttr ".phl[534]" 0;
+	setAttr ".phl[535]" 0;
+	setAttr ".phl[536]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TV_SetsRN"
 		"TV_SetsRN" 0
-		"TV_SetsRN" 560
+		"TV_SetsRN" 583
 		0 "|TV_Sets:TV_Small" "|TV_Stand" "-s -r "
 		0 "|TV_Sets:TV_Medium" "|TV_Stand" "-s -r "
 		0 "|TV_Sets:TV_Large" "|TV_Stand" "-s -r "
@@ -47322,6 +47328,26 @@ createNode reference -n "TV_SetsRN";
 		2 "|TV_Sets:Main_TV|TV_Sets:Dial" "translate" " -type \"double3\" 0 0 0"
 		2 "|TV_Sets:Main_TV|TV_Sets:Dial1" "translate" " -type \"double3\" 0 0 0"
 		
+		2 "TV_Sets:LargeTVScreen_Color" "emissionColor" " -type \"float3\" 0 0 1"
+		
+		2 "TV_Sets:MediumTV_Color" "emissionColor" " -type \"float3\" 0.449 1 1"
+		2 "TV_Sets:MediumTVScreen_Color" "emissionColor" " -type \"float3\" 0.449 1 1"
+		
+		2 "TV_Sets:SmallTVScreen_Color" "emissionColor" " -type \"float3\" 0.36363636999999999 0.36363636999999999 0.36363636999999999"
+		
+		2 "TV_Sets:MainTVScreen_Color" "base" " 1"
+		2 "TV_Sets:MainTVScreen_Color" "diffuseRoughness" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "specular" " 1"
+		2 "TV_Sets:MainTVScreen_Color" "metalness" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "transmission" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "subsurface" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "sheen" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "coat" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "coatColor" " -type \"float3\" 1 1 1"
+		2 "TV_Sets:MainTVScreen_Color" "coatRoughness" " 0.10000000149011612"
+		2 "TV_Sets:MainTVScreen_Color" "thinFilmThickness" " 0"
+		2 "TV_Sets:MainTVScreen_Color" "emissionColor" " -type \"float3\" 0 1 1"
+		2 "TV_Sets:MainTVScreen_Color" "opacity" " -type \"float3\" 1 1 1"
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[1]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.dagSetMembers" "TV_SetsRN.placeHolderList[2]" 
@@ -47338,14 +47364,14 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface2SG.dagSetMembers" "TV_SetsRN.placeHolderList[8]" 
 		""
+		5 4 "TV_SetsRN" "TV_Sets:BigTVScreen_Color.emission" "TV_SetsRN.placeHolderList[9]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[9]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.groupNodes" "TV_SetsRN.placeHolderList[10]" 
+		"TV_SetsRN.placeHolderList[10]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.groupNodes" "TV_SetsRN.placeHolderList[11]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.dagSetMembers" "TV_SetsRN.placeHolderList[11]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.dagSetMembers" "TV_SetsRN.placeHolderList[12]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[12]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[13]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
@@ -47362,8 +47388,8 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[19]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[20]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[21]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[21]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[22]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[23]" 
@@ -47470,7 +47496,7 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[74]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[75]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[75]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[76]" 
 		""
@@ -47578,8 +47604,8 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[128]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[129]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[129]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[130]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
@@ -47596,8 +47622,8 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[136]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[137]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[138]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[138]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[139]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[140]" 
@@ -47614,7 +47640,7 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[146]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[147]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[147]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[148]" 
 		""
@@ -47632,8 +47658,8 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[155]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[156]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[156]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[157]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
@@ -47704,8 +47730,8 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[190]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[191]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[192]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[192]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[193]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[194]" 
@@ -47776,7 +47802,7 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[227]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[228]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[228]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[229]" 
 		""
@@ -47848,10 +47874,10 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[263]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[264]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[265]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[264]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:LargeTVScreen_Color.emission" "TV_SetsRN.placeHolderList[265]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[266]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
@@ -47866,10 +47892,10 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[271]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[272]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[273]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[274]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[273]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[274]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[275]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[276]" 
@@ -47884,9 +47910,9 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[281]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[282]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[282]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[283]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[283]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[284]" 
 		""
@@ -47902,12 +47928,12 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[290]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[291]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[292]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[293]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[291]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[292]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:MediumTV_Color.emission" "TV_SetsRN.placeHolderList[293]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[294]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
@@ -47916,12 +47942,12 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[296]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[297]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[298]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[299]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[300]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[298]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[299]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[300]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[301]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[302]" 
@@ -47944,11 +47970,11 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[311]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[312]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[312]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[313]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[313]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[314]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[314]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[315]" 
 		""
@@ -47972,41 +47998,41 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[325]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[326]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[327]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[328]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[329]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[326]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[327]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[328]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:MediumTVScreen_Color.emission" "TV_SetsRN.placeHolderList[329]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[330]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[331]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[332]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[333]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[334]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[335]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[336]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[333]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[334]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[335]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[336]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[337]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[338]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[339]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[340]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[340]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[341]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[341]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[342]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[342]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[343]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[343]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[344]" 
 		""
@@ -48014,41 +48040,41 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[346]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[347]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[348]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[349]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[350]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[347]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[348]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[349]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[350]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[351]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[352]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[353]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[354]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[355]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[356]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[357]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[354]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[355]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[356]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[357]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[358]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[359]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[360]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[361]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[361]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[362]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[362]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[363]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[363]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[364]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[364]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[365]" 
 		""
@@ -48056,41 +48082,41 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[367]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[368]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[369]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[370]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[371]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[368]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[369]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[370]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[371]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[372]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[373]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[374]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[375]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[376]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[377]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[378]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[375]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[376]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[377]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[378]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[379]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[380]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[381]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[382]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[382]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[383]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[383]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[384]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[384]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[385]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[385]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[386]" 
 		""
@@ -48098,41 +48124,41 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[388]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[389]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[390]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[391]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[392]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[389]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[390]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[391]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[392]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[393]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[394]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[395]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[396]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[397]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[398]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[399]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[396]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[397]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[398]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[399]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[400]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[401]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[402]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[403]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[403]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[404]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[404]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[405]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[405]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[406]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[406]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[407]" 
 		""
@@ -48140,13 +48166,13 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[409]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[410]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[410]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[411]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[411]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[412]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[412]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[413]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[413]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[414]" 
 		""
@@ -48238,14 +48264,14 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[458]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[459]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[460]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[461]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[462]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[459]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[460]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[461]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[462]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[463]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
@@ -48256,14 +48282,14 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[466]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[467]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[468]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[469]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[470]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[471]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[468]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[469]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[470]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[471]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[472]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[473]" 
@@ -48292,13 +48318,13 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[485]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[486]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[486]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[487]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[487]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[488]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[488]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[489]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[489]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[490]" 
 		""
@@ -48328,16 +48354,16 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[503]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[504]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[505]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[506]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[507]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[508]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[504]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[505]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[506]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[507]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:SmallTVScreen_Color.emission" "TV_SetsRN.placeHolderList[508]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[509]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
@@ -48346,16 +48372,16 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[511]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[512]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[513]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[514]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[515]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[516]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[517]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[513]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[514]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[515]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[516]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[517]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[518]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[519]" 
@@ -48364,15 +48390,15 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[521]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[522]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[522]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[523]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[523]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[524]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[524]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[525]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[525]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[526]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[526]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[527]" 
 		""
@@ -48381,6 +48407,18 @@ createNode reference -n "TV_SetsRN";
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[529]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[530]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[531]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[532]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[533]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[534]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[535]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:MainTVScreen_Color.emission" "TV_SetsRN.placeHolderList[536]" 
 		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -48701,7 +48739,7 @@ createNode groupId -n "groupId105";
 	setAttr ".ihi" 0;
 createNode reference -n "TeachBot_10_UVRN";
 	rename -uid "9DBE750B-44CD-694F-A3C3-86A9B9156234";
-	setAttr -s 127 ".phl";
+	setAttr -s 298 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -48829,22 +48867,185 @@ createNode reference -n "TeachBot_10_UVRN";
 	setAttr ".phl[125]" 0;
 	setAttr ".phl[126]" 0;
 	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".phl[138]" 0;
+	setAttr ".phl[139]" 0;
+	setAttr ".phl[140]" 0;
+	setAttr ".phl[141]" 0;
+	setAttr ".phl[142]" 0;
+	setAttr ".phl[143]" 0;
+	setAttr ".phl[144]" 0;
+	setAttr ".phl[145]" 0;
+	setAttr ".phl[146]" 0;
+	setAttr ".phl[147]" 0;
+	setAttr ".phl[148]" 0;
+	setAttr ".phl[149]" 0;
+	setAttr ".phl[150]" 0;
+	setAttr ".phl[151]" 0;
+	setAttr ".phl[152]" 0;
+	setAttr ".phl[153]" 0;
+	setAttr ".phl[154]" 0;
+	setAttr ".phl[155]" 0;
+	setAttr ".phl[156]" 0;
+	setAttr ".phl[157]" 0;
+	setAttr ".phl[158]" 0;
+	setAttr ".phl[159]" 0;
+	setAttr ".phl[160]" 0;
+	setAttr ".phl[161]" 0;
+	setAttr ".phl[162]" 0;
+	setAttr ".phl[163]" 0;
+	setAttr ".phl[164]" 0;
+	setAttr ".phl[165]" 0;
+	setAttr ".phl[166]" 0;
+	setAttr ".phl[167]" 0;
+	setAttr ".phl[168]" 0;
+	setAttr ".phl[169]" 0;
+	setAttr ".phl[170]" 0;
+	setAttr ".phl[171]" 0;
+	setAttr ".phl[172]" 0;
+	setAttr ".phl[173]" 0;
+	setAttr ".phl[174]" 0;
+	setAttr ".phl[175]" 0;
+	setAttr ".phl[176]" 0;
+	setAttr ".phl[177]" 0;
+	setAttr ".phl[178]" 0;
+	setAttr ".phl[179]" 0;
+	setAttr ".phl[180]" 0;
+	setAttr ".phl[181]" 0;
+	setAttr ".phl[182]" 0;
+	setAttr ".phl[183]" 0;
+	setAttr ".phl[184]" 0;
+	setAttr ".phl[185]" 0;
+	setAttr ".phl[186]" 0;
+	setAttr ".phl[187]" 0;
+	setAttr ".phl[188]" 0;
+	setAttr ".phl[189]" 0;
+	setAttr ".phl[190]" 0;
+	setAttr ".phl[191]" 0;
+	setAttr ".phl[192]" 0;
+	setAttr ".phl[193]" 0;
+	setAttr ".phl[194]" 0;
+	setAttr ".phl[195]" 0;
+	setAttr ".phl[196]" 0;
+	setAttr ".phl[197]" 0;
+	setAttr ".phl[198]" 0;
+	setAttr ".phl[199]" 0;
+	setAttr ".phl[200]" 0;
+	setAttr ".phl[201]" 0;
+	setAttr ".phl[202]" 0;
+	setAttr ".phl[203]" 0;
+	setAttr ".phl[204]" 0;
+	setAttr ".phl[205]" 0;
+	setAttr ".phl[206]" 0;
+	setAttr ".phl[207]" 0;
+	setAttr ".phl[208]" 0;
+	setAttr ".phl[209]" 0;
+	setAttr ".phl[210]" 0;
+	setAttr ".phl[211]" 0;
+	setAttr ".phl[212]" 0;
+	setAttr ".phl[213]" 0;
+	setAttr ".phl[214]" 0;
+	setAttr ".phl[215]" 0;
+	setAttr ".phl[216]" 0;
+	setAttr ".phl[217]" 0;
+	setAttr ".phl[218]" 0;
+	setAttr ".phl[219]" 0;
+	setAttr ".phl[220]" 0;
+	setAttr ".phl[221]" 0;
+	setAttr ".phl[222]" 0;
+	setAttr ".phl[223]" 0;
+	setAttr ".phl[224]" 0;
+	setAttr ".phl[225]" 0;
+	setAttr ".phl[226]" 0;
+	setAttr ".phl[227]" 0;
+	setAttr ".phl[228]" 0;
+	setAttr ".phl[229]" 0;
+	setAttr ".phl[230]" 0;
+	setAttr ".phl[231]" 0;
+	setAttr ".phl[232]" 0;
+	setAttr ".phl[233]" 0;
+	setAttr ".phl[234]" 0;
+	setAttr ".phl[235]" 0;
+	setAttr ".phl[236]" 0;
+	setAttr ".phl[237]" 0;
+	setAttr ".phl[238]" 0;
+	setAttr ".phl[239]" 0;
+	setAttr ".phl[240]" 0;
+	setAttr ".phl[241]" 0;
+	setAttr ".phl[242]" 0;
+	setAttr ".phl[243]" 0;
+	setAttr ".phl[244]" 0;
+	setAttr ".phl[245]" 0;
+	setAttr ".phl[246]" 0;
+	setAttr ".phl[247]" 0;
+	setAttr ".phl[248]" 0;
+	setAttr ".phl[249]" 0;
+	setAttr ".phl[250]" 0;
+	setAttr ".phl[251]" 0;
+	setAttr ".phl[252]" 0;
+	setAttr ".phl[253]" 0;
+	setAttr ".phl[254]" 0;
+	setAttr ".phl[255]" 0;
+	setAttr ".phl[256]" 0;
+	setAttr ".phl[257]" 0;
+	setAttr ".phl[258]" 0;
+	setAttr ".phl[259]" 0;
+	setAttr ".phl[260]" 0;
+	setAttr ".phl[261]" 0;
+	setAttr ".phl[262]" 0;
+	setAttr ".phl[263]" 0;
+	setAttr ".phl[264]" 0;
+	setAttr ".phl[265]" 0;
+	setAttr ".phl[266]" 0;
+	setAttr ".phl[267]" 0;
+	setAttr ".phl[268]" 0;
+	setAttr ".phl[269]" 0;
+	setAttr ".phl[270]" 0;
+	setAttr ".phl[271]" 0;
+	setAttr ".phl[272]" 0;
+	setAttr ".phl[273]" 0;
+	setAttr ".phl[274]" 0;
+	setAttr ".phl[275]" 0;
+	setAttr ".phl[276]" 0;
+	setAttr ".phl[277]" 0;
+	setAttr ".phl[278]" 0;
+	setAttr ".phl[279]" 0;
+	setAttr ".phl[280]" 0;
+	setAttr ".phl[281]" 0;
+	setAttr ".phl[282]" 0;
+	setAttr ".phl[283]" 0;
+	setAttr ".phl[284]" 0;
+	setAttr ".phl[285]" 0;
+	setAttr ".phl[286]" 0;
+	setAttr ".phl[287]" 0;
+	setAttr ".phl[288]" 0;
+	setAttr ".phl[289]" 0;
+	setAttr ".phl[290]" 0;
+	setAttr ".phl[291]" 0;
+	setAttr ".phl[292]" 0;
+	setAttr ".phl[293]" 0;
+	setAttr ".phl[294]" 0;
+	setAttr ".phl[295]" 0;
+	setAttr ".phl[296]" 0;
+	setAttr ".phl[297]" 0;
+	setAttr ".phl[298]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TeachBot_10_UVRN"
 		"TeachBot_10_UVRN" 0
-		"TeachBot_10_UVRN" 135
+		"TeachBot_10_UVRN" 302
 		2 "|TeachBot_10_UV:Mr_Limbo" "translate" " -type \"double3\" 166.19696268012140195 11.45499942712429942 -154.95774603021962434"
 		
 		2 "|TeachBot_10_UV:Mr_Limbo" "rotate" " -type \"double3\" 0 30.00000000000001066 0"
 		
-		2 "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr" 
-		"translate" " -type \"double3\" 0 0 0"
 		2 "TeachBot_10_UV:Geometry_Layer" "displayType" " 2"
 		2 "TeachBot_10_UV:IK_Skeleton" "displayType" " 0"
 		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr.translateX" 
@@ -48867,240 +49068,582 @@ createNode reference -n "TeachBot_10_UVRN";
 		"TeachBot_10_UVRN.placeHolderList[9]" ""
 		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[10]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[11]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[12]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[13]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.visibility" 
 		"TeachBot_10_UVRN.placeHolderList[14]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[15]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[16]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[17]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[18]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[19]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[20]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[21]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[22]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[23]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[24]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[25]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[26]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[27]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[28]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[29]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[30]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[31]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[32]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[33]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[34]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[35]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[36]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[37]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[38]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[39]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[40]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[41]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[42]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[43]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[44]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[45]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[46]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[47]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[48]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[49]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[50]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[51]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[52]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[53]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[54]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[55]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[56]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[57]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[58]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[59]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[60]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[61]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[62]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[63]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[64]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Neck_01_FK_Cntr_Grp|TeachBot_10_UV:Neck_01_FK_Cntr|TeachBot_10_UV:Head_01_FK_Cntr_Grp|TeachBot_10_UV:Head_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[65]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[66]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[67]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[68]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[69]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[70]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[71]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[72]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[73]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[74]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[75]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[76]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[77]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[78]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[79]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[80]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[81]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[82]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[83]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[84]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[85]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[86]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[87]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[88]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[89]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[90]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[91]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[92]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[93]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[94]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[95]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[96]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[97]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[98]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[99]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[100]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_TopHand_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[101]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[102]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[103]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[104]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[105]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[106]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[107]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[108]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[109]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_01_FK_Cntr|TeachBot_10_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_02_FK_Cntr|TeachBot_10_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_10_UV:L_Arm_03_FK_Cntr|TeachBot_10_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:L_BottomHand_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[110]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[111]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[112]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[113]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[114]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[115]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[116]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[117]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.scaleY" 
 		"TeachBot_10_UVRN.placeHolderList[118]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr.scaleZ" 
 		"TeachBot_10_UVRN.placeHolderList[119]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.translateX" 
 		"TeachBot_10_UVRN.placeHolderList[120]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.translateY" 
 		"TeachBot_10_UVRN.placeHolderList[121]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.translateZ" 
 		"TeachBot_10_UVRN.placeHolderList[122]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.rotateZ" 
 		"TeachBot_10_UVRN.placeHolderList[123]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.rotateX" 
 		"TeachBot_10_UVRN.placeHolderList[124]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.rotateY" 
 		"TeachBot_10_UVRN.placeHolderList[125]" ""
-		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.scaleX" 
 		"TeachBot_10_UVRN.placeHolderList[126]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[127]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[128]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[129]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[130]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[131]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[132]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[133]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[134]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[135]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[136]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[137]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[138]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[139]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[140]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[141]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[142]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[143]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[144]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[145]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_TopHand_01_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[146]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[147]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[148]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[149]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[150]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[151]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[152]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[153]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[154]" ""
 		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_01_FK_Cntr|TeachBot_10_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_02_FK_Cntr|TeachBot_10_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_10_UV:R_Arm_03_FK_Cntr|TeachBot_10_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_10_UV:R_BottomHand_01_FK_Cntr.scaleZ" 
-		"TeachBot_10_UVRN.placeHolderList[127]" "";
+		"TeachBot_10_UVRN.placeHolderList[155]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[156]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[157]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[158]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[159]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[160]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[161]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[162]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[163]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[164]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_01_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[165]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[166]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[167]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[168]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[169]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[170]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[171]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[172]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[173]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[174]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_02_Cntr_Grp|TeachBot_10_UV:Dial_02_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[175]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[176]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[177]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[178]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[179]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[180]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[181]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[182]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[183]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[184]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_03_Cntr_Grp|TeachBot_10_UV:Dial_03_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[185]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[186]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[187]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[188]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[189]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[190]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[191]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[192]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[193]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[194]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_04_Cntr_Grp|TeachBot_10_UV:Dial_04_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[195]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[196]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[197]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[198]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[199]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[200]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[201]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[202]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[203]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[204]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_05_Cntr_Grp|TeachBot_10_UV:Dial_05_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[205]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[206]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[207]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[208]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[209]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[210]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[211]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[212]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[213]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[214]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_06_Cntr_Grp|TeachBot_10_UV:Dial_01_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[215]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[216]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[217]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[218]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[219]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[220]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[221]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[222]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[223]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[224]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr_Grp|TeachBot_10_UV:Base_01_FK_Cntr|TeachBot_10_UV:Waist_01_FK_Cntr_Grp|TeachBot_10_UV:Waist_01_Cntr_Jnt|TeachBot_10_UV:Torso_01_FK_Cntr_Grp|TeachBot_10_UV:Torso_01_FK_Cntr|TeachBot_10_UV:Dial_07_Cntr_Grp|TeachBot_10_UV:Dial_07_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[225]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[226]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[227]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[228]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.visibility" 
+		"TeachBot_10_UVRN.placeHolderList[229]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[230]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[231]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[232]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[233]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[234]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[235]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[236]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[237]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[238]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[239]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[240]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[241]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[242]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[243]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[244]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[245]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[246]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[247]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[248]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[249]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[250]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[251]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[252]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[253]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[254]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[255]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[256]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[257]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[258]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[259]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[260]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[261]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[262]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[263]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[264]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[265]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[266]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[267]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[268]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[269]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[270]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:L_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_01_FK_Cntr|TeachBot_10_UV:L_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_02_FK_Cntr|TeachBot_10_UV:L_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:L_Leg_03_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[271]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[272]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[273]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[274]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[275]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[276]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[277]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[278]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[279]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[280]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[281]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[282]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[283]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[284]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[285]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[286]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[287]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[288]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[289]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.translateX" 
+		"TeachBot_10_UVRN.placeHolderList[290]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.translateY" 
+		"TeachBot_10_UVRN.placeHolderList[291]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.translateZ" 
+		"TeachBot_10_UVRN.placeHolderList[292]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.rotateX" 
+		"TeachBot_10_UVRN.placeHolderList[293]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.rotateY" 
+		"TeachBot_10_UVRN.placeHolderList[294]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.rotateZ" 
+		"TeachBot_10_UVRN.placeHolderList[295]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.scaleX" 
+		"TeachBot_10_UVRN.placeHolderList[296]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.scaleY" 
+		"TeachBot_10_UVRN.placeHolderList[297]" ""
+		5 4 "TeachBot_10_UVRN" "|TeachBot_10_UV:Mr_Limbo|TeachBot_10_UV:Controls|TeachBot_10_UV:Transform_Cntr_Grp|TeachBot_10_UV:Transform_Cntr|TeachBot_10_UV:COG_Cntr_Grp|TeachBot_10_UV:COG_Cntr|TeachBot_10_UV:FK_Master_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr_Grp|TeachBot_10_UV:ROOT_Cntr|TeachBot_10_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_10_UV:Pelvis_01_FK_Cntr|TeachBot_10_UV:R_Leg_01_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_01_FK_Cntr|TeachBot_10_UV:R_Leg_02_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_02_FK_Cntr|TeachBot_10_UV:R_Leg_03_FK_Cntr_Grp|TeachBot_10_UV:R_Leg_03_FK_Cntr.scaleZ" 
+		"TeachBot_10_UVRN.placeHolderList[298]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Mr_Limbo_RoomRN";
@@ -49461,146 +50004,149 @@ createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateX";
 	rename -uid "4BD6DE2C-4564-3740-A349-7291CD394730";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 -5.1127600296719997 25 5.832761869903468
-		 49 38.449279790840386 73 -8.2637971722945718 97 -54.680935291679269;
+	setAttr -s 7 ".ktv[0:6]"  1 -5.1127600296719997 25 5.832761869903468
+		 49 38.449279790840386 73 -8.2637971722945718 97 -54.680935291679269 146 -49.089349595877458
+		 172 3.8923646853330163;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateY";
 	rename -uid "8BEA2464-4E63-932D-E30A-F8A88D56A90F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 -24.331470055921102 25 -27.150273958375553
-		 49 -13.905509221608229 73 -12.710638937372773 97 -12.710638937372797;
+	setAttr -s 7 ".ktv[0:6]"  1 -24.331470055921102 25 -27.150273958375553
+		 49 -13.905509221608229 73 -12.710638937372773 97 -12.710638937372797 146 -12.710638937372822
+		 172 -12.136423842028075;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateZ";
 	rename -uid "1E729745-4B28-5CA9-705D-5E93AEF10655";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 -37.277105740591473 25 -28.615396601704767
-		 49 -33.80853543064481 73 -24.023660970622927 97 -24.023660970622924;
+	setAttr -s 7 ".ktv[0:6]"  1 -37.277105740591473 25 -28.615396601704767
+		 49 -33.80853543064481 73 -24.023660970622931 97 -24.023660970622924 146 -24.02366097062292
+		 172 -45.662325679527612;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateX";
 	rename -uid "CE11D644-48A1-E4FD-FF51-B2B2D23F348F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 172 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateY";
 	rename -uid "71966F02-4A25-0EBF-F8AC-F1AA7727741E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 172 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateZ";
 	rename -uid "2B33AD7A-4FC5-047B-4FC7-3C982A3A14AF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 172 0;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleX";
 	rename -uid "97B06405-4E9F-FBB4-BF2B-1D9F4ED3F3D5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 172 1;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleY";
 	rename -uid "684FCAA3-4E49-081E-C938-2A9EB85C38F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 172 1;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleZ";
 	rename -uid "E396F6E1-44B2-6165-F7D0-85A31D6BA57A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 172 1;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateX";
 	rename -uid "5BD40636-41A4-7A8B-B14F-39A4D1C45458";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 11.840014742311444 25 11.84 49 20.166779366387182
-		 73 24.333591546604154 97 45.953514545222355;
+	setAttr -s 7 ".ktv[0:6]"  1 11.840014742311444 25 11.84 49 20.166779366387182
+		 73 24.333591546604154 97 45.953514545222355 146 37.982775300243233 196 34.047391686702298;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateY";
 	rename -uid "0E875FBA-4387-2718-6DDC-F1B9817828A1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 3.1668632742820599 25 3.167 49 3.1669999999999972
-		 73 -33.341970926944711 97 -22.051317502657266;
+	setAttr -s 7 ".ktv[0:6]"  1 3.1668632742820599 25 3.167 49 3.1669999999999972
+		 73 -33.341970926944711 97 -22.051317502657266 146 -28.640209642516748 196 -33.397026246392173;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateZ";
 	rename -uid "10C7034A-4E07-0720-92E0-F3A55AE87C5D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 44.120977361131764 25 44.121 49 44.121000000000009
-		 73 29.000165234907239 97 15.288455280025993;
+	setAttr -s 7 ".ktv[0:6]"  1 44.120977361131764 25 44.121 49 44.121000000000009
+		 73 29.000165234907239 97 15.288455280025993 146 24.000750095959393 196 31.622739295245779;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateX";
 	rename -uid "B0864BC2-49B8-A6AB-5E7C-E1B1AAFD2D77";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 196 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateY";
 	rename -uid "DE923042-4525-79A2-5A49-1A9A0FECF15D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 196 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateZ";
 	rename -uid "22B3073E-4A90-C350-4637-F5A7BCF651B5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 196 0;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleX";
 	rename -uid "96FE8C1C-4124-6A7B-9F81-DC9C9244B2FD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 196 1;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleY";
 	rename -uid "CA5B9A59-4B64-E970-7A4C-1BA6047D0E6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 196 1;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleZ";
 	rename -uid "23102C4D-46E7-D474-A2A1-1B8A93CFC80F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 196 1;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateX";
 	rename -uid "0E633419-4F1A-4B6D-C525-5597A9F2239F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 35.261625723028665 25 12.486078949712994
-		 49 8.167655749628846 73 13.330364012649294;
+	setAttr -s 6 ".ktv[0:5]"  1 35.261625723028665 25 12.486078949712994
+		 49 8.167655749628846 73 13.330364012649294 146 12.121054960863553 172 23.922492839641425;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateY";
 	rename -uid "B867F2AF-4A46-9ECA-C90D-80876339B8C2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 9.0849924875623191 25 9.0849924875623191
-		 49 13.098993969652913 73 7.7797887520879998;
+	setAttr -s 6 ".ktv[0:5]"  1 9.0849924875623209 25 9.0849924875623209
+		 49 13.098993969652913 73 7.7797887520879998 146 9.5697014032194598 172 8.5187425154674745;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateZ";
 	rename -uid "B9F73F58-4F73-0438-8B71-79B4E22015F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 51.454985481755877 25 36.218351924767539
-		 49 14.055251856208931 73 41.970692997169813;
+	setAttr -s 6 ".ktv[0:5]"  1 51.454985481755877 25 36.218351924767539
+		 49 14.055251856208931 73 41.970692997169813 146 33.966460104312837 172 40.604915779104907;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateX";
 	rename -uid "FC4C7C45-4AD9-DB65-BE8B-2AB5BDFDDEDC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 25 0 49 0 73 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 146 0 172 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateY";
 	rename -uid "741612D0-4400-F8A0-6B69-95830394A5A1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 25 0 49 0 73 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 146 0 172 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateZ";
 	rename -uid "7CE01B2D-4A33-CB8F-411D-AC8A57D0A918";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 25 0 49 0 73 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 146 0 172 0;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleX";
 	rename -uid "F6DAA1BA-4203-BD36-4571-479E2589DF63";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 25 1 49 1 73 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 146 1 172 1;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleY";
 	rename -uid "9579DDC5-4BCD-819A-C122-0A81506236B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 25 1 49 1 73 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 146 1 172 1;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleZ";
 	rename -uid "B56EABD2-4247-9E5E-EE7A-358E2500EB47";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 25 1 49 1 73 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 146 1 172 1;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateX";
 	rename -uid "3FD86923-4CD8-F07C-7D3D-32874260EEB6";
 	setAttr ".tan" 18;
@@ -49695,373 +50241,1285 @@ createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateX";
 	rename -uid "8BB8A7DC-48F4-7967-82CB-CF94F7EFCCAC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateY";
 	rename -uid "2E2568C3-4847-EE47-B47C-60921D9C243C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateZ";
 	rename -uid "326D3E6A-42F8-FD6C-12F5-CA9371B4C8DB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 -40.386426457357736 49 4.1961625220669347
-		 73 13.887974229844698 121 54.381963168605346;
+	setAttr -s 6 ".ktv[0:5]"  1 -40.386426457357736 49 4.1961625220669347
+		 73 13.887974229844698 121 54.381963168605346 171 -28.829657095001235 196 3.2146149647342237;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateX";
 	rename -uid "B8724DF9-4563-F660-FF87-6A8CF337992A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateY";
 	rename -uid "28230FD5-4A6E-BC88-1BDA-A4AF6BC17FD5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateZ";
 	rename -uid "9354D2BB-4458-3D41-D5AB-BE8D830042B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleX";
 	rename -uid "F161211C-4232-72BA-AEED-0E8952528483";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 171 1 196 1;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleY";
 	rename -uid "E9A7AEA7-41F4-3DCF-E5E4-5D802E1EA41C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 171 1 196 1;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleZ";
 	rename -uid "4C018934-4156-7468-E74A-2E909625A453";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 171 1 196 1;
 createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateX";
 	rename -uid "B11DFEC5-485C-5EDE-F74D-C88F7EA4B667";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
 createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateY";
 	rename -uid "6ECF63D6-4726-BAD1-FE32-F0A92D44AD2D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
 createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateZ";
 	rename -uid "589CC6DD-4EFB-AC12-987A-258FB4B4AE5E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 -22.870611450731879 25 -48.033950123629573
-		 49 -85.911673518353808 73 -6.0386876712667927 121 32.652523419689452;
+	setAttr -s 6 ".ktv[0:5]"  1 -22.870611450731879 25 -48.033950123629573
+		 49 -85.911673518353808 73 -6.0386876712667927 121 8.3298524983475257 171 0;
 createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateX";
 	rename -uid "5A76966B-49E1-2832-1A84-BFB7705AF0FD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
 createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateY";
 	rename -uid "5E600581-4764-D094-AD7A-0A8B95A1C4A2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
 createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateZ";
 	rename -uid "8C7443F4-49A6-AB0F-8051-BD956B33FC3F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
 createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleX";
 	rename -uid "5830F349-4240-501F-05E1-618134BB8144";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 121 1 171 1;
 createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleY";
 	rename -uid "78076F6B-432B-9B81-4DBF-CC80B6ABF7B6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 121 1 171 1;
 createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleZ";
 	rename -uid "53E3F320-4EF7-24D1-731D-D68812C12561";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 121 1 171 1;
 createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateX";
 	rename -uid "7896E18B-4C52-9CF5-95DF-9FA75668C4B7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 -0.17310347537610257 73 -0.1601356948924339
-		 121 -0.15832578707991976;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 -0.17310347537610257 73 -0.1601356948924339
+		 121 -0.15832578707991976 146 -0.0424438463074382 171 0;
 createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateY";
 	rename -uid "3B0A1F0E-4CCD-C2EE-45EF-DCB5C423AB0E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 -0.018040737990691055 73 -0.068167820451592157
-		 121 0.072271978417905294;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 -0.018040737990691055 73 -0.068167820451592157
+		 121 0.072271978417905294 146 0.16878627179391761 171 0;
 createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateZ";
 	rename -uid "2C21D5E3-452E-0096-CB26-17A5DB58EAB7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 -3.1933790464835856 49 -36.577913978205373
-		 73 -53.68688754740036 121 -6.0925649858859439;
+	setAttr -s 6 ".ktv[0:5]"  1 -3.1933790464835861 49 -36.577913978205373
+		 73 -53.68688754740036 121 -6.0925649858859439 146 45.25667807549236 171 0;
 createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateX";
 	rename -uid "189420E6-489D-1183-8F69-1F980FF812E6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 146 0 171 0;
 createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateY";
 	rename -uid "A4DD419B-40EE-5A4F-DFAA-64B9E5B1F620";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 146 0 171 0;
 createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateZ";
 	rename -uid "B59315F0-470B-6B1C-ADD8-65AF8B701E00";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 49 0 73 0 121 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 146 0 171 0;
 createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleX";
 	rename -uid "619AB6A5-4C2E-8F56-9054-42A985D0D64C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 146 1 171 1;
 createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleY";
 	rename -uid "1C26B235-4D29-E579-0349-EF8B30F1C159";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 146 1 171 1;
 createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleZ";
 	rename -uid "59DE1DC6-45F0-FB42-D24B-97A84E243972";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 49 1 73 1 121 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 146 1 171 1;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateX";
 	rename -uid "B430B280-468E-F430-06E2-9E9E838BCFC9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 9.0177070310233645e-16 73 -24.466050033173897
-		 97 -4.4958197603939078;
+	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 9.0177070310233645e-16 73 -24.466050033173897
+		 97 -4.4958197603939078 146 14.789509678568505 171 -14.16931703479062 196 -14.124264910756693;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateY";
 	rename -uid "2A69807A-4DDC-A085-DB11-E19CFFEFCF9A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 -28.145492284756717 73 1.2530727614927704
-		 97 18.52422356064168;
+	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 -28.145492284756717 73 1.2530727614927704
+		 97 18.52422356064168 146 18.524223560641673 171 -10.161715675613685 196 9.1089048674060251;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateZ";
 	rename -uid "FE779BD3-4F66-24BC-73E5-849DAAFF6165";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 -11.340731429134724 25 -20.900518907320578
-		 49 -20.900518907320581 73 -20.900518907320567 97 -15.744843636005736;
+	setAttr -s 8 ".ktv[0:7]"  1 -11.340731429134724 25 -20.900518907320578
+		 49 -20.900518907320581 73 -20.900518907320567 97 -15.744843636005736 146 -15.744843636005754
+		 171 -8.4228167664787623 196 -13.254473142667669;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateX";
 	rename -uid "32FEE15E-4C91-802A-E050-B894401FEA2D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 0 73 0 97 0 146 0 171 0 196 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateY";
 	rename -uid "4F402079-489C-B750-80F6-CCB4750D374E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 0 73 0 97 0 146 0 171 0 196 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateZ";
 	rename -uid "D6C7D164-466E-627B-10F8-348B45A45D20";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 25 0 49 0 73 0 97 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 0 73 0 97 0 146 0 171 0 196 0;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleX";
 	rename -uid "2E9CF377-44A5-4EBD-C520-3489F9E7EB2C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 8 ".ktv[0:7]"  1 1 25 1 49 1 73 1 97 1 146 1 171 1 196 1;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleY";
 	rename -uid "8F21D4DE-40F7-AB56-0FDC-F483F7A220BE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 8 ".ktv[0:7]"  1 1 25 1 49 1 73 1 97 1 146 1 171 1 196 1;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleZ";
 	rename -uid "2DDA35BD-4A78-EACB-E9FC-718643F5A0A6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 25 1 49 1 73 1 97 1;
+	setAttr -s 8 ".ktv[0:7]"  1 1 25 1 49 1 73 1 97 1 146 1 171 1 196 1;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateX";
 	rename -uid "2335D134-428E-7806-665D-148076CD3D79";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 7.2522129907646471e-18
-		 97 0 121 4.2044568240682068e-17;
+	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 7.2522129907646471e-18
+		 97 0 121 4.2044568240682068e-17 146 15.739397339364331 171 -29.706937235440346 196 15.70262408167175;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateY";
 	rename -uid "1F663C3F-4903-D5D9-86D5-55BA4EE2DDFB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 44.99999999999995 73 31.066493684951066
-		 97 97.130516867722932 121 287.18733911831458;
+	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 44.99999999999995 73 31.066493684951066
+		 97 97.130516867722932 121 287.18733911831458 146 376.49142734697875 171 360.63621046178662
+		 196 353.68016466789231;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateZ";
 	rename -uid "54F82DA1-4B72-2173-71B7-D2ABB2ECBFE9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 15.489232505636178 25 -0.10943890483688709
-		 49 -0.10943890483688713 73 -0.10943890483689228 97 -0.10943890483687656 121 -0.10943890483687709;
+	setAttr -s 9 ".ktv[0:8]"  1 15.489232505636178 25 -0.10943890483688709
+		 49 -0.10943890483688713 73 -0.10943890483689228 97 -0.10943890483687656 121 -0.1094389048368771
+		 146 -7.4699441237867514 171 1.8908351131028986 196 -0.059434163927377735;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateX";
 	rename -uid "A34FC8C0-4059-5A11-E4ED-C6BA05D66E51";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 97 0 121 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 0 97 0 121 0 146 0 171 0
+		 196 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateY";
 	rename -uid "3C0283B7-4471-9FD6-2229-EB8D7A3F1E98";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 97 0 121 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 0 97 0 121 0 146 0 171 0
+		 196 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateZ";
 	rename -uid "B00F304C-4CC0-5264-3B33-97A31BF0647F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 97 0 121 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 0 97 0 121 0 146 0 171 0
+		 196 0;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleX";
 	rename -uid "9CDB9832-44A2-45B6-9B75-37BDD1F8F483";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 97 1 121 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 25 1 49 1 73 1 97 1 121 1 146 1 171 1
+		 196 1;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleY";
 	rename -uid "045B41BE-408E-5D74-B0FE-01810EDF25F6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 97 1 121 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 25 1 49 1 73 1 97 1 121 1 146 1 171 1
+		 196 1;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleZ";
 	rename -uid "A340BB45-4E30-ACC5-B25E-57B9F4DA050A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 97 1 121 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 25 1 49 1 73 1 97 1 121 1 146 1 171 1
+		 196 1;
 createNode animCurveTA -n "Torso_01_FK_Cntr_rotateX";
 	rename -uid "C1A6812C-4B0B-8822-6991-319052CC9AB0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 0;
+	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
 createNode animCurveTA -n "Torso_01_FK_Cntr_rotateY";
 	rename -uid "A3FCFE7C-467F-1C80-07FA-2EB0D723CA4D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 0;
+	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
 createNode animCurveTA -n "Torso_01_FK_Cntr_rotateZ";
 	rename -uid "EE6C7D62-4C3C-A096-0DF0-C8A3A1B8BC65";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 13.273398379634363;
+	setAttr -s 2 ".ktv[0:1]"  1 13.273398379634363 25 13.273398379634363;
 createNode animCurveTL -n "Torso_01_FK_Cntr_translateX";
 	rename -uid "CB42F571-48BA-D694-A7C8-CDAB9886E69D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 0;
+	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
 createNode animCurveTL -n "Torso_01_FK_Cntr_translateY";
 	rename -uid "7B26DFE7-4DD9-90F3-6618-35AC8CD77BBA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 0;
+	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
 createNode animCurveTL -n "Torso_01_FK_Cntr_translateZ";
 	rename -uid "2CD5983E-4DC9-1BCD-E8EA-9CA3258AEAB6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 0;
+	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
 createNode animCurveTU -n "Torso_01_FK_Cntr_scaleX";
 	rename -uid "7C12FACD-431E-E75A-36A7-169E713572AE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 1;
+	setAttr -s 2 ".ktv[0:1]"  1 1 25 1;
 createNode animCurveTU -n "Torso_01_FK_Cntr_scaleY";
 	rename -uid "AC0F8231-4A25-A540-1E88-039083224061";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 1;
+	setAttr -s 2 ".ktv[0:1]"  1 1 25 1;
 createNode animCurveTU -n "Torso_01_FK_Cntr_scaleZ";
 	rename -uid "CD7AEB95-4DE4-AF1E-F115-C7B92A3AE555";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  25 1;
+	setAttr -s 2 ".ktv[0:1]"  1 1 25 1;
 createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateX";
 	rename -uid "F87B304A-473C-8E48-0CAA-419335773C7F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateY";
 	rename -uid "BB9E845A-4954-407A-CC7F-1E92C5756A99";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateZ";
 	rename -uid "6D226234-470C-98DF-DCD1-5BAAA6024CDF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 35.708159027838192;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 35.708159027838192 146 -29.18992720748302
+		 171 54.249517610863052;
 createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateX";
 	rename -uid "BB37AF69-4851-5834-A9B0-E7940C279017";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateY";
 	rename -uid "3ABD5662-4B1B-6475-15CA-3DB335E617DE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateZ";
 	rename -uid "061AC15A-4274-F758-1C29-BD94DB1CF79F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleX";
 	rename -uid "12A6D779-4D5B-5A17-7A7E-47B28ECE4B9E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 121 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
 createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleY";
 	rename -uid "1DCAF6EE-4723-A404-71DE-C2A55D2276DF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 121 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
 createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleZ";
 	rename -uid "41EAB06B-4E42-0909-767F-ADA0FA2A8AD7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 121 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
 createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateX";
 	rename -uid "1835B2EB-406E-4872-0F1E-A08022A606F8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateY";
 	rename -uid "6C40D1C3-4303-4D28-A7C1-F5B68745099F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateZ";
 	rename -uid "3C3BBC0A-402A-119E-D9EF-C2B9066ACCF5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 -25.528312820779423;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 -25.528312820779423 146 31.50621226932742
+		 171 -45.778723768512116;
 createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateX";
 	rename -uid "7F8CDED2-4853-1D48-2AD2-F18078E0ADDE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateY";
 	rename -uid "A39D501D-46F3-75A8-5F80-E0A3E8E7CD88";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateZ";
 	rename -uid "95F7B0B5-4FD4-BB0C-5A7E-BE982ACD36C3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 121 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
 createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleX";
 	rename -uid "9E148043-4492-3DAD-C0B2-30A1392600EE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 121 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
 createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleY";
 	rename -uid "AFCBD129-4D6C-1CFD-879C-A9AC782B12F7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 121 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
 createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleZ";
 	rename -uid "9CBDAD1E-4ED3-05CD-110F-9A9B983192EE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 121 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+createNode animCurveTA -n "COG_Cntr_rotateX";
+	rename -uid "A1ED37EB-4B72-19BB-4669-88B84C5315E6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "COG_Cntr_rotateY";
+	rename -uid "6413964F-4FAE-C330-6BDB-8192BB167A83";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "COG_Cntr_rotateZ";
+	rename -uid "6C9E775E-4727-B47F-1784-B88F94750755";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "COG_Cntr_visibility";
+	rename -uid "99A068E0-4BD7-AC20-57E9-F58FDEDE32BC";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "COG_Cntr_translateX";
+	rename -uid "B12315A5-44CB-93A7-CF08-E9BA9129EDA3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "COG_Cntr_translateY";
+	rename -uid "492E1772-4A9A-2C40-7BFE-22B9AC3D4706";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "COG_Cntr_translateZ";
+	rename -uid "AD706E0A-40A3-34DE-D019-4EBFD5E37434";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "COG_Cntr_scaleX";
+	rename -uid "C57E57F3-42DB-81EE-907D-75A1B310DC2A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "COG_Cntr_scaleY";
+	rename -uid "C61A8F4E-469C-BA55-F18A-3B94B39BE4A1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "COG_Cntr_scaleZ";
+	rename -uid "FD86F0CD-4D52-3751-9DB8-1181FE5E271B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTA -n "ROOT_Cntr_rotateX";
+	rename -uid "6227BC4B-4B7B-E9FE-EA5E-18B9933B56C0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "ROOT_Cntr_rotateY";
+	rename -uid "E4D1B7CB-4EFA-5BE0-F8F7-98AF46A66FF3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "ROOT_Cntr_rotateZ";
+	rename -uid "D49FAEC7-4FD8-CD5E-FCDA-B78984394E26";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "ROOT_Cntr_visibility";
+	rename -uid "5370100A-4086-B3F3-23A2-0BBF15C0AFA3";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "ROOT_Cntr_translateX";
+	rename -uid "352DE346-48A0-0C52-C2F9-F7AF408ECBDE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "ROOT_Cntr_translateY";
+	rename -uid "DD409876-41F9-6D7B-C8F8-4AA396BF6610";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "ROOT_Cntr_translateZ";
+	rename -uid "283EC4BD-4D28-C680-D652-53BDDFB502BF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "ROOT_Cntr_scaleX";
+	rename -uid "2EEF94E8-4169-C856-D6A4-3886A1ACE23A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "ROOT_Cntr_scaleY";
+	rename -uid "3926EF90-418D-73BF-E95E-59908B1BFA1C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "ROOT_Cntr_scaleZ";
+	rename -uid "CD4B1991-49FD-16CE-F501-238F57BCC451";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "L_Leg_01_FK_Cntr_translateX";
+	rename -uid "365D9546-4332-7837-16D6-43B1FD31C2E9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+createNode animCurveTL -n "L_Leg_01_FK_Cntr_translateY";
+	rename -uid "9075E63A-4A4E-AA33-B74A-4BBDADEA4805";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+createNode animCurveTL -n "L_Leg_01_FK_Cntr_translateZ";
+	rename -uid "5E0F002B-43B9-A953-09F6-9CBDFB4C0BEE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+createNode animCurveTA -n "L_Leg_01_FK_Cntr_rotateX";
+	rename -uid "C8106853-405C-F034-9748-1F8B21296C9B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 -62.93636147871198;
+createNode animCurveTA -n "L_Leg_01_FK_Cntr_rotateY";
+	rename -uid "BD000B7C-4CBF-9D0B-0DC8-3FA25B1D47DC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+createNode animCurveTA -n "L_Leg_01_FK_Cntr_rotateZ";
+	rename -uid "561C8516-4187-AE98-006C-88A7346044BE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+createNode animCurveTU -n "L_Leg_01_FK_Cntr_scaleX";
+	rename -uid "39E16CF6-43A2-1E3B-7E58-089B87CD3BFC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 146 1 172 1;
+createNode animCurveTU -n "L_Leg_01_FK_Cntr_scaleY";
+	rename -uid "0337CC5C-44BC-4A1D-1B75-61B7E6EC9169";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 146 1 172 1;
+createNode animCurveTU -n "L_Leg_01_FK_Cntr_scaleZ";
+	rename -uid "CB76085A-4B29-3F01-DA35-4FBD59367B3E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 146 1 172 1;
+createNode animCurveTL -n "L_Leg_02_FK_Cntr_translateX";
+	rename -uid "90A11928-4503-C67E-31EB-B5B220F62954";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "L_Leg_02_FK_Cntr_translateY";
+	rename -uid "C0A11A17-414C-44B1-46CC-28B6CB2E5E33";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "L_Leg_02_FK_Cntr_translateZ";
+	rename -uid "0E92C2EA-406C-3CFD-5068-AA9E3E84C43E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "L_Leg_02_FK_Cntr_rotateX";
+	rename -uid "F3473CF6-45A5-745A-08EF-A887399AC453";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "L_Leg_02_FK_Cntr_rotateY";
+	rename -uid "C310FBED-49BA-197A-316A-29A165CEDA30";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "L_Leg_02_FK_Cntr_rotateZ";
+	rename -uid "182404FF-40CD-45DC-3F0A-448B1874494E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "L_Leg_02_FK_Cntr_scaleX";
+	rename -uid "29F7A680-4E09-C3A4-AEB2-058CDA645FB7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "L_Leg_02_FK_Cntr_scaleY";
+	rename -uid "A40951EB-4EC4-8F9D-8EF8-0689385F54E3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "L_Leg_02_FK_Cntr_scaleZ";
+	rename -uid "6E7D8DC6-4772-E858-4B0A-55A404C3F19D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "L_Leg_03_FK_Cntr_translateX";
+	rename -uid "1A73D3EA-4EBB-588A-4130-63814B793F40";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "L_Leg_03_FK_Cntr_translateY";
+	rename -uid "30ADED26-4C78-58A2-01AE-1691DCCFA0C4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "L_Leg_03_FK_Cntr_translateZ";
+	rename -uid "05FE1939-4B1B-4ABA-6DC0-7BB6CD1451F3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "L_Leg_03_FK_Cntr_rotateX";
+	rename -uid "696CF666-49B7-F66B-3ADE-85B5860FF744";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "L_Leg_03_FK_Cntr_rotateY";
+	rename -uid "101F06A7-45E6-FF8B-AEEE-FC9643AEF55A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "L_Leg_03_FK_Cntr_rotateZ";
+	rename -uid "88FFBD6B-4836-EA19-AB73-A4B6406C65B0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "L_Leg_03_FK_Cntr_scaleX";
+	rename -uid "A0FA379E-402C-5388-E542-C7853B973834";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "L_Leg_03_FK_Cntr_scaleY";
+	rename -uid "4EF8FC69-41E8-9D65-49A3-7994894D6DBF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "L_Leg_03_FK_Cntr_scaleZ";
+	rename -uid "0ECC87F4-4583-C758-8CA8-07980A07DBAD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "R_Leg_01_FK_Cntr_translateX";
+	rename -uid "00A45AD6-4D53-AD8B-6A9E-70841BE0A494";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "R_Leg_01_FK_Cntr_translateY";
+	rename -uid "F0FAAB4A-4277-DA0D-AECA-57ADC8B48170";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "R_Leg_01_FK_Cntr_translateZ";
+	rename -uid "63441CF9-49CD-8780-1441-879981B9DDFB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_01_FK_Cntr_rotateX";
+	rename -uid "1AAE4A03-4DD2-1F23-6BF4-419C72C369D1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_01_FK_Cntr_rotateY";
+	rename -uid "7D7BC7B8-4A21-1D8D-6A6F-0E8CE04DCE94";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_01_FK_Cntr_rotateZ";
+	rename -uid "90F48E12-4433-12F9-1097-60A5432017D7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "R_Leg_01_FK_Cntr_scaleX";
+	rename -uid "78AEEE6B-424D-C2DF-0A61-55B09C40031D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "R_Leg_01_FK_Cntr_scaleY";
+	rename -uid "097D855D-47F9-B732-319A-0DBABE2DCBF5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "R_Leg_01_FK_Cntr_scaleZ";
+	rename -uid "73FBC1D2-4924-E977-8DDF-CF933B4DCD33";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "R_Leg_02_FK_Cntr_translateX";
+	rename -uid "BD13C825-4B37-3060-903F-88BCCA2C0E7D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "R_Leg_02_FK_Cntr_translateY";
+	rename -uid "98EE37DE-4FC1-9D24-0B39-3B88531B53D7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "R_Leg_02_FK_Cntr_translateZ";
+	rename -uid "814EB187-4D17-338E-5701-F09ADB3DB1F2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_02_FK_Cntr_rotateX";
+	rename -uid "4E6E9DC7-4F52-AB53-EB77-C984D010782B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_02_FK_Cntr_rotateY";
+	rename -uid "0AF5D7C0-4375-4BF3-2522-87A17366EB7D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_02_FK_Cntr_rotateZ";
+	rename -uid "6DF0E52B-4B9E-11FB-F426-95981779FCF0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "R_Leg_02_FK_Cntr_scaleX";
+	rename -uid "3598B07D-4523-15AC-7482-EEA88FE1084F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "R_Leg_02_FK_Cntr_scaleY";
+	rename -uid "08E4ADE6-41E7-C746-3596-B4B95816E457";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "R_Leg_02_FK_Cntr_scaleZ";
+	rename -uid "92F7C4E8-4A48-7ECF-8F09-E8BFF8F0ECE5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "R_Leg_03_FK_Cntr_translateX";
+	rename -uid "815E7584-46DA-9154-D76F-2F84BF7F7E8F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "R_Leg_03_FK_Cntr_translateY";
+	rename -uid "F4BA4120-4562-1435-42EF-C787F3E7B695";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "R_Leg_03_FK_Cntr_translateZ";
+	rename -uid "194BA939-4334-D4BE-5A35-83A515ECBB88";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_03_FK_Cntr_rotateX";
+	rename -uid "97373E50-4067-1B99-7771-A6B77517C398";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_03_FK_Cntr_rotateY";
+	rename -uid "CFE1AF49-4394-FCEF-4FD4-1B841D40FBDD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "R_Leg_03_FK_Cntr_rotateZ";
+	rename -uid "5C380A23-4DFB-9786-0C86-2FA3A85A793F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "R_Leg_03_FK_Cntr_scaleX";
+	rename -uid "E6B75D8F-4DD0-3347-A448-449487CD7D88";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "R_Leg_03_FK_Cntr_scaleY";
+	rename -uid "6DA06028-4066-A9A6-FBFA-F7A95D50894C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "R_Leg_03_FK_Cntr_scaleZ";
+	rename -uid "B299FD55-43BE-83E3-0A10-1BAB668E3903";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "Pelvis_01_FK_Cntr_translateX";
+	rename -uid "86657A22-430B-B77D-2C31-B0B06B6670C8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Pelvis_01_FK_Cntr_translateY";
+	rename -uid "50BE1081-4F3C-E6FC-135C-6E9E6CC32FFE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Pelvis_01_FK_Cntr_translateZ";
+	rename -uid "8620E188-4A35-B31D-7A05-CCA60365A9D1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Pelvis_01_FK_Cntr_rotateX";
+	rename -uid "16DD8150-4561-9A9B-B405-DB87D83C919A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Pelvis_01_FK_Cntr_rotateY";
+	rename -uid "5D9B481F-44C3-903E-CE23-0FAB2049FAC7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Pelvis_01_FK_Cntr_rotateZ";
+	rename -uid "1FB58A7E-48FD-EC84-63CA-C1BF2F657DEF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Pelvis_01_FK_Cntr_scaleX";
+	rename -uid "9AB85C60-48CC-5080-EBDC-76BD05936BB4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Pelvis_01_FK_Cntr_scaleY";
+	rename -uid "E28F2FDA-4690-C2C5-4403-2C954BBCBD33";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Pelvis_01_FK_Cntr_scaleZ";
+	rename -uid "009B81CD-4D72-FF76-B3FF-CFBFEFBF16B7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "Base_01_FK_Cntr_translateX";
+	rename -uid "85728BC6-4705-40D3-8A11-E5BF7ECB921C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Base_01_FK_Cntr_translateY";
+	rename -uid "19B5EABD-4865-8764-A7C0-8AAB14896A9D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Base_01_FK_Cntr_translateZ";
+	rename -uid "DD51F16F-46C9-5FBD-82BC-7996BE9C2667";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Base_01_FK_Cntr_rotateX";
+	rename -uid "96066C7C-4DA9-E4B7-7434-3AA0DE1F753A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Base_01_FK_Cntr_rotateY";
+	rename -uid "E4F7C14B-4A6B-AE30-9477-8CA9403ACF55";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Base_01_FK_Cntr_rotateZ";
+	rename -uid "B943B041-4916-52E4-67EB-F4B63456D165";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Base_01_FK_Cntr_scaleX";
+	rename -uid "0D13BF3D-4A34-71AE-76D7-E2A95AE327EE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Base_01_FK_Cntr_scaleY";
+	rename -uid "8F538D86-444D-6329-F8B1-10998D3ADB22";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Base_01_FK_Cntr_scaleZ";
+	rename -uid "8FFF4564-4266-CF10-29A4-E3BCE002C2DF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_07_Cntr_visibility";
+	rename -uid "B2F0B403-44A4-AE44-15C6-A9A56782D3EF";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_07_Cntr_translateX";
+	rename -uid "66699C74-44E7-D5CA-17B6-2B9F782101C3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_07_Cntr_translateY";
+	rename -uid "3EE2370D-4A42-4B04-41F0-64B0C2C0C975";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_07_Cntr_translateZ";
+	rename -uid "F15650B5-427D-12B5-DB57-2193126CC8C4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_07_Cntr_rotateX";
+	rename -uid "C8591AF5-4216-4500-0580-03B36B3892EB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_07_Cntr_rotateY";
+	rename -uid "381FFC8C-4F52-7C2B-2656-EAAAD2177040";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_07_Cntr_rotateZ";
+	rename -uid "5592DF09-4379-E110-C122-8C9A1BB1D01A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_07_Cntr_scaleX";
+	rename -uid "C1832E38-461B-8AAE-D017-35B9E2F04920";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_07_Cntr_scaleY";
+	rename -uid "B64DB4BE-405B-84B6-D8F7-C18E8699FD46";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_07_Cntr_scaleZ";
+	rename -uid "E01F1A18-4F0E-302E-E47D-6E9EA426CBF4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_01_Cntr_visibility";
+	rename -uid "FEC70C7B-4143-E062-45C9-B897F2284CEE";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_01_Cntr_translateX";
+	rename -uid "9C4E6984-4F1B-2218-C743-51B1CD44833B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_01_Cntr_translateY";
+	rename -uid "EC21D02F-4BA0-A8E0-C635-718EBD49E524";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_01_Cntr_translateZ";
+	rename -uid "9E74EFDD-43BC-700D-0C32-7895C4C01B0A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_01_Cntr_rotateX";
+	rename -uid "A02EE023-420D-453A-3DC3-F4A9B8C44CEE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_01_Cntr_rotateY";
+	rename -uid "8E595CC1-4262-D3AB-2A0A-3390C70F4B50";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_01_Cntr_rotateZ";
+	rename -uid "12814031-4C1B-B63E-56D8-18BEB9E1C143";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_01_Cntr_scaleX";
+	rename -uid "BEBF0E94-4A34-D96C-844F-A79F048339DF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_01_Cntr_scaleY";
+	rename -uid "3DEBFADD-4365-ADB9-4F98-089BE5E0E1E5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_01_Cntr_scaleZ";
+	rename -uid "EFE636BF-4D28-A6D3-BC4A-FB9B024D3378";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_01_Cntr_visibility1";
+	rename -uid "688FAF7A-4E47-57B1-4DA2-EFA060E8622D";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_01_Cntr_translateX1";
+	rename -uid "37E7BF6E-47AC-5D35-B70D-0FB92AAE4120";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_01_Cntr_translateY1";
+	rename -uid "A9D5D7BF-4E03-313A-97D8-FE8FC9B97CAF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_01_Cntr_translateZ1";
+	rename -uid "ED6CC38B-44AC-1544-3654-15846EA8F601";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_01_Cntr_rotateX1";
+	rename -uid "44C21A58-4F3A-5BA8-F6FA-DAB5B8C5A58D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_01_Cntr_rotateY1";
+	rename -uid "76D9C66F-4686-3631-D822-F1AEA90074BB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_01_Cntr_rotateZ1";
+	rename -uid "AED80A96-4076-5DF7-395D-A4910E27B70B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_01_Cntr_scaleX1";
+	rename -uid "065C0F9E-47A8-3517-3C7D-298E0C83C9C2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_01_Cntr_scaleY1";
+	rename -uid "E8AE3FFC-4276-1762-AD9C-22B29D5DCE94";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_01_Cntr_scaleZ1";
+	rename -uid "0D698B6E-44A1-8993-799F-52989DDBEEDF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_05_Cntr_visibility";
+	rename -uid "6323187A-47E4-CBFD-57B4-DFA987F500C7";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_05_Cntr_translateX";
+	rename -uid "AEC5D5B5-44A9-6393-5A19-DEAE0DBF2428";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_05_Cntr_translateY";
+	rename -uid "C2DC2136-4053-12CB-5083-CDAF3DEDB0A4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_05_Cntr_translateZ";
+	rename -uid "03270126-4C68-10F3-227D-D490D0165A6A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_05_Cntr_rotateX";
+	rename -uid "5CC324C8-4245-4BD3-D638-6DA264F0AA6E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_05_Cntr_rotateY";
+	rename -uid "ABD3E9C9-41A6-2666-61C3-E79EE64136DB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_05_Cntr_rotateZ";
+	rename -uid "35573923-4B76-796A-F213-D7A6F1242AC8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_05_Cntr_scaleX";
+	rename -uid "12DCAA4D-4220-1B0F-EA4A-80AA7B100FFD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_05_Cntr_scaleY";
+	rename -uid "24905AD4-47C1-A7D8-E772-568A6FD0709C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_05_Cntr_scaleZ";
+	rename -uid "9AF818C0-4A37-6EF8-D105-CFAEE55A652F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_04_Cntr_visibility";
+	rename -uid "3C66268A-4DB2-A60B-07A0-1B93955858FA";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_04_Cntr_translateX";
+	rename -uid "73277365-43CD-CBDE-0C24-DD81725AEC39";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_04_Cntr_translateY";
+	rename -uid "D4B45F98-4253-EA18-FFE5-048D604F9E00";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_04_Cntr_translateZ";
+	rename -uid "7A4DFEE0-43F6-28A9-AF22-5288F9EA22ED";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_04_Cntr_rotateX";
+	rename -uid "C9C4E871-4828-32E9-B749-67B77F39F89D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_04_Cntr_rotateY";
+	rename -uid "8A9ADBD1-4AAD-3B20-FC4A-BDB2AA9E49D1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_04_Cntr_rotateZ";
+	rename -uid "194E0D22-4A5A-C4E0-2699-D3BA31377600";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_04_Cntr_scaleX";
+	rename -uid "DC826050-4CF0-8662-A7A5-26B06D46D112";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_04_Cntr_scaleY";
+	rename -uid "D38A888E-4D12-772A-7C2B-99878307D62B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_04_Cntr_scaleZ";
+	rename -uid "40265F2E-4153-AF9A-6579-66BFA6BB9E6C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_03_Cntr_visibility";
+	rename -uid "BD7E43F8-4BCF-0B57-291D-0AA1CCB4AB3C";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_03_Cntr_translateX";
+	rename -uid "C5139695-4E66-1C39-CC46-1AB9EEE9EF7B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_03_Cntr_translateY";
+	rename -uid "1D997BF9-4B56-106B-738D-0EADB754ABD7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_03_Cntr_translateZ";
+	rename -uid "39A530A7-4B7F-A934-5219-02B35662821B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_03_Cntr_rotateX";
+	rename -uid "57D28AA8-4B11-5FD9-8731-B58AD8B5DF08";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_03_Cntr_rotateY";
+	rename -uid "3DB8FE5A-4B21-483E-7397-56988B3A3349";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_03_Cntr_rotateZ";
+	rename -uid "A0E05621-4584-EFDF-0A66-D5811364949B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_03_Cntr_scaleX";
+	rename -uid "5B413E22-4FD7-E340-2C64-83A897E8EA20";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_03_Cntr_scaleY";
+	rename -uid "0C4B6C7A-4718-E9C4-5F86-95A35C41E492";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_03_Cntr_scaleZ";
+	rename -uid "F6529FEF-460A-F845-4002-238E18CE2408";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_02_Cntr_visibility";
+	rename -uid "0A864E4A-4468-6E50-90E8-DB9960EC154D";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTL -n "Dial_02_Cntr_translateX";
+	rename -uid "73861C96-4025-D314-C702-96A2A4196E33";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_02_Cntr_translateY";
+	rename -uid "72A2AA3C-49B3-21EB-F18E-F587367350D5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Dial_02_Cntr_translateZ";
+	rename -uid "DA4388A1-47F5-C43F-F094-CEA27EF3B0BE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_02_Cntr_rotateX";
+	rename -uid "56DB3AD5-4DCB-4702-1C52-A2AE084AF728";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_02_Cntr_rotateY";
+	rename -uid "CB16C99A-4A12-AF7B-5692-97B1990FF166";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Dial_02_Cntr_rotateZ";
+	rename -uid "0FA3053A-4AA9-DA53-97FE-138B62790407";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Dial_02_Cntr_scaleX";
+	rename -uid "BF8ED468-46D6-A835-0A26-2F8AF581F960";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_02_Cntr_scaleY";
+	rename -uid "06184E5E-42FF-569B-C1F5-0CBEC158F963";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Dial_02_Cntr_scaleZ";
+	rename -uid "D48DF676-45B9-1A34-EFB4-079FB7ABEC4D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTL -n "Head_01_FK_Cntr_translateX";
+	rename -uid "595D3458-489C-C74B-CD70-D299C11BAF16";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Head_01_FK_Cntr_translateY";
+	rename -uid "D315DE8F-4EBB-6475-9D67-1F9FCD75AC80";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "Head_01_FK_Cntr_translateZ";
+	rename -uid "9BC94354-49F7-2C32-C66C-B5A1D4335D36";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Head_01_FK_Cntr_rotateX";
+	rename -uid "169E0D5C-4FD5-26A6-66C0-02B47EB1BE9F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Head_01_FK_Cntr_rotateY";
+	rename -uid "25DD326B-412A-1896-B620-E1A58691EAA0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "Head_01_FK_Cntr_rotateZ";
+	rename -uid "E70121D1-4160-C8A6-AA63-DA9871050224";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "Head_01_FK_Cntr_scaleX";
+	rename -uid "DACDE834-4CC1-947F-442F-C883D09459FB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Head_01_FK_Cntr_scaleY";
+	rename -uid "15C4D035-46F4-E294-6CC5-6CB38B1CEF74";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "Head_01_FK_Cntr_scaleZ";
+	rename -uid "5D4DD98D-4698-288E-C90B-E4A749E70003";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "MainTVScreen_Color_emission";
+	rename -uid "58CF07EB-493B-8AFF-BD4A-F0821205BB4A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 40 ".ktv[0:39]"  1 1 5 1 10 1 15 1 20 0 25 0 30 0 35 0 40 1
+		 45 1 50 1 55 1 60 0 65 0 70 0 75 0 80 1 90 1 95 1 100 0 105 0 110 0 115 0 120 1 125 1
+		 130 1 135 1 140 0 145 0 150 0 155 0 160 1 165 1 170 1 175 1 180 0 185 0 190 0 195 0
+		 200 1;
+createNode animCurveTU -n "BigTVScreen_Color_emission";
+	rename -uid "9C51DE92-44BF-638E-323A-839EC7C77EC6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 20 ".ktv[0:19]"  1 0 20 0 25 1 40 1 45 0 60 0 65 1 80 1 85 0
+		 100 0 105 1 120 1 125 0 140 0 145 1 160 1 165 0 180 0 185 1 200 1;
+createNode animCurveTU -n "LargeTVScreen_Color_emission";
+	rename -uid "2BD3AE3D-44E2-5EA0-C068-03B600585ADE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  25 0 40 0 45 1 60 1 65 0 80 0 85 1 100 1
+		 105 0 120 0 125 1 140 1 145 0 160 0 165 1 180 1 185 0 200 0;
+createNode animCurveTU -n "MediumTV_Color_emission";
+	rename -uid "1A6F5482-4F27-8F96-240A-92A43763661C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 15 0;
+createNode animCurveTU -n "MediumTVScreen_Color_emission";
+	rename -uid "D7177F2E-4D24-9AB7-7DEB-90936136E04C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 21 ".ktv[0:20]"  1 0 15 0 20 1 35 1 40 0 55 0 60 1 75 1 80 0
+		 95 0 100 1 115 1 120 0 135 0 140 1 155 1 160 0 175 0 180 1 195 1 200 0;
+createNode animCurveTU -n "SmallTVScreen_Color_emission";
+	rename -uid "4A2D33B1-4AA3-DBB3-99C4-B2956D240E6E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 21 ".ktv[0:20]"  10 0 15 1 30 1 35 0 50 0 55 1 60 0 75 0
+		 80 1 95 1 100 0 115 0 120 1 135 1 140 0 155 0 160 1 175 1 180 0 195 0 200 1;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -50124,770 +51582,776 @@ connectAttr "groupId175.msg" "TV_SetsRN.phl[5]";
 connectAttr "TV_SetsRN.phl[6]" "TV_BIgShape.iog.og[4].gco";
 connectAttr "groupId173.msg" "TV_SetsRN.phl[7]";
 connectAttr "TV_BIgShape.iog.og[4]" "TV_SetsRN.phl[8]";
-connectAttr "TV_SetsRN.phl[9]" "TV_BIgShape.iog.og[5].gco";
-connectAttr "groupId174.msg" "TV_SetsRN.phl[10]";
-connectAttr "TV_BIgShape.iog.og[5]" "TV_SetsRN.phl[11]";
-connectAttr "TV_SetsRN.phl[12]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "BigTVScreen_Color_emission.o" "TV_SetsRN.phl[9]";
+connectAttr "TV_SetsRN.phl[10]" "TV_BIgShape.iog.og[5].gco";
+connectAttr "groupId174.msg" "TV_SetsRN.phl[11]";
+connectAttr "TV_BIgShape.iog.og[5]" "TV_SetsRN.phl[12]";
+connectAttr "TV_SetsRN.phl[13]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[13]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[14]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[14]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[15]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[15]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[16]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[16]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[17]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[17]" "|TV_Large|TV_LargeShape.iog.og[4].gco";
-connectAttr "TV_SetsRN.phl[18]" "TV_Large1Shape.iog.og[4].gco";
-connectAttr "TV_SetsRN.phl[19]" "TV_Large2Shape.iog.og[4].gco";
-connectAttr "TV_SetsRN.phl[20]" "TV_Large3Shape.iog.og[4].gco";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[21]";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[22]";
-connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[23]"
+connectAttr "TV_SetsRN.phl[18]" "|TV_Large|TV_LargeShape.iog.og[4].gco";
+connectAttr "TV_SetsRN.phl[19]" "TV_Large1Shape.iog.og[4].gco";
+connectAttr "TV_SetsRN.phl[20]" "TV_Large2Shape.iog.og[4].gco";
+connectAttr "TV_SetsRN.phl[21]" "TV_Large3Shape.iog.og[4].gco";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[22]";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[23]";
+connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[24]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[24]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[25]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[25]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[26]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[26]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[27]"
 		;
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[27]";
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[28]";
-connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[29]"
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[28]";
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[29]";
+connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[30]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[30]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[31]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[31]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[32]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[32]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[33]"
 		;
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[33]";
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[34]";
-connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[35]"
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[34]";
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[35]";
+connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[36]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[36]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[37]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[37]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[38]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[38]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[39]"
 		;
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[39]";
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[40]";
-connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[41]"
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[40]";
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[41]";
+connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[42]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[42]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[43]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[43]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[44]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[44]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[45]"
 		;
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[45]";
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[46]";
-connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[47]"
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[46]";
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[47]";
+connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[48]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[48]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[49]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[49]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[50]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[50]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[51]"
 		;
-connectAttr "|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[51]";
-connectAttr "|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[52]";
-connectAttr "|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[53]"
+connectAttr "|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[52]";
+connectAttr "|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[53]";
+connectAttr "|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[54]"
 		;
-connectAttr "|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[54]"
+connectAttr "|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[55]"
 		;
-connectAttr "|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[55]"
+connectAttr "|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[56]"
 		;
-connectAttr "|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[56]"
+connectAttr "|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[57]"
 		;
-connectAttr "TV_Large1Shape.iog.og[4]" "TV_SetsRN.phl[57]";
-connectAttr "TV_Large1Shape.ciog.cog[0]" "TV_SetsRN.phl[58]";
-connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[59]"
+connectAttr "TV_Large1Shape.iog.og[4]" "TV_SetsRN.phl[58]";
+connectAttr "TV_Large1Shape.ciog.cog[0]" "TV_SetsRN.phl[59]";
+connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[60]"
 		;
-connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[60]"
+connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[61]"
 		;
-connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[61]"
+connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[62]"
+		;
+connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[63]"
+		;
+connectAttr "TV_Large2Shape.iog.og[4]" "TV_SetsRN.phl[64]";
+connectAttr "TV_Large2Shape.ciog.cog[0]" "TV_SetsRN.phl[65]";
+connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[66]"
+		;
+connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[67]"
+		;
+connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[68]"
+		;
+connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[69]"
+		;
+connectAttr "TV_Large3Shape.iog.og[4]" "TV_SetsRN.phl[70]";
+connectAttr "TV_Large3Shape.ciog.cog[0]" "TV_SetsRN.phl[71]";
+connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[72]"
+		;
+connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[73]"
+		;
+connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[74]"
+		;
+connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[75]"
+		;
+connectAttr "groupId10.msg" "TV_SetsRN.phl[76]";
+connectAttr "groupId13.msg" "TV_SetsRN.phl[77]";
+connectAttr "groupId15.msg" "TV_SetsRN.phl[78]";
+connectAttr "groupId17.msg" "TV_SetsRN.phl[79]";
+connectAttr "groupId19.msg" "TV_SetsRN.phl[80]";
+connectAttr "groupId21.msg" "TV_SetsRN.phl[81]";
+connectAttr "groupId31.msg" "TV_SetsRN.phl[82]";
+connectAttr "groupId34.msg" "TV_SetsRN.phl[83]";
+connectAttr "groupId36.msg" "TV_SetsRN.phl[84]";
+connectAttr "groupId38.msg" "TV_SetsRN.phl[85]";
+connectAttr "groupId40.msg" "TV_SetsRN.phl[86]";
+connectAttr "groupId42.msg" "TV_SetsRN.phl[87]";
+connectAttr "groupId52.msg" "TV_SetsRN.phl[88]";
+connectAttr "groupId55.msg" "TV_SetsRN.phl[89]";
+connectAttr "groupId57.msg" "TV_SetsRN.phl[90]";
+connectAttr "groupId59.msg" "TV_SetsRN.phl[91]";
+connectAttr "groupId61.msg" "TV_SetsRN.phl[92]";
+connectAttr "groupId63.msg" "TV_SetsRN.phl[93]";
+connectAttr "groupId73.msg" "TV_SetsRN.phl[94]";
+connectAttr "groupId76.msg" "TV_SetsRN.phl[95]";
+connectAttr "groupId78.msg" "TV_SetsRN.phl[96]";
+connectAttr "groupId80.msg" "TV_SetsRN.phl[97]";
+connectAttr "groupId82.msg" "TV_SetsRN.phl[98]";
+connectAttr "groupId84.msg" "TV_SetsRN.phl[99]";
+connectAttr "groupId94.msg" "TV_SetsRN.phl[100]";
+connectAttr "groupId97.msg" "TV_SetsRN.phl[101]";
+connectAttr "groupId99.msg" "TV_SetsRN.phl[102]";
+connectAttr "groupId101.msg" "TV_SetsRN.phl[103]";
+connectAttr "groupId103.msg" "TV_SetsRN.phl[104]";
+connectAttr "groupId105.msg" "TV_SetsRN.phl[105]";
+connectAttr "groupId106.msg" "TV_SetsRN.phl[106]";
+connectAttr "groupId109.msg" "TV_SetsRN.phl[107]";
+connectAttr "groupId111.msg" "TV_SetsRN.phl[108]";
+connectAttr "groupId113.msg" "TV_SetsRN.phl[109]";
+connectAttr "groupId115.msg" "TV_SetsRN.phl[110]";
+connectAttr "groupId117.msg" "TV_SetsRN.phl[111]";
+connectAttr "groupId118.msg" "TV_SetsRN.phl[112]";
+connectAttr "groupId121.msg" "TV_SetsRN.phl[113]";
+connectAttr "groupId123.msg" "TV_SetsRN.phl[114]";
+connectAttr "groupId125.msg" "TV_SetsRN.phl[115]";
+connectAttr "groupId127.msg" "TV_SetsRN.phl[116]";
+connectAttr "groupId129.msg" "TV_SetsRN.phl[117]";
+connectAttr "groupId130.msg" "TV_SetsRN.phl[118]";
+connectAttr "groupId133.msg" "TV_SetsRN.phl[119]";
+connectAttr "groupId135.msg" "TV_SetsRN.phl[120]";
+connectAttr "groupId137.msg" "TV_SetsRN.phl[121]";
+connectAttr "groupId139.msg" "TV_SetsRN.phl[122]";
+connectAttr "groupId141.msg" "TV_SetsRN.phl[123]";
+connectAttr "groupId142.msg" "TV_SetsRN.phl[124]";
+connectAttr "groupId145.msg" "TV_SetsRN.phl[125]";
+connectAttr "groupId147.msg" "TV_SetsRN.phl[126]";
+connectAttr "groupId149.msg" "TV_SetsRN.phl[127]";
+connectAttr "groupId151.msg" "TV_SetsRN.phl[128]";
+connectAttr "groupId153.msg" "TV_SetsRN.phl[129]";
+connectAttr "TV_SetsRN.phl[130]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[62]"
-		;
-connectAttr "TV_Large2Shape.iog.og[4]" "TV_SetsRN.phl[63]";
-connectAttr "TV_Large2Shape.ciog.cog[0]" "TV_SetsRN.phl[64]";
-connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[65]"
-		;
-connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[66]"
-		;
-connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[67]"
-		;
-connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[68]"
-		;
-connectAttr "TV_Large3Shape.iog.og[4]" "TV_SetsRN.phl[69]";
-connectAttr "TV_Large3Shape.ciog.cog[0]" "TV_SetsRN.phl[70]";
-connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[71]"
-		;
-connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[72]"
-		;
-connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[73]"
-		;
-connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[74]"
-		;
-connectAttr "groupId10.msg" "TV_SetsRN.phl[75]";
-connectAttr "groupId13.msg" "TV_SetsRN.phl[76]";
-connectAttr "groupId15.msg" "TV_SetsRN.phl[77]";
-connectAttr "groupId17.msg" "TV_SetsRN.phl[78]";
-connectAttr "groupId19.msg" "TV_SetsRN.phl[79]";
-connectAttr "groupId21.msg" "TV_SetsRN.phl[80]";
-connectAttr "groupId31.msg" "TV_SetsRN.phl[81]";
-connectAttr "groupId34.msg" "TV_SetsRN.phl[82]";
-connectAttr "groupId36.msg" "TV_SetsRN.phl[83]";
-connectAttr "groupId38.msg" "TV_SetsRN.phl[84]";
-connectAttr "groupId40.msg" "TV_SetsRN.phl[85]";
-connectAttr "groupId42.msg" "TV_SetsRN.phl[86]";
-connectAttr "groupId52.msg" "TV_SetsRN.phl[87]";
-connectAttr "groupId55.msg" "TV_SetsRN.phl[88]";
-connectAttr "groupId57.msg" "TV_SetsRN.phl[89]";
-connectAttr "groupId59.msg" "TV_SetsRN.phl[90]";
-connectAttr "groupId61.msg" "TV_SetsRN.phl[91]";
-connectAttr "groupId63.msg" "TV_SetsRN.phl[92]";
-connectAttr "groupId73.msg" "TV_SetsRN.phl[93]";
-connectAttr "groupId76.msg" "TV_SetsRN.phl[94]";
-connectAttr "groupId78.msg" "TV_SetsRN.phl[95]";
-connectAttr "groupId80.msg" "TV_SetsRN.phl[96]";
-connectAttr "groupId82.msg" "TV_SetsRN.phl[97]";
-connectAttr "groupId84.msg" "TV_SetsRN.phl[98]";
-connectAttr "groupId94.msg" "TV_SetsRN.phl[99]";
-connectAttr "groupId97.msg" "TV_SetsRN.phl[100]";
-connectAttr "groupId99.msg" "TV_SetsRN.phl[101]";
-connectAttr "groupId101.msg" "TV_SetsRN.phl[102]";
-connectAttr "groupId103.msg" "TV_SetsRN.phl[103]";
-connectAttr "groupId105.msg" "TV_SetsRN.phl[104]";
-connectAttr "groupId106.msg" "TV_SetsRN.phl[105]";
-connectAttr "groupId109.msg" "TV_SetsRN.phl[106]";
-connectAttr "groupId111.msg" "TV_SetsRN.phl[107]";
-connectAttr "groupId113.msg" "TV_SetsRN.phl[108]";
-connectAttr "groupId115.msg" "TV_SetsRN.phl[109]";
-connectAttr "groupId117.msg" "TV_SetsRN.phl[110]";
-connectAttr "groupId118.msg" "TV_SetsRN.phl[111]";
-connectAttr "groupId121.msg" "TV_SetsRN.phl[112]";
-connectAttr "groupId123.msg" "TV_SetsRN.phl[113]";
-connectAttr "groupId125.msg" "TV_SetsRN.phl[114]";
-connectAttr "groupId127.msg" "TV_SetsRN.phl[115]";
-connectAttr "groupId129.msg" "TV_SetsRN.phl[116]";
-connectAttr "groupId130.msg" "TV_SetsRN.phl[117]";
-connectAttr "groupId133.msg" "TV_SetsRN.phl[118]";
-connectAttr "groupId135.msg" "TV_SetsRN.phl[119]";
-connectAttr "groupId137.msg" "TV_SetsRN.phl[120]";
-connectAttr "groupId139.msg" "TV_SetsRN.phl[121]";
-connectAttr "groupId141.msg" "TV_SetsRN.phl[122]";
-connectAttr "groupId142.msg" "TV_SetsRN.phl[123]";
-connectAttr "groupId145.msg" "TV_SetsRN.phl[124]";
-connectAttr "groupId147.msg" "TV_SetsRN.phl[125]";
-connectAttr "groupId149.msg" "TV_SetsRN.phl[126]";
-connectAttr "groupId151.msg" "TV_SetsRN.phl[127]";
-connectAttr "groupId153.msg" "TV_SetsRN.phl[128]";
-connectAttr "TV_SetsRN.phl[129]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[131]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[130]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[132]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[131]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[133]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[132]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[134]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[133]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[135]" "|TV_Large|TV_LargeShape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[136]" "TV_Large1Shape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[137]" "TV_Large2Shape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[138]" "TV_Large3Shape.iog.og[5].gco";
+connectAttr "groupId11.msg" "TV_SetsRN.phl[139]";
+connectAttr "groupId32.msg" "TV_SetsRN.phl[140]";
+connectAttr "groupId53.msg" "TV_SetsRN.phl[141]";
+connectAttr "groupId74.msg" "TV_SetsRN.phl[142]";
+connectAttr "groupId95.msg" "TV_SetsRN.phl[143]";
+connectAttr "groupId107.msg" "TV_SetsRN.phl[144]";
+connectAttr "groupId119.msg" "TV_SetsRN.phl[145]";
+connectAttr "groupId131.msg" "TV_SetsRN.phl[146]";
+connectAttr "groupId143.msg" "TV_SetsRN.phl[147]";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[148]";
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[149]";
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[150]";
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[151]";
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[152]";
+connectAttr "|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[153]";
+connectAttr "TV_Large1Shape.iog.og[5]" "TV_SetsRN.phl[154]";
+connectAttr "TV_Large2Shape.iog.og[5]" "TV_SetsRN.phl[155]";
+connectAttr "TV_Large3Shape.iog.og[5]" "TV_SetsRN.phl[156]";
+connectAttr "TV_SetsRN.phl[157]" "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[134]" "|TV_Large|TV_LargeShape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[135]" "TV_Large1Shape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[136]" "TV_Large2Shape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[137]" "TV_Large3Shape.iog.og[5].gco";
-connectAttr "groupId11.msg" "TV_SetsRN.phl[138]";
-connectAttr "groupId32.msg" "TV_SetsRN.phl[139]";
-connectAttr "groupId53.msg" "TV_SetsRN.phl[140]";
-connectAttr "groupId74.msg" "TV_SetsRN.phl[141]";
-connectAttr "groupId95.msg" "TV_SetsRN.phl[142]";
-connectAttr "groupId107.msg" "TV_SetsRN.phl[143]";
-connectAttr "groupId119.msg" "TV_SetsRN.phl[144]";
-connectAttr "groupId131.msg" "TV_SetsRN.phl[145]";
-connectAttr "groupId143.msg" "TV_SetsRN.phl[146]";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[147]";
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[148]";
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[149]";
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[150]";
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[151]";
-connectAttr "|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[152]";
-connectAttr "TV_Large1Shape.iog.og[5]" "TV_SetsRN.phl[153]";
-connectAttr "TV_Large2Shape.iog.og[5]" "TV_SetsRN.phl[154]";
-connectAttr "TV_Large3Shape.iog.og[5]" "TV_SetsRN.phl[155]";
-connectAttr "TV_SetsRN.phl[156]" "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[158]" "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[157]" "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[159]" "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[158]" "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[160]" "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[159]" "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[161]" "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[160]" "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[162]" "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[161]" "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[163]" "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[162]" "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[164]" "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[163]" "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[165]" "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[164]" "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[166]" "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[165]" "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[167]" "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[166]" "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[168]" "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[167]" "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[169]" "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[168]" "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[170]" "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[169]" "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[171]" "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[170]" "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[172]" "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[171]" "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[173]" "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[172]" "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[174]" "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[173]" "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[175]" "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[174]" "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[176]" "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[175]" "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[177]" "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[176]" "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[178]" "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[177]" "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[179]" "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[178]" "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[180]" "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[179]" "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[181]" "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[180]" "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[182]" "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[181]" "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[183]" "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[182]" "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[184]" "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[183]" "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[185]" "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[184]" "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[186]" "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[185]" "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[187]" "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[186]" "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[188]" "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[187]" "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[189]" "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[188]" "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[190]" "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[189]" "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[191]" "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[190]" "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[192]" "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[191]" "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[193]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[192]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[194]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[193]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[195]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[194]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[196]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[195]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[197]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[196]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[198]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[197]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[199]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[198]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[200]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[199]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[201]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[200]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[202]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[201]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[203]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[202]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[204]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[203]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[205]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[204]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[206]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[205]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[207]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[206]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[208]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[207]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[209]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[208]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[210]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[209]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[211]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[210]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[212]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[211]"
+connectAttr "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[213]"
 		;
-connectAttr "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[212]"
+connectAttr "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[214]"
 		;
-connectAttr "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[213]"
+connectAttr "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[215]"
 		;
-connectAttr "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[214]"
+connectAttr "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[216]"
 		;
-connectAttr "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[215]"
+connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[217]"
 		;
-connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[216]"
+connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[218]"
 		;
-connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[217]"
+connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[219]"
 		;
-connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[218]"
+connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[220]"
 		;
-connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[219]"
+connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[221]"
 		;
-connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[220]"
+connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[222]"
 		;
-connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[221]"
+connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[223]"
 		;
-connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[222]"
+connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[224]"
 		;
-connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[223]"
+connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[225]"
 		;
-connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[224]"
+connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[226]"
 		;
-connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[225]"
+connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[227]"
 		;
-connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[226]"
+connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[228]"
 		;
-connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[227]"
+connectAttr "groupId14.msg" "TV_SetsRN.phl[229]";
+connectAttr "groupId16.msg" "TV_SetsRN.phl[230]";
+connectAttr "groupId18.msg" "TV_SetsRN.phl[231]";
+connectAttr "groupId20.msg" "TV_SetsRN.phl[232]";
+connectAttr "groupId35.msg" "TV_SetsRN.phl[233]";
+connectAttr "groupId37.msg" "TV_SetsRN.phl[234]";
+connectAttr "groupId39.msg" "TV_SetsRN.phl[235]";
+connectAttr "groupId41.msg" "TV_SetsRN.phl[236]";
+connectAttr "groupId56.msg" "TV_SetsRN.phl[237]";
+connectAttr "groupId58.msg" "TV_SetsRN.phl[238]";
+connectAttr "groupId60.msg" "TV_SetsRN.phl[239]";
+connectAttr "groupId62.msg" "TV_SetsRN.phl[240]";
+connectAttr "groupId77.msg" "TV_SetsRN.phl[241]";
+connectAttr "groupId79.msg" "TV_SetsRN.phl[242]";
+connectAttr "groupId81.msg" "TV_SetsRN.phl[243]";
+connectAttr "groupId83.msg" "TV_SetsRN.phl[244]";
+connectAttr "groupId98.msg" "TV_SetsRN.phl[245]";
+connectAttr "groupId100.msg" "TV_SetsRN.phl[246]";
+connectAttr "groupId102.msg" "TV_SetsRN.phl[247]";
+connectAttr "groupId104.msg" "TV_SetsRN.phl[248]";
+connectAttr "groupId110.msg" "TV_SetsRN.phl[249]";
+connectAttr "groupId112.msg" "TV_SetsRN.phl[250]";
+connectAttr "groupId114.msg" "TV_SetsRN.phl[251]";
+connectAttr "groupId116.msg" "TV_SetsRN.phl[252]";
+connectAttr "groupId122.msg" "TV_SetsRN.phl[253]";
+connectAttr "groupId124.msg" "TV_SetsRN.phl[254]";
+connectAttr "groupId126.msg" "TV_SetsRN.phl[255]";
+connectAttr "groupId128.msg" "TV_SetsRN.phl[256]";
+connectAttr "groupId134.msg" "TV_SetsRN.phl[257]";
+connectAttr "groupId136.msg" "TV_SetsRN.phl[258]";
+connectAttr "groupId138.msg" "TV_SetsRN.phl[259]";
+connectAttr "groupId140.msg" "TV_SetsRN.phl[260]";
+connectAttr "groupId146.msg" "TV_SetsRN.phl[261]";
+connectAttr "groupId148.msg" "TV_SetsRN.phl[262]";
+connectAttr "groupId150.msg" "TV_SetsRN.phl[263]";
+connectAttr "groupId152.msg" "TV_SetsRN.phl[264]";
+connectAttr "LargeTVScreen_Color_emission.o" "TV_SetsRN.phl[265]";
+connectAttr "TV_SetsRN.phl[266]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "groupId14.msg" "TV_SetsRN.phl[228]";
-connectAttr "groupId16.msg" "TV_SetsRN.phl[229]";
-connectAttr "groupId18.msg" "TV_SetsRN.phl[230]";
-connectAttr "groupId20.msg" "TV_SetsRN.phl[231]";
-connectAttr "groupId35.msg" "TV_SetsRN.phl[232]";
-connectAttr "groupId37.msg" "TV_SetsRN.phl[233]";
-connectAttr "groupId39.msg" "TV_SetsRN.phl[234]";
-connectAttr "groupId41.msg" "TV_SetsRN.phl[235]";
-connectAttr "groupId56.msg" "TV_SetsRN.phl[236]";
-connectAttr "groupId58.msg" "TV_SetsRN.phl[237]";
-connectAttr "groupId60.msg" "TV_SetsRN.phl[238]";
-connectAttr "groupId62.msg" "TV_SetsRN.phl[239]";
-connectAttr "groupId77.msg" "TV_SetsRN.phl[240]";
-connectAttr "groupId79.msg" "TV_SetsRN.phl[241]";
-connectAttr "groupId81.msg" "TV_SetsRN.phl[242]";
-connectAttr "groupId83.msg" "TV_SetsRN.phl[243]";
-connectAttr "groupId98.msg" "TV_SetsRN.phl[244]";
-connectAttr "groupId100.msg" "TV_SetsRN.phl[245]";
-connectAttr "groupId102.msg" "TV_SetsRN.phl[246]";
-connectAttr "groupId104.msg" "TV_SetsRN.phl[247]";
-connectAttr "groupId110.msg" "TV_SetsRN.phl[248]";
-connectAttr "groupId112.msg" "TV_SetsRN.phl[249]";
-connectAttr "groupId114.msg" "TV_SetsRN.phl[250]";
-connectAttr "groupId116.msg" "TV_SetsRN.phl[251]";
-connectAttr "groupId122.msg" "TV_SetsRN.phl[252]";
-connectAttr "groupId124.msg" "TV_SetsRN.phl[253]";
-connectAttr "groupId126.msg" "TV_SetsRN.phl[254]";
-connectAttr "groupId128.msg" "TV_SetsRN.phl[255]";
-connectAttr "groupId134.msg" "TV_SetsRN.phl[256]";
-connectAttr "groupId136.msg" "TV_SetsRN.phl[257]";
-connectAttr "groupId138.msg" "TV_SetsRN.phl[258]";
-connectAttr "groupId140.msg" "TV_SetsRN.phl[259]";
-connectAttr "groupId146.msg" "TV_SetsRN.phl[260]";
-connectAttr "groupId148.msg" "TV_SetsRN.phl[261]";
-connectAttr "groupId150.msg" "TV_SetsRN.phl[262]";
-connectAttr "groupId152.msg" "TV_SetsRN.phl[263]";
-connectAttr "TV_SetsRN.phl[264]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[267]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[265]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[268]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[266]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[269]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[267]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[270]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[268]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[271]" "|TV_Large|TV_LargeShape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[272]" "TV_Large1Shape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[273]" "TV_Large2Shape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[274]" "TV_Large3Shape.iog.og[6].gco";
+connectAttr "groupId12.msg" "TV_SetsRN.phl[275]";
+connectAttr "groupId33.msg" "TV_SetsRN.phl[276]";
+connectAttr "groupId54.msg" "TV_SetsRN.phl[277]";
+connectAttr "groupId75.msg" "TV_SetsRN.phl[278]";
+connectAttr "groupId96.msg" "TV_SetsRN.phl[279]";
+connectAttr "groupId108.msg" "TV_SetsRN.phl[280]";
+connectAttr "groupId120.msg" "TV_SetsRN.phl[281]";
+connectAttr "groupId132.msg" "TV_SetsRN.phl[282]";
+connectAttr "groupId144.msg" "TV_SetsRN.phl[283]";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[284]";
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[285]";
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[286]";
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[287]";
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[288]";
+connectAttr "|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[289]";
+connectAttr "TV_Large1Shape.iog.og[6]" "TV_SetsRN.phl[290]";
+connectAttr "TV_Large2Shape.iog.og[6]" "TV_SetsRN.phl[291]";
+connectAttr "TV_Large3Shape.iog.og[6]" "TV_SetsRN.phl[292]";
+connectAttr "MediumTV_Color_emission.o" "TV_SetsRN.phl[293]";
+connectAttr "TV_SetsRN.phl[294]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[269]" "|TV_Large|TV_LargeShape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[270]" "TV_Large1Shape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[271]" "TV_Large2Shape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[272]" "TV_Large3Shape.iog.og[6].gco";
-connectAttr "groupId12.msg" "TV_SetsRN.phl[273]";
-connectAttr "groupId33.msg" "TV_SetsRN.phl[274]";
-connectAttr "groupId54.msg" "TV_SetsRN.phl[275]";
-connectAttr "groupId75.msg" "TV_SetsRN.phl[276]";
-connectAttr "groupId96.msg" "TV_SetsRN.phl[277]";
-connectAttr "groupId108.msg" "TV_SetsRN.phl[278]";
-connectAttr "groupId120.msg" "TV_SetsRN.phl[279]";
-connectAttr "groupId132.msg" "TV_SetsRN.phl[280]";
-connectAttr "groupId144.msg" "TV_SetsRN.phl[281]";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[282]";
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[283]";
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[284]";
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[285]";
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[286]";
-connectAttr "|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[287]";
-connectAttr "TV_Large1Shape.iog.og[6]" "TV_SetsRN.phl[288]";
-connectAttr "TV_Large2Shape.iog.og[6]" "TV_SetsRN.phl[289]";
-connectAttr "TV_Large3Shape.iog.og[6]" "TV_SetsRN.phl[290]";
-connectAttr "TV_SetsRN.phl[291]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[295]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[292]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[296]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[293]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[297]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[294]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[298]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[295]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[299]" "|TV_Medium|TV_MediumShape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[300]" "TV_Medium1Shape.iog.og[5].gco";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[301]"
 		;
-connectAttr "TV_SetsRN.phl[296]" "|TV_Medium|TV_MediumShape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[297]" "TV_Medium1Shape.iog.og[5].gco";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[298]"
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[302]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[299]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[303]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[300]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[304]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[301]"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[305]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[302]"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[306]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[303]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[307]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[304]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[308]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[305]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[309]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[306]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[310]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[307]"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[311]";
+connectAttr "|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[312]";
+connectAttr "TV_Medium1Shape.iog.og[5]" "TV_SetsRN.phl[313]";
+connectAttr "TV_Medium1Shape.ciog.cog[0]" "TV_SetsRN.phl[314]";
+connectAttr "groupId4.msg" "TV_SetsRN.phl[315]";
+connectAttr "groupId9.msg" "TV_SetsRN.phl[316]";
+connectAttr "groupId25.msg" "TV_SetsRN.phl[317]";
+connectAttr "groupId30.msg" "TV_SetsRN.phl[318]";
+connectAttr "groupId46.msg" "TV_SetsRN.phl[319]";
+connectAttr "groupId51.msg" "TV_SetsRN.phl[320]";
+connectAttr "groupId67.msg" "TV_SetsRN.phl[321]";
+connectAttr "groupId72.msg" "TV_SetsRN.phl[322]";
+connectAttr "groupId88.msg" "TV_SetsRN.phl[323]";
+connectAttr "groupId93.msg" "TV_SetsRN.phl[324]";
+connectAttr "groupId166.msg" "TV_SetsRN.phl[325]";
+connectAttr "groupId171.msg" "TV_SetsRN.phl[326]";
+connectAttr "groupId182.msg" "TV_SetsRN.phl[327]";
+connectAttr "groupId187.msg" "TV_SetsRN.phl[328]";
+connectAttr "MediumTVScreen_Color_emission.o" "TV_SetsRN.phl[329]";
+connectAttr "TV_SetsRN.phl[330]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[308]";
-connectAttr "|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[309]";
-connectAttr "TV_Medium1Shape.iog.og[5]" "TV_SetsRN.phl[310]";
-connectAttr "TV_Medium1Shape.ciog.cog[0]" "TV_SetsRN.phl[311]";
-connectAttr "groupId4.msg" "TV_SetsRN.phl[312]";
-connectAttr "groupId9.msg" "TV_SetsRN.phl[313]";
-connectAttr "groupId25.msg" "TV_SetsRN.phl[314]";
-connectAttr "groupId30.msg" "TV_SetsRN.phl[315]";
-connectAttr "groupId46.msg" "TV_SetsRN.phl[316]";
-connectAttr "groupId51.msg" "TV_SetsRN.phl[317]";
-connectAttr "groupId67.msg" "TV_SetsRN.phl[318]";
-connectAttr "groupId72.msg" "TV_SetsRN.phl[319]";
-connectAttr "groupId88.msg" "TV_SetsRN.phl[320]";
-connectAttr "groupId93.msg" "TV_SetsRN.phl[321]";
-connectAttr "groupId166.msg" "TV_SetsRN.phl[322]";
-connectAttr "groupId171.msg" "TV_SetsRN.phl[323]";
-connectAttr "groupId182.msg" "TV_SetsRN.phl[324]";
-connectAttr "groupId187.msg" "TV_SetsRN.phl[325]";
-connectAttr "TV_SetsRN.phl[326]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[331]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[327]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[332]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[328]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[333]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[329]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[334]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "TV_SetsRN.phl[330]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[335]" "|TV_Medium|TV_MediumShape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[336]" "TV_Medium1Shape.iog.og[6].gco";
+connectAttr "groupId5.msg" "TV_SetsRN.phl[337]";
+connectAttr "groupId26.msg" "TV_SetsRN.phl[338]";
+connectAttr "groupId47.msg" "TV_SetsRN.phl[339]";
+connectAttr "groupId68.msg" "TV_SetsRN.phl[340]";
+connectAttr "groupId89.msg" "TV_SetsRN.phl[341]";
+connectAttr "groupId167.msg" "TV_SetsRN.phl[342]";
+connectAttr "groupId183.msg" "TV_SetsRN.phl[343]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[344]"
 		;
-connectAttr "TV_SetsRN.phl[331]" "|TV_Medium|TV_MediumShape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[332]" "TV_Medium1Shape.iog.og[6].gco";
-connectAttr "groupId5.msg" "TV_SetsRN.phl[333]";
-connectAttr "groupId26.msg" "TV_SetsRN.phl[334]";
-connectAttr "groupId47.msg" "TV_SetsRN.phl[335]";
-connectAttr "groupId68.msg" "TV_SetsRN.phl[336]";
-connectAttr "groupId89.msg" "TV_SetsRN.phl[337]";
-connectAttr "groupId167.msg" "TV_SetsRN.phl[338]";
-connectAttr "groupId183.msg" "TV_SetsRN.phl[339]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[340]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[345]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[341]"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[346]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[342]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[347]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[343]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[348]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[344]"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[349]";
+connectAttr "TV_Medium1Shape.iog.og[6]" "TV_SetsRN.phl[350]";
+connectAttr "TV_SetsRN.phl[351]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[345]";
-connectAttr "TV_Medium1Shape.iog.og[6]" "TV_SetsRN.phl[346]";
-connectAttr "TV_SetsRN.phl[347]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "TV_SetsRN.phl[352]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "TV_SetsRN.phl[348]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "TV_SetsRN.phl[353]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "TV_SetsRN.phl[349]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "TV_SetsRN.phl[354]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "TV_SetsRN.phl[350]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "TV_SetsRN.phl[355]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "TV_SetsRN.phl[351]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "TV_SetsRN.phl[356]" "|TV_Medium|TV_MediumShape.iog.og[7].gco";
+connectAttr "TV_SetsRN.phl[357]" "TV_Medium1Shape.iog.og[7].gco";
+connectAttr "groupId6.msg" "TV_SetsRN.phl[358]";
+connectAttr "groupId27.msg" "TV_SetsRN.phl[359]";
+connectAttr "groupId48.msg" "TV_SetsRN.phl[360]";
+connectAttr "groupId69.msg" "TV_SetsRN.phl[361]";
+connectAttr "groupId90.msg" "TV_SetsRN.phl[362]";
+connectAttr "groupId168.msg" "TV_SetsRN.phl[363]";
+connectAttr "groupId184.msg" "TV_SetsRN.phl[364]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[365]"
 		;
-connectAttr "TV_SetsRN.phl[352]" "|TV_Medium|TV_MediumShape.iog.og[7].gco";
-connectAttr "TV_SetsRN.phl[353]" "TV_Medium1Shape.iog.og[7].gco";
-connectAttr "groupId6.msg" "TV_SetsRN.phl[354]";
-connectAttr "groupId27.msg" "TV_SetsRN.phl[355]";
-connectAttr "groupId48.msg" "TV_SetsRN.phl[356]";
-connectAttr "groupId69.msg" "TV_SetsRN.phl[357]";
-connectAttr "groupId90.msg" "TV_SetsRN.phl[358]";
-connectAttr "groupId168.msg" "TV_SetsRN.phl[359]";
-connectAttr "groupId184.msg" "TV_SetsRN.phl[360]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[361]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[366]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[362]"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[367]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[363]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[368]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[364]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[369]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[365]"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[370]";
+connectAttr "TV_Medium1Shape.iog.og[7]" "TV_SetsRN.phl[371]";
+connectAttr "TV_SetsRN.phl[372]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[366]";
-connectAttr "TV_Medium1Shape.iog.og[7]" "TV_SetsRN.phl[367]";
-connectAttr "TV_SetsRN.phl[368]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "TV_SetsRN.phl[373]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "TV_SetsRN.phl[369]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "TV_SetsRN.phl[374]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "TV_SetsRN.phl[370]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "TV_SetsRN.phl[375]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "TV_SetsRN.phl[371]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "TV_SetsRN.phl[376]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "TV_SetsRN.phl[372]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "TV_SetsRN.phl[377]" "|TV_Medium|TV_MediumShape.iog.og[8].gco";
+connectAttr "TV_SetsRN.phl[378]" "TV_Medium1Shape.iog.og[8].gco";
+connectAttr "groupId7.msg" "TV_SetsRN.phl[379]";
+connectAttr "groupId28.msg" "TV_SetsRN.phl[380]";
+connectAttr "groupId49.msg" "TV_SetsRN.phl[381]";
+connectAttr "groupId70.msg" "TV_SetsRN.phl[382]";
+connectAttr "groupId91.msg" "TV_SetsRN.phl[383]";
+connectAttr "groupId169.msg" "TV_SetsRN.phl[384]";
+connectAttr "groupId185.msg" "TV_SetsRN.phl[385]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[386]"
 		;
-connectAttr "TV_SetsRN.phl[373]" "|TV_Medium|TV_MediumShape.iog.og[8].gco";
-connectAttr "TV_SetsRN.phl[374]" "TV_Medium1Shape.iog.og[8].gco";
-connectAttr "groupId7.msg" "TV_SetsRN.phl[375]";
-connectAttr "groupId28.msg" "TV_SetsRN.phl[376]";
-connectAttr "groupId49.msg" "TV_SetsRN.phl[377]";
-connectAttr "groupId70.msg" "TV_SetsRN.phl[378]";
-connectAttr "groupId91.msg" "TV_SetsRN.phl[379]";
-connectAttr "groupId169.msg" "TV_SetsRN.phl[380]";
-connectAttr "groupId185.msg" "TV_SetsRN.phl[381]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[382]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[387]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[383]"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[388]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[384]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[389]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[385]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[390]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[386]"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[391]";
+connectAttr "TV_Medium1Shape.iog.og[8]" "TV_SetsRN.phl[392]";
+connectAttr "TV_SetsRN.phl[393]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[387]";
-connectAttr "TV_Medium1Shape.iog.og[8]" "TV_SetsRN.phl[388]";
-connectAttr "TV_SetsRN.phl[389]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "TV_SetsRN.phl[394]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "TV_SetsRN.phl[390]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "TV_SetsRN.phl[395]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "TV_SetsRN.phl[391]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "TV_SetsRN.phl[396]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "TV_SetsRN.phl[392]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "TV_SetsRN.phl[397]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "TV_SetsRN.phl[393]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "TV_SetsRN.phl[398]" "|TV_Medium|TV_MediumShape.iog.og[9].gco";
+connectAttr "TV_SetsRN.phl[399]" "TV_Medium1Shape.iog.og[9].gco";
+connectAttr "groupId8.msg" "TV_SetsRN.phl[400]";
+connectAttr "groupId29.msg" "TV_SetsRN.phl[401]";
+connectAttr "groupId50.msg" "TV_SetsRN.phl[402]";
+connectAttr "groupId71.msg" "TV_SetsRN.phl[403]";
+connectAttr "groupId92.msg" "TV_SetsRN.phl[404]";
+connectAttr "groupId170.msg" "TV_SetsRN.phl[405]";
+connectAttr "groupId186.msg" "TV_SetsRN.phl[406]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[407]"
 		;
-connectAttr "TV_SetsRN.phl[394]" "|TV_Medium|TV_MediumShape.iog.og[9].gco";
-connectAttr "TV_SetsRN.phl[395]" "TV_Medium1Shape.iog.og[9].gco";
-connectAttr "groupId8.msg" "TV_SetsRN.phl[396]";
-connectAttr "groupId29.msg" "TV_SetsRN.phl[397]";
-connectAttr "groupId50.msg" "TV_SetsRN.phl[398]";
-connectAttr "groupId71.msg" "TV_SetsRN.phl[399]";
-connectAttr "groupId92.msg" "TV_SetsRN.phl[400]";
-connectAttr "groupId170.msg" "TV_SetsRN.phl[401]";
-connectAttr "groupId186.msg" "TV_SetsRN.phl[402]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[403]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[408]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[404]"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[409]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[405]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[410]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[406]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[411]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[407]"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[412]";
+connectAttr "TV_Medium1Shape.iog.og[9]" "TV_SetsRN.phl[413]";
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[414]"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[408]";
-connectAttr "TV_Medium1Shape.iog.og[9]" "TV_SetsRN.phl[409]";
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[410]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[415]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[411]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[416]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[412]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[417]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[413]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[418]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[414]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[419]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[415]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[420]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[416]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[421]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[417]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[422]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[418]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[423]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[419]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[424]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[420]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[425]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[421]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[426]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[422]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[427]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[423]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[428]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[424]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[429]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[425]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[430]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[426]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[431]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[427]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[432]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[428]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[433]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[429]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[434]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[430]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[435]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[431]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[436]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[432]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[437]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[433]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[438]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[434]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[439]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[435]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[440]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[436]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[441]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[437]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[442]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[438]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[443]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[439]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[444]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[440]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[445]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[441]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[446]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[442]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[447]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[443]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[448]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[444]"
+connectAttr "|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[449]";
+connectAttr "|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[450]"
 		;
-connectAttr "|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[445]";
-connectAttr "|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[446]"
+connectAttr "|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[451]"
 		;
-connectAttr "|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[447]"
+connectAttr "|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[452]"
 		;
-connectAttr "|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[448]"
+connectAttr "|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[453]"
 		;
-connectAttr "|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[449]"
+connectAttr "|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[454]"
 		;
-connectAttr "|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[450]"
+connectAttr "|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[455]"
 		;
-connectAttr "|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[451]"
+connectAttr "|TV_Medium1|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[456]";
+connectAttr "|TV_Medium1|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[457]"
 		;
-connectAttr "|TV_Medium1|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[452]";
-connectAttr "|TV_Medium1|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[453]"
+connectAttr "|TV_Medium1|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[458]"
 		;
-connectAttr "|TV_Medium1|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[454]"
+connectAttr "|TV_Medium1|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[459]"
 		;
-connectAttr "|TV_Medium1|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[455]"
+connectAttr "|TV_Medium1|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[460]"
 		;
-connectAttr "|TV_Medium1|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[456]"
+connectAttr "|TV_Medium1|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[461]"
 		;
-connectAttr "|TV_Medium1|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[457]"
+connectAttr "|TV_Medium1|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[462]"
 		;
-connectAttr "|TV_Medium1|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[458]"
+connectAttr "TV_SetsRN.phl[463]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "TV_SetsRN.phl[459]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[464]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "TV_SetsRN.phl[460]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[465]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "TV_SetsRN.phl[461]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[466]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "TV_SetsRN.phl[462]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[467]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "TV_SetsRN.phl[463]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[468]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "TV_SetsRN.phl[464]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[469]" "TV_Small1Shape.iog.og[2].gco";
+connectAttr "TV_SetsRN.phl[470]" "TV_Small2Shape.iog.og[2].gco";
+connectAttr "TV_SetsRN.phl[471]" "TV_Small3Shape.iog.og[2].gco";
+connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[472]";
+connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[473]"
 		;
-connectAttr "TV_SetsRN.phl[465]" "TV_Small1Shape.iog.og[2].gco";
-connectAttr "TV_SetsRN.phl[466]" "TV_Small2Shape.iog.og[2].gco";
-connectAttr "TV_SetsRN.phl[467]" "TV_Small3Shape.iog.og[2].gco";
-connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[468]";
-connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[469]"
+connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[474]";
+connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[475]"
 		;
-connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[470]";
-connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[471]"
+connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[476]";
+connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[477]"
 		;
-connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[472]";
-connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[473]"
+connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[478]";
+connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[479]"
 		;
-connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[474]";
-connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[475]"
+connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[480]";
+connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[481]"
 		;
-connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[476]";
-connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[477]"
+connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[482]";
+connectAttr "|TV_Stand|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[483]";
+connectAttr "TV_Small1Shape.iog.og[2]" "TV_SetsRN.phl[484]";
+connectAttr "TV_Small1Shape.ciog.cog[0]" "TV_SetsRN.phl[485]";
+connectAttr "TV_Small2Shape.iog.og[2]" "TV_SetsRN.phl[486]";
+connectAttr "TV_Small2Shape.ciog.cog[0]" "TV_SetsRN.phl[487]";
+connectAttr "TV_Small3Shape.iog.og[2]" "TV_SetsRN.phl[488]";
+connectAttr "TV_Small3Shape.ciog.cog[0]" "TV_SetsRN.phl[489]";
+connectAttr "groupId1.msg" "TV_SetsRN.phl[490]";
+connectAttr "groupId3.msg" "TV_SetsRN.phl[491]";
+connectAttr "groupId22.msg" "TV_SetsRN.phl[492]";
+connectAttr "groupId24.msg" "TV_SetsRN.phl[493]";
+connectAttr "groupId43.msg" "TV_SetsRN.phl[494]";
+connectAttr "groupId45.msg" "TV_SetsRN.phl[495]";
+connectAttr "groupId64.msg" "TV_SetsRN.phl[496]";
+connectAttr "groupId66.msg" "TV_SetsRN.phl[497]";
+connectAttr "groupId85.msg" "TV_SetsRN.phl[498]";
+connectAttr "groupId87.msg" "TV_SetsRN.phl[499]";
+connectAttr "groupId176.msg" "TV_SetsRN.phl[500]";
+connectAttr "groupId178.msg" "TV_SetsRN.phl[501]";
+connectAttr "groupId179.msg" "TV_SetsRN.phl[502]";
+connectAttr "groupId181.msg" "TV_SetsRN.phl[503]";
+connectAttr "groupId188.msg" "TV_SetsRN.phl[504]";
+connectAttr "groupId190.msg" "TV_SetsRN.phl[505]";
+connectAttr "groupId191.msg" "TV_SetsRN.phl[506]";
+connectAttr "groupId193.msg" "TV_SetsRN.phl[507]";
+connectAttr "SmallTVScreen_Color_emission.o" "TV_SetsRN.phl[508]";
+connectAttr "TV_SetsRN.phl[509]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[478]";
-connectAttr "|TV_Stand|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[479]";
-connectAttr "TV_Small1Shape.iog.og[2]" "TV_SetsRN.phl[480]";
-connectAttr "TV_Small1Shape.ciog.cog[0]" "TV_SetsRN.phl[481]";
-connectAttr "TV_Small2Shape.iog.og[2]" "TV_SetsRN.phl[482]";
-connectAttr "TV_Small2Shape.ciog.cog[0]" "TV_SetsRN.phl[483]";
-connectAttr "TV_Small3Shape.iog.og[2]" "TV_SetsRN.phl[484]";
-connectAttr "TV_Small3Shape.ciog.cog[0]" "TV_SetsRN.phl[485]";
-connectAttr "groupId1.msg" "TV_SetsRN.phl[486]";
-connectAttr "groupId3.msg" "TV_SetsRN.phl[487]";
-connectAttr "groupId22.msg" "TV_SetsRN.phl[488]";
-connectAttr "groupId24.msg" "TV_SetsRN.phl[489]";
-connectAttr "groupId43.msg" "TV_SetsRN.phl[490]";
-connectAttr "groupId45.msg" "TV_SetsRN.phl[491]";
-connectAttr "groupId64.msg" "TV_SetsRN.phl[492]";
-connectAttr "groupId66.msg" "TV_SetsRN.phl[493]";
-connectAttr "groupId85.msg" "TV_SetsRN.phl[494]";
-connectAttr "groupId87.msg" "TV_SetsRN.phl[495]";
-connectAttr "groupId176.msg" "TV_SetsRN.phl[496]";
-connectAttr "groupId178.msg" "TV_SetsRN.phl[497]";
-connectAttr "groupId179.msg" "TV_SetsRN.phl[498]";
-connectAttr "groupId181.msg" "TV_SetsRN.phl[499]";
-connectAttr "groupId188.msg" "TV_SetsRN.phl[500]";
-connectAttr "groupId190.msg" "TV_SetsRN.phl[501]";
-connectAttr "groupId191.msg" "TV_SetsRN.phl[502]";
-connectAttr "groupId193.msg" "TV_SetsRN.phl[503]";
-connectAttr "TV_SetsRN.phl[504]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3].gco"
+connectAttr "TV_SetsRN.phl[510]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[505]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3].gco"
+connectAttr "TV_SetsRN.phl[511]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[506]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3].gco"
+connectAttr "TV_SetsRN.phl[512]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[507]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3].gco"
+connectAttr "TV_SetsRN.phl[513]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[508]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3].gco"
+connectAttr "TV_SetsRN.phl[514]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[509]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[510]" "TV_Small1Shape.iog.og[3].gco";
-connectAttr "TV_SetsRN.phl[511]" "TV_Small2Shape.iog.og[3].gco";
-connectAttr "TV_SetsRN.phl[512]" "TV_Small3Shape.iog.og[3].gco";
-connectAttr "groupId2.msg" "TV_SetsRN.phl[513]";
-connectAttr "groupId23.msg" "TV_SetsRN.phl[514]";
-connectAttr "groupId44.msg" "TV_SetsRN.phl[515]";
-connectAttr "groupId65.msg" "TV_SetsRN.phl[516]";
-connectAttr "groupId86.msg" "TV_SetsRN.phl[517]";
-connectAttr "groupId177.msg" "TV_SetsRN.phl[518]";
-connectAttr "groupId180.msg" "TV_SetsRN.phl[519]";
-connectAttr "groupId189.msg" "TV_SetsRN.phl[520]";
-connectAttr "groupId192.msg" "TV_SetsRN.phl[521]";
-connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[522]";
-connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[523]";
-connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[524]";
-connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[525]";
-connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[526]";
-connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[527]";
-connectAttr "TV_Small1Shape.iog.og[3]" "TV_SetsRN.phl[528]";
-connectAttr "TV_Small2Shape.iog.og[3]" "TV_SetsRN.phl[529]";
-connectAttr "TV_Small3Shape.iog.og[3]" "TV_SetsRN.phl[530]";
+connectAttr "TV_SetsRN.phl[515]" "TV_Small1Shape.iog.og[3].gco";
+connectAttr "TV_SetsRN.phl[516]" "TV_Small2Shape.iog.og[3].gco";
+connectAttr "TV_SetsRN.phl[517]" "TV_Small3Shape.iog.og[3].gco";
+connectAttr "groupId2.msg" "TV_SetsRN.phl[518]";
+connectAttr "groupId23.msg" "TV_SetsRN.phl[519]";
+connectAttr "groupId44.msg" "TV_SetsRN.phl[520]";
+connectAttr "groupId65.msg" "TV_SetsRN.phl[521]";
+connectAttr "groupId86.msg" "TV_SetsRN.phl[522]";
+connectAttr "groupId177.msg" "TV_SetsRN.phl[523]";
+connectAttr "groupId180.msg" "TV_SetsRN.phl[524]";
+connectAttr "groupId189.msg" "TV_SetsRN.phl[525]";
+connectAttr "groupId192.msg" "TV_SetsRN.phl[526]";
+connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[527]";
+connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[528]";
+connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[529]";
+connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[530]";
+connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[531]";
+connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[532]";
+connectAttr "TV_Small1Shape.iog.og[3]" "TV_SetsRN.phl[533]";
+connectAttr "TV_Small2Shape.iog.og[3]" "TV_SetsRN.phl[534]";
+connectAttr "TV_Small3Shape.iog.og[3]" "TV_SetsRN.phl[535]";
+connectAttr "MainTVScreen_Color_emission.o" "TV_SetsRN.phl[536]";
 connectAttr "Transform_Cntr_translateX.o" "TeachBot_10_UVRN.phl[1]";
 connectAttr "Transform_Cntr_translateY.o" "TeachBot_10_UVRN.phl[2]";
 connectAttr "Transform_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[3]";
@@ -50898,123 +52362,294 @@ connectAttr "Transform_Cntr_visibility.o" "TeachBot_10_UVRN.phl[7]";
 connectAttr "Transform_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[8]";
 connectAttr "Transform_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[9]";
 connectAttr "Transform_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[10]";
-connectAttr "Waist_01_Cntr_Jnt_translateX.o" "TeachBot_10_UVRN.phl[11]";
-connectAttr "Waist_01_Cntr_Jnt_translateY.o" "TeachBot_10_UVRN.phl[12]";
-connectAttr "Waist_01_Cntr_Jnt_translateZ.o" "TeachBot_10_UVRN.phl[13]";
-connectAttr "Waist_01_Cntr_Jnt_rotateZ.o" "TeachBot_10_UVRN.phl[14]";
-connectAttr "Waist_01_Cntr_Jnt_rotateX.o" "TeachBot_10_UVRN.phl[15]";
-connectAttr "Waist_01_Cntr_Jnt_rotateY.o" "TeachBot_10_UVRN.phl[16]";
-connectAttr "Waist_01_Cntr_Jnt_scaleX.o" "TeachBot_10_UVRN.phl[17]";
-connectAttr "Waist_01_Cntr_Jnt_scaleY.o" "TeachBot_10_UVRN.phl[18]";
-connectAttr "Waist_01_Cntr_Jnt_scaleZ.o" "TeachBot_10_UVRN.phl[19]";
-connectAttr "Torso_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[20]";
-connectAttr "Torso_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[21]";
-connectAttr "Torso_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[22]";
-connectAttr "Torso_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[23]";
-connectAttr "Torso_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[24]";
-connectAttr "Torso_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[25]";
-connectAttr "Torso_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[26]";
-connectAttr "Torso_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[27]";
-connectAttr "Torso_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[28]";
-connectAttr "Neck_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[29]";
-connectAttr "Neck_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[30]";
-connectAttr "Neck_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[31]";
-connectAttr "Neck_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[32]";
-connectAttr "Neck_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[33]";
-connectAttr "Neck_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[34]";
-connectAttr "Neck_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[35]";
-connectAttr "Neck_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[36]";
-connectAttr "Neck_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[37]";
-connectAttr "L_Arm_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[38]";
-connectAttr "L_Arm_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[39]";
-connectAttr "L_Arm_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[40]";
-connectAttr "L_Arm_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[41]";
-connectAttr "L_Arm_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[42]";
-connectAttr "L_Arm_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[43]";
-connectAttr "L_Arm_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[44]";
-connectAttr "L_Arm_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[45]";
-connectAttr "L_Arm_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[46]";
-connectAttr "L_Arm_02_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[47]";
-connectAttr "L_Arm_02_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[48]";
-connectAttr "L_Arm_02_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[49]";
-connectAttr "L_Arm_02_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[50]";
-connectAttr "L_Arm_02_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[51]";
-connectAttr "L_Arm_02_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[52]";
-connectAttr "L_Arm_02_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[53]";
-connectAttr "L_Arm_02_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[54]";
-connectAttr "L_Arm_02_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[55]";
-connectAttr "L_Arm_03_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[56]";
-connectAttr "L_Arm_03_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[57]";
-connectAttr "L_Arm_03_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[58]";
-connectAttr "L_Arm_03_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[59]";
-connectAttr "L_Arm_03_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[60]";
-connectAttr "L_Arm_03_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[61]";
-connectAttr "L_Arm_03_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[62]";
-connectAttr "L_Arm_03_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[63]";
-connectAttr "L_Arm_03_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[64]";
-connectAttr "L_TopHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[65]";
-connectAttr "L_TopHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[66]";
-connectAttr "L_TopHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[67]";
-connectAttr "L_TopHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[68]";
-connectAttr "L_TopHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[69]";
-connectAttr "L_TopHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[70]";
-connectAttr "L_TopHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[71]";
-connectAttr "L_TopHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[72]";
-connectAttr "L_TopHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[73]";
-connectAttr "L_BottomHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[74]";
-connectAttr "L_BottomHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[75]";
-connectAttr "L_BottomHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[76]";
-connectAttr "L_BottomHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[77]";
-connectAttr "L_BottomHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[78]";
-connectAttr "L_BottomHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[79]";
-connectAttr "L_BottomHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[80]";
-connectAttr "L_BottomHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[81]";
-connectAttr "L_BottomHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[82]";
-connectAttr "R_Arm_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[83]";
-connectAttr "R_Arm_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[84]";
-connectAttr "R_Arm_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[85]";
-connectAttr "R_Arm_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[86]";
-connectAttr "R_Arm_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[87]";
-connectAttr "R_Arm_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[88]";
-connectAttr "R_Arm_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[89]";
-connectAttr "R_Arm_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[90]";
-connectAttr "R_Arm_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[91]";
-connectAttr "R_Arm_02_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[92]";
-connectAttr "R_Arm_02_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[93]";
-connectAttr "R_Arm_02_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[94]";
-connectAttr "R_Arm_02_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[95]";
-connectAttr "R_Arm_02_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[96]";
-connectAttr "R_Arm_02_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[97]";
-connectAttr "R_Arm_02_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[98]";
-connectAttr "R_Arm_02_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[99]";
-connectAttr "R_Arm_02_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[100]";
-connectAttr "R_Arm_03_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[101]";
-connectAttr "R_Arm_03_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[102]";
-connectAttr "R_Arm_03_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[103]";
-connectAttr "R_Arm_03_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[104]";
-connectAttr "R_Arm_03_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[105]";
-connectAttr "R_Arm_03_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[106]";
-connectAttr "R_Arm_03_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[107]";
-connectAttr "R_Arm_03_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[108]";
-connectAttr "R_Arm_03_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[109]";
-connectAttr "R_TopHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[110]";
-connectAttr "R_TopHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[111]";
-connectAttr "R_TopHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[112]";
-connectAttr "R_TopHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[113]";
-connectAttr "R_TopHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[114]";
-connectAttr "R_TopHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[115]";
-connectAttr "R_TopHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[116]";
-connectAttr "R_TopHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[117]";
-connectAttr "R_TopHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[118]";
-connectAttr "R_BottomHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[119]";
-connectAttr "R_BottomHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[120]";
-connectAttr "R_BottomHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[121]";
-connectAttr "R_BottomHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[122]";
-connectAttr "R_BottomHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[123]";
-connectAttr "R_BottomHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[124]";
-connectAttr "R_BottomHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[125]";
-connectAttr "R_BottomHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[126]";
-connectAttr "R_BottomHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[127]";
+connectAttr "COG_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[11]";
+connectAttr "COG_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[12]";
+connectAttr "COG_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[13]";
+connectAttr "COG_Cntr_visibility.o" "TeachBot_10_UVRN.phl[14]";
+connectAttr "COG_Cntr_translateX.o" "TeachBot_10_UVRN.phl[15]";
+connectAttr "COG_Cntr_translateY.o" "TeachBot_10_UVRN.phl[16]";
+connectAttr "COG_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[17]";
+connectAttr "COG_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[18]";
+connectAttr "COG_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[19]";
+connectAttr "COG_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[20]";
+connectAttr "Base_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[21]";
+connectAttr "Base_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[22]";
+connectAttr "Base_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[23]";
+connectAttr "Base_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[24]";
+connectAttr "Base_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[25]";
+connectAttr "Base_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[26]";
+connectAttr "Base_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[27]";
+connectAttr "Base_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[28]";
+connectAttr "Base_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[29]";
+connectAttr "Waist_01_Cntr_Jnt_translateX.o" "TeachBot_10_UVRN.phl[30]";
+connectAttr "Waist_01_Cntr_Jnt_translateY.o" "TeachBot_10_UVRN.phl[31]";
+connectAttr "Waist_01_Cntr_Jnt_translateZ.o" "TeachBot_10_UVRN.phl[32]";
+connectAttr "Waist_01_Cntr_Jnt_rotateZ.o" "TeachBot_10_UVRN.phl[33]";
+connectAttr "Waist_01_Cntr_Jnt_rotateX.o" "TeachBot_10_UVRN.phl[34]";
+connectAttr "Waist_01_Cntr_Jnt_rotateY.o" "TeachBot_10_UVRN.phl[35]";
+connectAttr "Waist_01_Cntr_Jnt_scaleX.o" "TeachBot_10_UVRN.phl[36]";
+connectAttr "Waist_01_Cntr_Jnt_scaleY.o" "TeachBot_10_UVRN.phl[37]";
+connectAttr "Waist_01_Cntr_Jnt_scaleZ.o" "TeachBot_10_UVRN.phl[38]";
+connectAttr "Torso_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[39]";
+connectAttr "Torso_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[40]";
+connectAttr "Torso_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[41]";
+connectAttr "Torso_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[42]";
+connectAttr "Torso_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[43]";
+connectAttr "Torso_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[44]";
+connectAttr "Torso_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[45]";
+connectAttr "Torso_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[46]";
+connectAttr "Torso_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[47]";
+connectAttr "Neck_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[48]";
+connectAttr "Neck_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[49]";
+connectAttr "Neck_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[50]";
+connectAttr "Neck_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[51]";
+connectAttr "Neck_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[52]";
+connectAttr "Neck_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[53]";
+connectAttr "Neck_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[54]";
+connectAttr "Neck_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[55]";
+connectAttr "Neck_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[56]";
+connectAttr "Head_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[57]";
+connectAttr "Head_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[58]";
+connectAttr "Head_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[59]";
+connectAttr "Head_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[60]";
+connectAttr "Head_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[61]";
+connectAttr "Head_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[62]";
+connectAttr "Head_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[63]";
+connectAttr "Head_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[64]";
+connectAttr "Head_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[65]";
+connectAttr "L_Arm_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[66]";
+connectAttr "L_Arm_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[67]";
+connectAttr "L_Arm_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[68]";
+connectAttr "L_Arm_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[69]";
+connectAttr "L_Arm_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[70]";
+connectAttr "L_Arm_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[71]";
+connectAttr "L_Arm_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[72]";
+connectAttr "L_Arm_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[73]";
+connectAttr "L_Arm_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[74]";
+connectAttr "L_Arm_02_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[75]";
+connectAttr "L_Arm_02_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[76]";
+connectAttr "L_Arm_02_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[77]";
+connectAttr "L_Arm_02_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[78]";
+connectAttr "L_Arm_02_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[79]";
+connectAttr "L_Arm_02_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[80]";
+connectAttr "L_Arm_02_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[81]";
+connectAttr "L_Arm_02_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[82]";
+connectAttr "L_Arm_02_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[83]";
+connectAttr "L_Arm_03_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[84]";
+connectAttr "L_Arm_03_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[85]";
+connectAttr "L_Arm_03_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[86]";
+connectAttr "L_Arm_03_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[87]";
+connectAttr "L_Arm_03_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[88]";
+connectAttr "L_Arm_03_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[89]";
+connectAttr "L_Arm_03_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[90]";
+connectAttr "L_Arm_03_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[91]";
+connectAttr "L_Arm_03_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[92]";
+connectAttr "L_TopHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[93]";
+connectAttr "L_TopHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[94]";
+connectAttr "L_TopHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[95]";
+connectAttr "L_TopHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[96]";
+connectAttr "L_TopHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[97]";
+connectAttr "L_TopHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[98]";
+connectAttr "L_TopHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[99]";
+connectAttr "L_TopHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[100]";
+connectAttr "L_TopHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[101]";
+connectAttr "L_BottomHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[102]";
+connectAttr "L_BottomHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[103]";
+connectAttr "L_BottomHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[104]";
+connectAttr "L_BottomHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[105]";
+connectAttr "L_BottomHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[106]";
+connectAttr "L_BottomHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[107]";
+connectAttr "L_BottomHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[108]";
+connectAttr "L_BottomHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[109]";
+connectAttr "L_BottomHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[110]";
+connectAttr "R_Arm_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[111]";
+connectAttr "R_Arm_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[112]";
+connectAttr "R_Arm_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[113]";
+connectAttr "R_Arm_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[114]";
+connectAttr "R_Arm_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[115]";
+connectAttr "R_Arm_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[116]";
+connectAttr "R_Arm_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[117]";
+connectAttr "R_Arm_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[118]";
+connectAttr "R_Arm_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[119]";
+connectAttr "R_Arm_02_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[120]";
+connectAttr "R_Arm_02_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[121]";
+connectAttr "R_Arm_02_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[122]";
+connectAttr "R_Arm_02_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[123]";
+connectAttr "R_Arm_02_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[124]";
+connectAttr "R_Arm_02_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[125]";
+connectAttr "R_Arm_02_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[126]";
+connectAttr "R_Arm_02_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[127]";
+connectAttr "R_Arm_02_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[128]";
+connectAttr "R_Arm_03_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[129]";
+connectAttr "R_Arm_03_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[130]";
+connectAttr "R_Arm_03_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[131]";
+connectAttr "R_Arm_03_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[132]";
+connectAttr "R_Arm_03_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[133]";
+connectAttr "R_Arm_03_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[134]";
+connectAttr "R_Arm_03_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[135]";
+connectAttr "R_Arm_03_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[136]";
+connectAttr "R_Arm_03_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[137]";
+connectAttr "R_TopHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[138]";
+connectAttr "R_TopHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[139]";
+connectAttr "R_TopHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[140]";
+connectAttr "R_TopHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[141]";
+connectAttr "R_TopHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[142]";
+connectAttr "R_TopHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[143]";
+connectAttr "R_TopHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[144]";
+connectAttr "R_TopHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[145]";
+connectAttr "R_TopHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[146]";
+connectAttr "R_BottomHand_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[147]";
+connectAttr "R_BottomHand_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[148]";
+connectAttr "R_BottomHand_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[149]";
+connectAttr "R_BottomHand_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[150]";
+connectAttr "R_BottomHand_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[151]";
+connectAttr "R_BottomHand_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[152]";
+connectAttr "R_BottomHand_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[153]";
+connectAttr "R_BottomHand_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[154]";
+connectAttr "R_BottomHand_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[155]";
+connectAttr "Dial_01_Cntr_translateX1.o" "TeachBot_10_UVRN.phl[156]";
+connectAttr "Dial_01_Cntr_translateY1.o" "TeachBot_10_UVRN.phl[157]";
+connectAttr "Dial_01_Cntr_translateZ1.o" "TeachBot_10_UVRN.phl[158]";
+connectAttr "Dial_01_Cntr_rotateX1.o" "TeachBot_10_UVRN.phl[159]";
+connectAttr "Dial_01_Cntr_rotateY1.o" "TeachBot_10_UVRN.phl[160]";
+connectAttr "Dial_01_Cntr_rotateZ1.o" "TeachBot_10_UVRN.phl[161]";
+connectAttr "Dial_01_Cntr_scaleX1.o" "TeachBot_10_UVRN.phl[162]";
+connectAttr "Dial_01_Cntr_scaleY1.o" "TeachBot_10_UVRN.phl[163]";
+connectAttr "Dial_01_Cntr_scaleZ1.o" "TeachBot_10_UVRN.phl[164]";
+connectAttr "Dial_01_Cntr_visibility1.o" "TeachBot_10_UVRN.phl[165]";
+connectAttr "Dial_02_Cntr_translateX.o" "TeachBot_10_UVRN.phl[166]";
+connectAttr "Dial_02_Cntr_translateY.o" "TeachBot_10_UVRN.phl[167]";
+connectAttr "Dial_02_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[168]";
+connectAttr "Dial_02_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[169]";
+connectAttr "Dial_02_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[170]";
+connectAttr "Dial_02_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[171]";
+connectAttr "Dial_02_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[172]";
+connectAttr "Dial_02_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[173]";
+connectAttr "Dial_02_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[174]";
+connectAttr "Dial_02_Cntr_visibility.o" "TeachBot_10_UVRN.phl[175]";
+connectAttr "Dial_03_Cntr_translateX.o" "TeachBot_10_UVRN.phl[176]";
+connectAttr "Dial_03_Cntr_translateY.o" "TeachBot_10_UVRN.phl[177]";
+connectAttr "Dial_03_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[178]";
+connectAttr "Dial_03_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[179]";
+connectAttr "Dial_03_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[180]";
+connectAttr "Dial_03_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[181]";
+connectAttr "Dial_03_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[182]";
+connectAttr "Dial_03_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[183]";
+connectAttr "Dial_03_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[184]";
+connectAttr "Dial_03_Cntr_visibility.o" "TeachBot_10_UVRN.phl[185]";
+connectAttr "Dial_04_Cntr_translateX.o" "TeachBot_10_UVRN.phl[186]";
+connectAttr "Dial_04_Cntr_translateY.o" "TeachBot_10_UVRN.phl[187]";
+connectAttr "Dial_04_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[188]";
+connectAttr "Dial_04_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[189]";
+connectAttr "Dial_04_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[190]";
+connectAttr "Dial_04_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[191]";
+connectAttr "Dial_04_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[192]";
+connectAttr "Dial_04_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[193]";
+connectAttr "Dial_04_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[194]";
+connectAttr "Dial_04_Cntr_visibility.o" "TeachBot_10_UVRN.phl[195]";
+connectAttr "Dial_05_Cntr_translateX.o" "TeachBot_10_UVRN.phl[196]";
+connectAttr "Dial_05_Cntr_translateY.o" "TeachBot_10_UVRN.phl[197]";
+connectAttr "Dial_05_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[198]";
+connectAttr "Dial_05_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[199]";
+connectAttr "Dial_05_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[200]";
+connectAttr "Dial_05_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[201]";
+connectAttr "Dial_05_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[202]";
+connectAttr "Dial_05_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[203]";
+connectAttr "Dial_05_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[204]";
+connectAttr "Dial_05_Cntr_visibility.o" "TeachBot_10_UVRN.phl[205]";
+connectAttr "Dial_01_Cntr_translateX.o" "TeachBot_10_UVRN.phl[206]";
+connectAttr "Dial_01_Cntr_translateY.o" "TeachBot_10_UVRN.phl[207]";
+connectAttr "Dial_01_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[208]";
+connectAttr "Dial_01_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[209]";
+connectAttr "Dial_01_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[210]";
+connectAttr "Dial_01_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[211]";
+connectAttr "Dial_01_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[212]";
+connectAttr "Dial_01_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[213]";
+connectAttr "Dial_01_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[214]";
+connectAttr "Dial_01_Cntr_visibility.o" "TeachBot_10_UVRN.phl[215]";
+connectAttr "Dial_07_Cntr_translateX.o" "TeachBot_10_UVRN.phl[216]";
+connectAttr "Dial_07_Cntr_translateY.o" "TeachBot_10_UVRN.phl[217]";
+connectAttr "Dial_07_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[218]";
+connectAttr "Dial_07_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[219]";
+connectAttr "Dial_07_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[220]";
+connectAttr "Dial_07_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[221]";
+connectAttr "Dial_07_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[222]";
+connectAttr "Dial_07_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[223]";
+connectAttr "Dial_07_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[224]";
+connectAttr "Dial_07_Cntr_visibility.o" "TeachBot_10_UVRN.phl[225]";
+connectAttr "ROOT_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[226]";
+connectAttr "ROOT_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[227]";
+connectAttr "ROOT_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[228]";
+connectAttr "ROOT_Cntr_visibility.o" "TeachBot_10_UVRN.phl[229]";
+connectAttr "ROOT_Cntr_translateX.o" "TeachBot_10_UVRN.phl[230]";
+connectAttr "ROOT_Cntr_translateY.o" "TeachBot_10_UVRN.phl[231]";
+connectAttr "ROOT_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[232]";
+connectAttr "ROOT_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[233]";
+connectAttr "ROOT_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[234]";
+connectAttr "ROOT_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[235]";
+connectAttr "Pelvis_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[236]";
+connectAttr "Pelvis_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[237]";
+connectAttr "Pelvis_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[238]";
+connectAttr "Pelvis_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[239]";
+connectAttr "Pelvis_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[240]";
+connectAttr "Pelvis_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[241]";
+connectAttr "Pelvis_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[242]";
+connectAttr "Pelvis_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[243]";
+connectAttr "Pelvis_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[244]";
+connectAttr "L_Leg_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[245]";
+connectAttr "L_Leg_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[246]";
+connectAttr "L_Leg_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[247]";
+connectAttr "L_Leg_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[248]";
+connectAttr "L_Leg_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[249]";
+connectAttr "L_Leg_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[250]";
+connectAttr "L_Leg_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[251]";
+connectAttr "L_Leg_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[252]";
+connectAttr "L_Leg_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[253]";
+connectAttr "L_Leg_02_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[254]";
+connectAttr "L_Leg_02_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[255]";
+connectAttr "L_Leg_02_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[256]";
+connectAttr "L_Leg_02_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[257]";
+connectAttr "L_Leg_02_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[258]";
+connectAttr "L_Leg_02_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[259]";
+connectAttr "L_Leg_02_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[260]";
+connectAttr "L_Leg_02_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[261]";
+connectAttr "L_Leg_02_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[262]";
+connectAttr "L_Leg_03_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[263]";
+connectAttr "L_Leg_03_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[264]";
+connectAttr "L_Leg_03_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[265]";
+connectAttr "L_Leg_03_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[266]";
+connectAttr "L_Leg_03_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[267]";
+connectAttr "L_Leg_03_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[268]";
+connectAttr "L_Leg_03_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[269]";
+connectAttr "L_Leg_03_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[270]";
+connectAttr "L_Leg_03_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[271]";
+connectAttr "R_Leg_01_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[272]";
+connectAttr "R_Leg_01_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[273]";
+connectAttr "R_Leg_01_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[274]";
+connectAttr "R_Leg_01_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[275]";
+connectAttr "R_Leg_01_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[276]";
+connectAttr "R_Leg_01_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[277]";
+connectAttr "R_Leg_01_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[278]";
+connectAttr "R_Leg_01_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[279]";
+connectAttr "R_Leg_01_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[280]";
+connectAttr "R_Leg_02_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[281]";
+connectAttr "R_Leg_02_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[282]";
+connectAttr "R_Leg_02_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[283]";
+connectAttr "R_Leg_02_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[284]";
+connectAttr "R_Leg_02_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[285]";
+connectAttr "R_Leg_02_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[286]";
+connectAttr "R_Leg_02_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[287]";
+connectAttr "R_Leg_02_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[288]";
+connectAttr "R_Leg_02_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[289]";
+connectAttr "R_Leg_03_FK_Cntr_translateX.o" "TeachBot_10_UVRN.phl[290]";
+connectAttr "R_Leg_03_FK_Cntr_translateY.o" "TeachBot_10_UVRN.phl[291]";
+connectAttr "R_Leg_03_FK_Cntr_translateZ.o" "TeachBot_10_UVRN.phl[292]";
+connectAttr "R_Leg_03_FK_Cntr_rotateX.o" "TeachBot_10_UVRN.phl[293]";
+connectAttr "R_Leg_03_FK_Cntr_rotateY.o" "TeachBot_10_UVRN.phl[294]";
+connectAttr "R_Leg_03_FK_Cntr_rotateZ.o" "TeachBot_10_UVRN.phl[295]";
+connectAttr "R_Leg_03_FK_Cntr_scaleX.o" "TeachBot_10_UVRN.phl[296]";
+connectAttr "R_Leg_03_FK_Cntr_scaleY.o" "TeachBot_10_UVRN.phl[297]";
+connectAttr "R_Leg_03_FK_Cntr_scaleZ.o" "TeachBot_10_UVRN.phl[298]";
 connectAttr ":defaultColorMgtGlobals.cme" "imagePlaneShape1.cme";
 connectAttr ":defaultColorMgtGlobals.cfe" "imagePlaneShape1.cmcf";
 connectAttr ":defaultColorMgtGlobals.cfp" "imagePlaneShape1.cmcp";
