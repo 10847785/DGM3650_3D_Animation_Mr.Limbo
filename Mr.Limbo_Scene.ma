@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
 //Name: Mr.Limbo_Scene.ma
-//Last modified: Tue, Nov 02, 2021 02:18:57 PM
+//Last modified: Thu, Nov 04, 2021 01:49:33 PM
 //Codeset: 1252
 file -rdi 1 -ns "Mr_Limbo_Table1" -rfn "Mr_Limbo_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/git/DGM3650_3D_Animation_Mr.Limbo/Mr.Limbo_Table.ma";
@@ -37,18 +37,15 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19042)";
-fileInfo "UUID" "08C927E5-4F94-7C51-6FBD-148ED39CDC8E";
+fileInfo "UUID" "78FFF23D-48AF-BEFD-906E-4882AAC88BA6";
 createNode transform -s -n "persp";
 	rename -uid "4CF4501C-4E3E-9D63-E74D-A5A01DC99A53";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 922.96223450267371 213.27526340287079 667.93928294317311 ;
-	setAttr ".r" -type "double3" 359.6616472701545 52.200000000001438 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "01F9766E-4609-8C91-9459-C98349CC9CF1";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1184.5418542315074;
+	setAttr ".coi" 846.37842797879398;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -46493,19 +46490,19 @@ createNode mesh -n "Dial_Medium6Shape" -p "|TV_Medium1|Dial_Medium6";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "3598E3A8-475D-447F-ACD5-98B289336060";
+	rename -uid "D76C5038-49CC-E55D-65DC-599518E7E5AF";
 	setAttr -s 132 ".lnk";
 	setAttr -s 132 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "ABEA98B4-4D75-9236-AF88-52A9E373CF4B";
+	rename -uid "882AACE8-4DAA-6DE6-3C0D-78A8FC721193";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "74BF038E-4749-D1CC-7C1A-F38B564ABEC4";
+	rename -uid "DC861CB4-4AAA-69F7-F0ED-729AEAC9E786";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CECB843F-4A25-BB24-9468-DDA42B635D83";
+	rename -uid "9FCDB273-4E4F-8ADB-2958-6E83D0B10C62";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "24D2B9D4-4A6E-F87C-5AA1-CBAC78668764";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "ACC5BDEE-449A-5AAB-FA6E-0285C4AD3F7E";
+	rename -uid "75E7E3B2-4D54-D346-2219-C4B8F358B906";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "7E72AA68-496E-43E8-0C5D-4688F69E1DB6";
 	setAttr ".g" yes;
@@ -46525,7 +46522,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1245\n            -height 677\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1245\n            -height 673\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
@@ -46552,13 +46549,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
 		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
 		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1245\\n    -height 677\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1245\\n    -height 677\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1245\\n    -height 673\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1245\\n    -height 673\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "24882FDC-47F9-2B20-6205-8EB191E2D0D2";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 200 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 375 -ast 1 -aet 375 ";
 	setAttr ".st" 6;
 createNode lambert -n "Sky";
 	rename -uid "BA6B3AF2-4C9F-0624-76E2-4EA9FED05442";
@@ -46720,7 +46717,7 @@ createNode reference -n "FloorWoodRN";
 lockNode -l 1 ;
 createNode reference -n "TV_SetsRN";
 	rename -uid "92DB9AF9-421F-2B6C-5F58-A38595C8B86A";
-	setAttr -s 536 ".phl";
+	setAttr -s 546 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -47257,10 +47254,20 @@ createNode reference -n "TV_SetsRN";
 	setAttr ".phl[534]" 0;
 	setAttr ".phl[535]" 0;
 	setAttr ".phl[536]" 0;
+	setAttr ".phl[537]" 0;
+	setAttr ".phl[538]" 0;
+	setAttr ".phl[539]" 0;
+	setAttr ".phl[540]" 0;
+	setAttr ".phl[541]" 0;
+	setAttr ".phl[542]" 0;
+	setAttr ".phl[543]" 0;
+	setAttr ".phl[544]" 0;
+	setAttr ".phl[545]" 0;
+	setAttr ".phl[546]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TV_SetsRN"
 		"TV_SetsRN" 0
-		"TV_SetsRN" 583
+		"TV_SetsRN" 592
 		0 "|TV_Sets:TV_Small" "|TV_Stand" "-s -r "
 		0 "|TV_Sets:TV_Medium" "|TV_Stand" "-s -r "
 		0 "|TV_Sets:TV_Large" "|TV_Stand" "-s -r "
@@ -47299,12 +47306,6 @@ createNode reference -n "TV_SetsRN";
 		
 		2 "|TV_Sets:TV_BIg" "scale" " -type \"double3\" 20.73279050020258651 20.73279050020258651 20.73279050020258651"
 		
-		2 "|TV_Sets:Main_TV" "translate" " -type \"double3\" 0 185.94299088156932953 0"
-		
-		2 "|TV_Sets:Main_TV" "rotate" " -type \"double3\" 0 53.87223794194746063 0"
-		
-		2 "|TV_Sets:Main_TV" "scale" " -type \"double3\" 19.20809643502657238 19.20809643502657238 19.20809643502657238"
-		
 		2 "|TV_Sets:Main_TV|TV_Sets:pSphere1" "translate" " -type \"double3\" 0 0 0"
 		
 		2 "|TV_Sets:Main_TV|TV_Sets:pCylinder1" "translate" " -type \"double3\" 0 0 0"
@@ -47319,8 +47320,10 @@ createNode reference -n "TV_SetsRN";
 		2 "TV_Sets:MediumTV_Color" "emissionColor" " -type \"float3\" 0.449 1 1"
 		2 "TV_Sets:MediumTVScreen_Color" "emissionColor" " -type \"float3\" 0.449 1 1"
 		
+		2 "TV_Sets:SmallTV_Color" "emission" " 0"
 		2 "TV_Sets:SmallTVScreen_Color" "emissionColor" " -type \"float3\" 0.36363636999999999 0.36363636999999999 0.36363636999999999"
 		
+		2 "TV_Sets:MainTV_Color" "emission" " 0"
 		2 "TV_Sets:MainTVScreen_Color" "base" " 1"
 		2 "TV_Sets:MainTVScreen_Color" "diffuseRoughness" " 0"
 		2 "TV_Sets:MainTVScreen_Color" "specular" " 1"
@@ -47334,68 +47337,68 @@ createNode reference -n "TV_SetsRN";
 		2 "TV_Sets:MainTVScreen_Color" "thinFilmThickness" " 0"
 		2 "TV_Sets:MainTVScreen_Color" "emissionColor" " -type \"float3\" 0 1 1"
 		2 "TV_Sets:MainTVScreen_Color" "opacity" " -type \"float3\" 1 1 1"
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.translateX" "TV_SetsRN.placeHolderList[1]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.translateY" "TV_SetsRN.placeHolderList[2]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.translateZ" "TV_SetsRN.placeHolderList[3]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.rotateX" "TV_SetsRN.placeHolderList[4]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.rotateY" "TV_SetsRN.placeHolderList[5]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.rotateZ" "TV_SetsRN.placeHolderList[6]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.scaleX" "TV_SetsRN.placeHolderList[7]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.scaleY" "TV_SetsRN.placeHolderList[8]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.scaleZ" "TV_SetsRN.placeHolderList[9]" 
+		""
+		5 4 "TV_SetsRN" "|TV_Sets:Main_TV.visibility" "TV_SetsRN.placeHolderList[10]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[1]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.dagSetMembers" "TV_SetsRN.placeHolderList[2]" 
+		"TV_SetsRN.placeHolderList[11]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.dagSetMembers" "TV_SetsRN.placeHolderList[12]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.dagSetMembers" "TV_SetsRN.placeHolderList[3]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.dagSetMembers" "TV_SetsRN.placeHolderList[13]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.groupNodes" "TV_SetsRN.placeHolderList[4]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.groupNodes" "TV_SetsRN.placeHolderList[14]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.groupNodes" "TV_SetsRN.placeHolderList[5]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface1SG.groupNodes" "TV_SetsRN.placeHolderList[15]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface2SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[6]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface2SG.groupNodes" "TV_SetsRN.placeHolderList[7]" 
+		"TV_SetsRN.placeHolderList[16]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface2SG.groupNodes" "TV_SetsRN.placeHolderList[17]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface2SG.dagSetMembers" "TV_SetsRN.placeHolderList[8]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface2SG.dagSetMembers" "TV_SetsRN.placeHolderList[18]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:BigTVScreen_Color.emission" "TV_SetsRN.placeHolderList[9]" 
+		5 4 "TV_SetsRN" "TV_Sets:BigTVScreen_Color.emission" "TV_SetsRN.placeHolderList[19]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[10]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.groupNodes" "TV_SetsRN.placeHolderList[11]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.dagSetMembers" "TV_SetsRN.placeHolderList[12]" 
-		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[13]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[14]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[15]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[16]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[17]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[18]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[19]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[20]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.groupNodes" "TV_SetsRN.placeHolderList[21]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface3SG.dagSetMembers" "TV_SetsRN.placeHolderList[22]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[21]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[22]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[23]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[24]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[25]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[26]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[27]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[28]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[29]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[30]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[31]" 
-		""
+		"TV_SetsRN.placeHolderList[23]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[24]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[25]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[26]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[27]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[28]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[29]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[30]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[31]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[32]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[33]" 
@@ -47484,25 +47487,25 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[75]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[76]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[76]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[77]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[77]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[78]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[78]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[79]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[79]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[80]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[80]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[81]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[81]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[82]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[82]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[83]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[83]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[84]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[84]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[85]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.dagSetMembers" "TV_SetsRN.placeHolderList[85]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[86]" 
 		""
@@ -47592,80 +47595,80 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[129]" 
 		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[130]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[131]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[132]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[133]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[134]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[135]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[136]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[137]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[138]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface4SG.groupNodes" "TV_SetsRN.placeHolderList[139]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[130]" ""
+		"TV_SetsRN.placeHolderList[140]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[131]" ""
+		"TV_SetsRN.placeHolderList[141]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[132]" ""
+		"TV_SetsRN.placeHolderList[142]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[133]" ""
+		"TV_SetsRN.placeHolderList[143]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[134]" ""
+		"TV_SetsRN.placeHolderList[144]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[135]" ""
+		"TV_SetsRN.placeHolderList[145]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[136]" ""
+		"TV_SetsRN.placeHolderList[146]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[137]" ""
+		"TV_SetsRN.placeHolderList[147]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[138]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[139]" 
+		"TV_SetsRN.placeHolderList[148]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[149]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[140]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[150]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[141]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[151]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[142]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[152]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[143]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[153]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[144]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[154]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[145]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[155]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[146]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[156]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[147]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.groupNodes" "TV_SetsRN.placeHolderList[157]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[148]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[158]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[149]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[159]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[150]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[160]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[151]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[161]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[152]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[162]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[153]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[163]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[154]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[164]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[155]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[165]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[156]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface5SG.dagSetMembers" "TV_SetsRN.placeHolderList[166]" 
 		""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[157]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[158]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[159]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[160]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[161]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[162]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[163]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[164]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[165]" ""
-		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[166]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[167]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
@@ -47718,26 +47721,26 @@ createNode reference -n "TV_SetsRN";
 		"TV_SetsRN.placeHolderList[191]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
 		"TV_SetsRN.placeHolderList[192]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[193]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[194]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[195]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[196]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[197]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[198]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[199]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[200]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[201]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[202]" 
-		""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[193]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[194]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[195]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[196]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[197]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[198]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[199]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[200]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[201]" ""
+		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.memberWireframeColor" 
+		"TV_SetsRN.placeHolderList[202]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[203]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[204]" 
@@ -47790,25 +47793,25 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[228]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[229]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[229]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[230]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[230]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[231]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[231]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[232]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[232]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[233]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[233]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[234]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[234]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[235]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[235]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[236]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[236]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[237]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[237]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[238]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.dagSetMembers" "TV_SetsRN.placeHolderList[238]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[239]" 
 		""
@@ -47862,98 +47865,98 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[264]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:LargeTVScreen_Color.emission" "TV_SetsRN.placeHolderList[265]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[265]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[266]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[267]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[268]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[269]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[270]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[271]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[272]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[273]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface6SG.groupNodes" "TV_SetsRN.placeHolderList[274]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:LargeTVScreen_Color.emission" "TV_SetsRN.placeHolderList[275]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[266]" ""
+		"TV_SetsRN.placeHolderList[276]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[267]" ""
+		"TV_SetsRN.placeHolderList[277]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[268]" ""
+		"TV_SetsRN.placeHolderList[278]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[269]" ""
+		"TV_SetsRN.placeHolderList[279]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[270]" ""
+		"TV_SetsRN.placeHolderList[280]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[271]" ""
+		"TV_SetsRN.placeHolderList[281]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[272]" ""
+		"TV_SetsRN.placeHolderList[282]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[273]" ""
+		"TV_SetsRN.placeHolderList[283]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[274]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[275]" 
+		"TV_SetsRN.placeHolderList[284]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[285]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[276]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[286]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[277]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[287]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[278]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[288]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[279]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[289]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[280]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[290]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[281]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[291]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[282]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[292]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[283]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.groupNodes" "TV_SetsRN.placeHolderList[293]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[284]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[294]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[285]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[295]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[286]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[296]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[287]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[297]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[288]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[298]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[289]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[299]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[290]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[300]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[291]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[301]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[292]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface7SG.dagSetMembers" "TV_SetsRN.placeHolderList[302]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:MediumTV_Color.emission" "TV_SetsRN.placeHolderList[293]" 
+		5 4 "TV_SetsRN" "TV_Sets:MediumTV_Color.emission" "TV_SetsRN.placeHolderList[303]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[294]" ""
+		"TV_SetsRN.placeHolderList[304]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[295]" ""
+		"TV_SetsRN.placeHolderList[305]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[296]" ""
+		"TV_SetsRN.placeHolderList[306]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[297]" ""
+		"TV_SetsRN.placeHolderList[307]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[298]" ""
+		"TV_SetsRN.placeHolderList[308]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[299]" ""
+		"TV_SetsRN.placeHolderList[309]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[300]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[301]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[302]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[303]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[304]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[305]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[306]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[307]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[308]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[309]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[310]" 
-		""
+		"TV_SetsRN.placeHolderList[310]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[311]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[312]" 
@@ -47962,25 +47965,25 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[314]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[315]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[315]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[316]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[316]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[317]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[317]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[318]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[318]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[319]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[319]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[320]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[320]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[321]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[321]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[322]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[322]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[323]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[323]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[324]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.dagSetMembers" "TV_SetsRN.placeHolderList[324]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[325]" 
 		""
@@ -47990,195 +47993,195 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[328]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:MediumTVScreen_Color.emission" "TV_SetsRN.placeHolderList[329]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[329]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[330]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[331]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[332]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[333]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[334]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[335]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[336]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[337]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface8SG.groupNodes" "TV_SetsRN.placeHolderList[338]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:MediumTVScreen_Color.emission" "TV_SetsRN.placeHolderList[339]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[330]" ""
+		"TV_SetsRN.placeHolderList[340]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[331]" ""
+		"TV_SetsRN.placeHolderList[341]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[332]" ""
+		"TV_SetsRN.placeHolderList[342]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[333]" ""
+		"TV_SetsRN.placeHolderList[343]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[334]" ""
+		"TV_SetsRN.placeHolderList[344]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[335]" ""
+		"TV_SetsRN.placeHolderList[345]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[336]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[337]" 
+		"TV_SetsRN.placeHolderList[346]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[347]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[338]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[348]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[339]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[349]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[340]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[350]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[341]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[351]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[342]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[352]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[343]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.groupNodes" "TV_SetsRN.placeHolderList[353]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[344]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[354]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[345]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[355]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[346]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[356]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[347]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[357]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[348]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[358]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[349]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[359]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[350]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface9SG.dagSetMembers" "TV_SetsRN.placeHolderList[360]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[351]" ""
+		"TV_SetsRN.placeHolderList[361]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[352]" ""
+		"TV_SetsRN.placeHolderList[362]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[353]" ""
+		"TV_SetsRN.placeHolderList[363]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[354]" ""
+		"TV_SetsRN.placeHolderList[364]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[355]" ""
+		"TV_SetsRN.placeHolderList[365]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[356]" ""
+		"TV_SetsRN.placeHolderList[366]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[357]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[358]" 
+		"TV_SetsRN.placeHolderList[367]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[368]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[359]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[369]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[360]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[370]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[361]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[371]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[362]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[372]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[363]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[373]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[364]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.groupNodes" "TV_SetsRN.placeHolderList[374]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[365]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[375]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[366]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[376]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[367]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[377]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[368]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[378]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[369]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[379]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[370]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[380]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[371]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface10SG.dagSetMembers" "TV_SetsRN.placeHolderList[381]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[372]" ""
+		"TV_SetsRN.placeHolderList[382]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[373]" ""
+		"TV_SetsRN.placeHolderList[383]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[374]" ""
+		"TV_SetsRN.placeHolderList[384]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[375]" ""
+		"TV_SetsRN.placeHolderList[385]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[376]" ""
+		"TV_SetsRN.placeHolderList[386]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[377]" ""
+		"TV_SetsRN.placeHolderList[387]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[378]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[379]" 
+		"TV_SetsRN.placeHolderList[388]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[389]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[380]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[390]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[381]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[391]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[382]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[392]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[383]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[393]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[384]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[394]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[385]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.groupNodes" "TV_SetsRN.placeHolderList[395]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[386]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[396]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[387]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[397]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[388]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[398]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[389]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[399]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[390]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[400]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[391]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[401]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[392]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface11SG.dagSetMembers" "TV_SetsRN.placeHolderList[402]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[393]" ""
+		"TV_SetsRN.placeHolderList[403]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[394]" ""
+		"TV_SetsRN.placeHolderList[404]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[395]" ""
+		"TV_SetsRN.placeHolderList[405]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[396]" ""
+		"TV_SetsRN.placeHolderList[406]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[397]" ""
+		"TV_SetsRN.placeHolderList[407]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[398]" ""
+		"TV_SetsRN.placeHolderList[408]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[399]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[400]" 
+		"TV_SetsRN.placeHolderList[409]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[410]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[401]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[411]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[402]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[412]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[403]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[413]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[404]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[414]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[405]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[415]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[406]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.groupNodes" "TV_SetsRN.placeHolderList[416]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[407]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[417]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[408]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[418]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[409]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[419]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[410]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[420]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[411]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[421]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[412]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[422]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[413]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[414]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[415]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[416]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[417]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[418]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[419]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[420]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[421]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[422]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[423]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface12SG.dagSetMembers" "TV_SetsRN.placeHolderList[423]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[424]" 
 		""
@@ -48258,44 +48261,44 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[462]" 
 		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[463]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[464]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[465]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[466]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[467]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[468]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[469]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[470]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[471]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface13SG.dagSetMembers" "TV_SetsRN.placeHolderList[472]" 
+		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[463]" ""
+		"TV_SetsRN.placeHolderList[473]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[464]" ""
+		"TV_SetsRN.placeHolderList[474]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[465]" ""
+		"TV_SetsRN.placeHolderList[475]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[466]" ""
+		"TV_SetsRN.placeHolderList[476]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[467]" ""
+		"TV_SetsRN.placeHolderList[477]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[468]" ""
+		"TV_SetsRN.placeHolderList[478]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[469]" ""
+		"TV_SetsRN.placeHolderList[479]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[470]" ""
+		"TV_SetsRN.placeHolderList[480]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[471]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[472]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[473]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[474]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[475]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[476]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[477]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[478]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[479]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[480]" 
-		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[481]" 
-		""
+		"TV_SetsRN.placeHolderList[481]" ""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[482]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[483]" 
@@ -48312,25 +48315,25 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[489]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[490]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[490]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[491]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[491]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[492]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[492]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[493]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[493]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[494]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[494]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[495]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[495]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[496]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[496]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[497]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[497]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[498]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[498]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[499]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.dagSetMembers" "TV_SetsRN.placeHolderList[499]" 
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[500]" 
 		""
@@ -48348,63 +48351,83 @@ createNode reference -n "TV_SetsRN";
 		""
 		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[507]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:SmallTVScreen_Color.emission" "TV_SetsRN.placeHolderList[508]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[508]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[509]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[510]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[511]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[512]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[513]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[514]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[515]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[516]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface14SG.groupNodes" "TV_SetsRN.placeHolderList[517]" 
+		""
+		5 4 "TV_SetsRN" "TV_Sets:SmallTVScreen_Color.emission" "TV_SetsRN.placeHolderList[518]" 
 		""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[509]" ""
+		"TV_SetsRN.placeHolderList[519]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[510]" ""
+		"TV_SetsRN.placeHolderList[520]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[511]" ""
+		"TV_SetsRN.placeHolderList[521]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[512]" ""
+		"TV_SetsRN.placeHolderList[522]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[513]" ""
+		"TV_SetsRN.placeHolderList[523]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[514]" ""
+		"TV_SetsRN.placeHolderList[524]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[515]" ""
+		"TV_SetsRN.placeHolderList[525]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[516]" ""
+		"TV_SetsRN.placeHolderList[526]" ""
 		5 3 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.memberWireframeColor" 
-		"TV_SetsRN.placeHolderList[517]" ""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[518]" 
+		"TV_SetsRN.placeHolderList[527]" ""
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[528]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[519]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[529]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[520]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[530]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[521]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[531]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[522]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[532]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[523]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[533]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[524]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[534]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[525]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[535]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[526]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.groupNodes" "TV_SetsRN.placeHolderList[536]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[527]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[537]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[528]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[538]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[529]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[539]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[530]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[540]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[531]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[541]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[532]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[542]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[533]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[543]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[534]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[544]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[535]" 
+		5 4 "TV_SetsRN" "TV_Sets:aiStandardSurface15SG.dagSetMembers" "TV_SetsRN.placeHolderList[545]" 
 		""
-		5 4 "TV_SetsRN" "TV_Sets:MainTVScreen_Color.emission" "TV_SetsRN.placeHolderList[536]" 
+		5 4 "TV_SetsRN" "TV_Sets:MainTVScreen_Color.emission" "TV_SetsRN.placeHolderList[546]" 
 		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -50040,621 +50063,743 @@ createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateX";
 	rename -uid "4BD6DE2C-4564-3740-A349-7291CD394730";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -5.1127600296719997 25 5.832761869903468
-		 49 38.449279790840386 73 -8.2637971722945718 97 -54.680935291679269 146 -49.089349595877458
-		 172 3.8923646853330163;
+	setAttr -s 10 ".ktv[0:9]"  1 -5.1127600296719997 103.77632142857144 5.832761869903468
+		 109.93242721088436 38.449279790840386 116.08853265306122 -8.2637971722945718 122.24463826530612 -54.680935291679269
+		 134.81335425170067 -49.089349595877458 141.48246853741497 3.8923646853330163 147.63857482993197 -37.003878189235422
+		 154.05118367346938 -8.5376550433661702 166.87640442176871 0;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateY";
 	rename -uid "8BEA2464-4E63-932D-E30A-F8A88D56A90F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -24.331470055921102 25 -27.150273958375553
-		 49 -13.905509221608229 73 -12.710638937372773 97 -12.710638937372797 146 -12.710638937372822
-		 172 -12.136423842028075;
+	setAttr -s 10 ".ktv[0:9]"  1 -24.331470055921102 103.77632142857144 -27.150273958375553
+		 109.93242721088436 -13.905509221608229 116.08853265306122 -12.710638937372773 122.24463826530612 -12.710638937372797
+		 134.81335425170067 -12.710638937372822 141.48246853741497 -12.136423842028075 147.63857482993197 -12.136423842028096
+		 154.05118367346938 -12.136423842028158 166.87640442176871 0;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateZ";
 	rename -uid "1E729745-4B28-5CA9-705D-5E93AEF10655";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -37.277105740591473 25 -28.615396601704767
-		 49 -33.80853543064481 73 -24.023660970622931 97 -24.023660970622924 146 -24.02366097062292
-		 172 -45.662325679527612;
+	setAttr -s 10 ".ktv[0:9]"  1 -37.277105740591473 103.77632142857144 -28.615396601704767
+		 109.93242721088436 -33.80853543064481 116.08853265306122 -24.023660970622931 122.24463826530612 -24.023660970622924
+		 134.81335425170067 -24.02366097062292 141.48246853741497 -45.662325679527612 147.63857482993197 -45.662325679527669
+		 154.05118367346938 -45.662325679527676 166.87640442176871 -49.105299272578868;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateX";
 	rename -uid "CE11D644-48A1-E4FD-FF51-B2B2D23F348F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 172 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 103.77632142857144 0 109.93242721088436 0
+		 116.08853265306122 0 122.24463826530612 0 134.81335425170067 0 141.48246853741497 0
+		 147.63857482993197 0 154.05118367346938 0 166.87640442176871 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateY";
 	rename -uid "71966F02-4A25-0EBF-F8AC-F1AA7727741E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 172 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 103.77632142857144 0 109.93242721088436 0
+		 116.08853265306122 0 122.24463826530612 0 134.81335425170067 0 141.48246853741497 0
+		 147.63857482993197 0 154.05118367346938 0 166.87640442176871 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateZ";
 	rename -uid "2B33AD7A-4FC5-047B-4FC7-3C982A3A14AF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 172 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 103.77632142857144 0 109.93242721088436 0
+		 116.08853265306122 0 122.24463826530612 0 134.81335425170067 0 141.48246853741497 0
+		 147.63857482993197 0 154.05118367346938 0 166.87640442176871 0;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleX";
 	rename -uid "97B06405-4E9F-FBB4-BF2B-1D9F4ED3F3D5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 172 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 103.77632142857144 1 109.93242721088436 1
+		 116.08853265306122 1 122.24463826530612 1 134.81335425170067 1 141.48246853741497 1
+		 147.63857482993197 1 154.05118367346938 1 166.87640442176871 1;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleY";
 	rename -uid "684FCAA3-4E49-081E-C938-2A9EB85C38F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 172 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 103.77632142857144 1 109.93242721088436 1
+		 116.08853265306122 1 122.24463826530612 1 134.81335425170067 1 141.48246853741497 1
+		 147.63857482993197 1 154.05118367346938 1 166.87640442176871 1;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleZ";
 	rename -uid "E396F6E1-44B2-6165-F7D0-85A31D6BA57A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 172 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 103.77632142857144 1 109.93242721088436 1
+		 116.08853265306122 1 122.24463826530612 1 134.81335425170067 1 141.48246853741497 1
+		 147.63857482993197 1 154.05118367346938 1 166.87640442176871 1;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateX";
 	rename -uid "5BD40636-41A4-7A8B-B14F-39A4D1C45458";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 11.840014742311444 25 11.84 49 20.166779366387182
-		 73 24.333591546604154 97 45.953514545222355 146 37.982775300243233 196 34.047391686702298;
+	setAttr -s 9 ".ktv[0:8]"  1 11.840014742311444 103.77632142857144 11.84
+		 109.93242721088436 20.166779366387182 116.08853265306122 24.333591546604154 122.24463826530612 45.953514545222355
+		 134.81335425170067 37.982775300243233 147.63857482993197 34.047391686702298 154.05118367346938 -0.36582324101931035
+		 166.87640442176871 0;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateY";
 	rename -uid "0E875FBA-4387-2718-6DDC-F1B9817828A1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 3.1668632742820599 25 3.167 49 3.1669999999999972
-		 73 -33.341970926944711 97 -22.051317502657266 146 -28.640209642516748 196 -33.397026246392173;
+	setAttr -s 9 ".ktv[0:8]"  1 3.1668632742820599 103.77632142857144 3.167
+		 109.93242721088436 3.1669999999999972 116.08853265306122 -33.341970926944711 122.24463826530612 -22.051317502657266
+		 134.81335425170067 -28.640209642516748 147.63857482993197 -33.397026246392173 154.05118367346938 -36.854356856047602
+		 166.87640442176871 0;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateZ";
 	rename -uid "10C7034A-4E07-0720-92E0-F3A55AE87C5D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 44.120977361131764 25 44.121 49 44.121000000000009
-		 73 29.000165234907239 97 15.288455280025993 146 24.000750095959393 196 31.622739295245779;
+	setAttr -s 9 ".ktv[0:8]"  1 44.120977361131764 103.77632142857144 44.121
+		 109.93242721088436 44.121000000000009 116.08853265306122 29.000165234907239 122.24463826530612 15.288455280025993
+		 134.81335425170067 24.000750095959393 147.63857482993197 31.622739295245779 154.05118367346938 52.228703462600414
+		 166.87640442176871 -38.180142635926636;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateX";
 	rename -uid "B0864BC2-49B8-A6AB-5E7C-E1B1AAFD2D77";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 196 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 103.77632142857144 0 109.93242721088436 0
+		 116.08853265306122 0 122.24463826530612 0 134.81335425170067 0 147.63857482993197 0
+		 154.05118367346938 0 166.87640442176871 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateY";
 	rename -uid "DE923042-4525-79A2-5A49-1A9A0FECF15D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 196 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 103.77632142857144 0 109.93242721088436 0
+		 116.08853265306122 0 122.24463826530612 0 134.81335425170067 0 147.63857482993197 0
+		 154.05118367346938 0 166.87640442176871 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateZ";
 	rename -uid "22B3073E-4A90-C350-4637-F5A7BCF651B5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 25 0 49 0 73 0 97 0 146 0 196 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 103.77632142857144 0 109.93242721088436 0
+		 116.08853265306122 0 122.24463826530612 0 134.81335425170067 0 147.63857482993197 0
+		 154.05118367346938 0 166.87640442176871 0;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleX";
 	rename -uid "96FE8C1C-4124-6A7B-9F81-DC9C9244B2FD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 196 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 103.77632142857144 1 109.93242721088436 1
+		 116.08853265306122 1 122.24463826530612 1 134.81335425170067 1 147.63857482993197 1
+		 154.05118367346938 1 166.87640442176871 1;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleY";
 	rename -uid "CA5B9A59-4B64-E970-7A4C-1BA6047D0E6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 196 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 103.77632142857144 1 109.93242721088436 1
+		 116.08853265306122 1 122.24463826530612 1 134.81335425170067 1 147.63857482993197 1
+		 154.05118367346938 1 166.87640442176871 1;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleZ";
 	rename -uid "23102C4D-46E7-D474-A2A1-1B8A93CFC80F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 25 1 49 1 73 1 97 1 146 1 196 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 103.77632142857144 1 109.93242721088436 1
+		 116.08853265306122 1 122.24463826530612 1 134.81335425170067 1 147.63857482993197 1
+		 154.05118367346938 1 166.87640442176871 1;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateX";
 	rename -uid "0E633419-4F1A-4B6D-C525-5597A9F2239F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 35.261625723028665 25 12.486078949712994
-		 49 8.167655749628846 73 13.330364012649294 146 12.121054960863553 172 23.922492839641425;
+	setAttr -s 8 ".ktv[0:7]"  1 24.716643186342669 103.77632142857144 12.486078949712994
+		 109.93242704081632 8.167655749628846 116.08853282312926 9.463068915541708 134.81335425170067 12.121054960863553
+		 141.48246904761905 28.451503719724375 147.63857465986393 24.841003462627178 166.87640442176871 0;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateY";
 	rename -uid "B867F2AF-4A46-9ECA-C90D-80876339B8C2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 9.0849924875623209 25 9.0849924875623209
-		 49 13.098993969652913 73 7.7797887520879998 146 9.5697014032194598 172 8.5187425154674745;
+	setAttr -s 8 ".ktv[0:7]"  1 9.8801989364622784 103.77632142857144 9.0849924875623209
+		 109.93242704081632 13.098993969652913 116.08853282312926 7.7797887520879891 134.81335425170067 9.5697014032194598
+		 141.48246904761905 26.313963000058248 147.63857465986393 -6.4311352599043046 166.87640442176871 0;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateZ";
 	rename -uid "B9F73F58-4F73-0438-8B71-79B4E22015F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 51.454985481755877 25 36.218351924767539
-		 49 14.055251856208931 73 41.970692997169813 146 33.966460104312837 172 40.604915779104907;
+	setAttr -s 8 ".ktv[0:7]"  1 49.715093031773222 103.77632142857144 36.218351924767539
+		 109.93242704081632 14.055251856208931 116.08853282312926 41.970692997169827 134.81335425170067 33.966460104312837
+		 141.48246904761905 43.812791364250394 147.63857465986393 34.083178559986941 166.87640442176871 -23.956624333264397;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateX";
 	rename -uid "FC4C7C45-4AD9-DB65-BE8B-2AB5BDFDDEDC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 146 0 172 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 134.81335425170067 0 141.48246904761905 0 147.63857465986393 0
+		 166.87640442176871 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateY";
 	rename -uid "741612D0-4400-F8A0-6B69-95830394A5A1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 146 0 172 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 134.81335425170067 0 141.48246904761905 0 147.63857465986393 0
+		 166.87640442176871 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateZ";
 	rename -uid "7CE01B2D-4A33-CB8F-411D-AC8A57D0A918";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 146 0 172 0;
+	setAttr -s 8 ".ktv[0:7]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 134.81335425170067 0 141.48246904761905 0 147.63857465986393 0
+		 166.87640442176871 0;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleX";
 	rename -uid "F6DAA1BA-4203-BD36-4571-479E2589DF63";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 146 1 172 1;
+	setAttr -s 8 ".ktv[0:7]"  1 1 103.77632142857144 1 109.93242704081632 1
+		 116.08853282312926 1 134.81335425170067 1 141.48246904761905 1 147.63857465986393 1
+		 166.87640442176871 1;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleY";
 	rename -uid "9579DDC5-4BCD-819A-C122-0A81506236B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 146 1 172 1;
+	setAttr -s 8 ".ktv[0:7]"  1 1 103.77632142857144 1 109.93242704081632 1
+		 116.08853282312926 1 134.81335425170067 1 141.48246904761905 1 147.63857465986393 1
+		 166.87640442176871 1;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleZ";
 	rename -uid "B56EABD2-4247-9E5E-EE7A-358E2500EB47";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 146 1 172 1;
+	setAttr -s 8 ".ktv[0:7]"  1 1 103.77632142857144 1 109.93242704081632 1
+		 116.08853282312926 1 134.81335425170067 1 141.48246904761905 1 147.63857465986393 1
+		 166.87640442176871 1;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateX";
 	rename -uid "3FD86923-4CD8-F07C-7D3D-32874260EEB6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateY";
 	rename -uid "069CD1DE-4135-FE3A-467E-F59D635EDDB9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateZ";
 	rename -uid "3E20E1F2-40E6-C108-6314-83B9EF4D8ECF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -26.117076341909055;
+	setAttr -s 3 ".ktv[0:2]"  1 -26.117076341909055 160.46379489795919 -26.117
+		 166.87640442176871 0;
 createNode animCurveTL -n "R_BottomHand_01_FK_Cntr_translateX";
 	rename -uid "3ED56C22-4542-4276-CB34-2E804C090375";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTL -n "R_BottomHand_01_FK_Cntr_translateY";
 	rename -uid "0535EDB6-453D-2CFE-1E5B-769CDC29621B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTL -n "R_BottomHand_01_FK_Cntr_translateZ";
 	rename -uid "ADC61336-48A7-3936-7ACA-718F215B5FE9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTU -n "R_BottomHand_01_FK_Cntr_scaleX";
 	rename -uid "44B0217D-4054-42FD-E879-DE82584C7A1F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 160.46379489795919 1 166.87640442176871 1;
 createNode animCurveTU -n "R_BottomHand_01_FK_Cntr_scaleY";
 	rename -uid "A96BAAB6-4B1B-9367-BEF6-1CAD035DBEEB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 160.46379489795919 1 166.87640442176871 1;
 createNode animCurveTU -n "R_BottomHand_01_FK_Cntr_scaleZ";
 	rename -uid "E7EFD505-4E0C-E5F9-6233-08AB06C038EE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 160.46379489795919 1 166.87640442176871 1;
 createNode animCurveTA -n "R_TopHand_01_FK_Cntr_rotateX";
 	rename -uid "A6CEA337-462B-D551-6AE0-C09063521377";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTA -n "R_TopHand_01_FK_Cntr_rotateY";
 	rename -uid "323FF6B0-463A-D568-87EE-B2A6CF00B375";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTA -n "R_TopHand_01_FK_Cntr_rotateZ";
 	rename -uid "BDD33200-4792-2727-3AC3-6094C72E17E5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 35.50608552451741;
+	setAttr -s 3 ".ktv[0:2]"  1 35.50608552451741 160.46379489795919 35.506
+		 166.87640442176871 0;
 createNode animCurveTL -n "R_TopHand_01_FK_Cntr_translateX";
 	rename -uid "2F3F9C4B-487B-D650-E1C4-E7BA7EA5E58A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTL -n "R_TopHand_01_FK_Cntr_translateY";
 	rename -uid "A08B9F80-4928-18B7-601A-29A6011063B5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTL -n "R_TopHand_01_FK_Cntr_translateZ";
 	rename -uid "3036921B-4EB9-0E32-7B50-639E91B35FF6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 160.46379489795919 0 166.87640442176871 0;
 createNode animCurveTU -n "R_TopHand_01_FK_Cntr_scaleX";
 	rename -uid "84209D53-4F54-1F81-F5D9-F7B313F4392B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 160.46379489795919 1 166.87640442176871 1;
 createNode animCurveTU -n "R_TopHand_01_FK_Cntr_scaleY";
 	rename -uid "FF7FFDCD-42B2-6AAF-284A-A693213BA257";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 160.46379489795919 1 166.87640442176871 1;
 createNode animCurveTU -n "R_TopHand_01_FK_Cntr_scaleZ";
 	rename -uid "F8FF3C7F-4C70-9F37-EFC8-6682EB318F68";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 160.46379489795919 1 166.87640442176871 1;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateX";
 	rename -uid "8BB8A7DC-48F4-7967-82CB-CF94F7EFCCAC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074489795919 0 141.22596496598641 0 147.63857465986393 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateY";
 	rename -uid "2E2568C3-4847-EE47-B47C-60921D9C243C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074489795919 0 141.22596496598641 0 147.63857465986393 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateZ";
 	rename -uid "326D3E6A-42F8-FD6C-12F5-CA9371B4C8DB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -40.386426457357736 49 4.1961625220669347
-		 73 13.887974229844698 121 54.381963168605346 171 -28.829657095001235 196 3.2146149647342237;
+	setAttr -s 7 ".ktv[0:6]"  1 -40.386426457357736 109.93242704081632 4.1961625220669347
+		 116.08853299319728 13.887974229844698 128.40074489795919 54.381963168605346 141.22596496598641 -28.829657095001235
+		 147.63857465986393 3.2146149647342237 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateX";
 	rename -uid "B8724DF9-4563-F660-FF87-6A8CF337992A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074489795919 0 141.22596496598641 0 147.63857465986393 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateY";
 	rename -uid "28230FD5-4A6E-BC88-1BDA-A4AF6BC17FD5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074489795919 0 141.22596496598641 0 147.63857465986393 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateZ";
 	rename -uid "9354D2BB-4458-3D41-D5AB-BE8D830042B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 171 0 196 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074489795919 0 141.22596496598641 0 147.63857465986393 0 166.87640442176871 0;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleX";
 	rename -uid "F161211C-4232-72BA-AEED-0E8952528483";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 171 1 196 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 109.93242704081632 1 116.08853299319728 1
+		 128.40074489795919 1 141.22596496598641 1 147.63857465986393 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleY";
 	rename -uid "E9A7AEA7-41F4-3DCF-E5E4-5D802E1EA41C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 171 1 196 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 109.93242704081632 1 116.08853299319728 1
+		 128.40074489795919 1 141.22596496598641 1 147.63857465986393 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleZ";
 	rename -uid "4C018934-4156-7468-E74A-2E909625A453";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 171 1 196 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 109.93242704081632 1 116.08853299319728 1
+		 128.40074489795919 1 141.22596496598641 1 147.63857465986393 1 166.87640442176871 1;
 createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateX";
 	rename -uid "B11DFEC5-485C-5EDE-F74D-C88F7EA4B667";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 103.77632142857144 0 109.9324268707483 0
+		 116.08853350340137 0 128.40074387755101 0 141.2259644557823 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateY";
 	rename -uid "6ECF63D6-4726-BAD1-FE32-F0A92D44AD2D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 103.77632142857144 0 109.9324268707483 0
+		 116.08853350340137 0 128.40074387755101 0 141.2259644557823 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateZ";
 	rename -uid "589CC6DD-4EFB-AC12-987A-258FB4B4AE5E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -22.870611450731879 25 -48.033950123629573
-		 49 -85.911673518353808 73 -6.0386876712667927 121 8.3298524983475257 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 -22.870611450731879 103.77632142857144 -48.033950123629573
+		 109.9324268707483 -85.911673518353808 116.08853350340137 -6.0386876712667927 128.40074387755101 8.3298524983475257
+		 141.2259644557823 0 166.87640442176871 -57.825753990560592;
 createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateX";
 	rename -uid "5A76966B-49E1-2832-1A84-BFB7705AF0FD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 103.77632142857144 0 109.9324268707483 0
+		 116.08853350340137 0 128.40074387755101 0 141.2259644557823 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateY";
 	rename -uid "5E600581-4764-D094-AD7A-0A8B95A1C4A2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 103.77632142857144 0 109.9324268707483 0
+		 116.08853350340137 0 128.40074387755101 0 141.2259644557823 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateZ";
 	rename -uid "8C7443F4-49A6-AB0F-8051-BD956B33FC3F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 25 0 49 0 73 0 121 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 103.77632142857144 0 109.9324268707483 0
+		 116.08853350340137 0 128.40074387755101 0 141.2259644557823 0 166.87640442176871 0;
 createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleX";
 	rename -uid "5830F349-4240-501F-05E1-618134BB8144";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 121 1 171 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 103.77632142857144 1 109.9324268707483 1
+		 116.08853350340137 1 128.40074387755101 1 141.2259644557823 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleY";
 	rename -uid "78076F6B-432B-9B81-4DBF-CC80B6ABF7B6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 121 1 171 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 103.77632142857144 1 109.9324268707483 1
+		 116.08853350340137 1 128.40074387755101 1 141.2259644557823 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleZ";
 	rename -uid "53E3F320-4EF7-24D1-731D-D68812C12561";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 25 1 49 1 73 1 121 1 171 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 103.77632142857144 1 109.9324268707483 1
+		 116.08853350340137 1 128.40074387755101 1 141.2259644557823 1 166.87640442176871 1;
 createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateX";
 	rename -uid "7896E18B-4C52-9CF5-95DF-9FA75668C4B7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 -0.17310347537610257 73 -0.1601356948924339
-		 121 -0.15832578707991976 146 -0.0424438463074382 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 -0.17310347537610257
+		 116.08853299319728 -0.1601356948924339 128.40074421768708 -0.15832578707991976 134.81335442176871 -0.0424438463074382
+		 141.2259642857143 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateY";
 	rename -uid "3B0A1F0E-4CCD-C2EE-45EF-DCB5C423AB0E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 -0.018040737990691055 73 -0.068167820451592157
-		 121 0.072271978417905294 146 0.16878627179391761 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 -0.018040737990691055
+		 116.08853299319728 -0.068167820451592157 128.40074421768708 0.072271978417905294
+		 134.81335442176871 0.16878627179391761 141.2259642857143 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateZ";
 	rename -uid "2C21D5E3-452E-0096-CB26-17A5DB58EAB7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -3.1933790464835861 49 -36.577913978205373
-		 73 -53.68688754740036 121 -6.0925649858859439 146 45.25667807549236 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 -3.1933790464835861 109.93242704081632 -36.577913978205373
+		 116.08853299319728 -53.68688754740036 128.40074421768708 -6.0925649858859439 134.81335442176871 45.25667807549236
+		 141.2259642857143 0 166.87640442176871 -6.955343009291294;
 createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateX";
 	rename -uid "189420E6-489D-1183-8F69-1F980FF812E6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 146 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074421768708 0 134.81335442176871 0 141.2259642857143 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateY";
 	rename -uid "A4DD419B-40EE-5A4F-DFAA-64B9E5B1F620";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 146 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074421768708 0 134.81335442176871 0 141.2259642857143 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateZ";
 	rename -uid "B59315F0-470B-6B1C-ADD8-65AF8B701E00";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 49 0 73 0 121 0 146 0 171 0;
+	setAttr -s 7 ".ktv[0:6]"  1 0 109.93242704081632 0 116.08853299319728 0
+		 128.40074421768708 0 134.81335442176871 0 141.2259642857143 0 166.87640442176871 0;
 createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleX";
 	rename -uid "619AB6A5-4C2E-8F56-9054-42A985D0D64C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 146 1 171 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 109.93242704081632 1 116.08853299319728 1
+		 128.40074421768708 1 134.81335442176871 1 141.2259642857143 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleY";
 	rename -uid "1C26B235-4D29-E579-0349-EF8B30F1C159";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 146 1 171 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 109.93242704081632 1 116.08853299319728 1
+		 128.40074421768708 1 134.81335442176871 1 141.2259642857143 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleZ";
 	rename -uid "59DE1DC6-45F0-FB42-D24B-97A84E243972";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 49 1 73 1 121 1 146 1 171 1;
+	setAttr -s 7 ".ktv[0:6]"  1 1 109.93242704081632 1 116.08853299319728 1
+		 128.40074421768708 1 134.81335442176871 1 141.2259642857143 1 166.87640442176871 1;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateX";
 	rename -uid "B430B280-468E-F430-06E2-9E9E838BCFC9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 9.0177070310233645e-16 73 -24.466050033173897
-		 97 -4.4958197603939078 146 14.789509678568505 171 -14.16931703479062 196 -14.124264910756693;
+	setAttr -s 10 ".ktv[0:9]"  1 0 99.415746428571424 0 105.57185204081632 0
+		 111.72795782312924 -24.466050033173897 117.88406343537415 -4.4958197603939078 130.4527794217687 14.789509678568505
+		 136.8653899659864 -14.16931703479062 143.27799982993199 -14.124264910756693 149.69060935374151 6.3986297741431803
+		 162.51583010204081 0;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateY";
 	rename -uid "2A69807A-4DDC-A085-DB11-E19CFFEFCF9A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 -28.145492284756717 73 1.2530727614927704
-		 97 18.52422356064168 146 18.524223560641673 171 -10.161715675613685 196 9.1089048674060251;
+	setAttr -s 10 ".ktv[0:9]"  1 0 99.415746428571424 0 105.57185204081632 -28.145492284756717
+		 111.72795782312924 1.2530727614927704 117.88406343537415 18.52422356064168 130.4527794217687 18.524223560641673
+		 136.8653899659864 -10.161715675613685 143.27799982993199 9.1089048674060251 149.69060935374151 9.1089048674059985
+		 162.51583010204081 0;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateZ";
 	rename -uid "FE779BD3-4F66-24BC-73E5-849DAAFF6165";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 -11.340731429134724 25 -20.900518907320578
-		 49 -20.900518907320581 73 -20.900518907320567 97 -15.744843636005736 146 -15.744843636005754
-		 171 -8.4228167664787623 196 -13.254473142667669;
+	setAttr -s 10 ".ktv[0:9]"  1 -11.340731429134724 99.415746428571424 -20.900518907320578
+		 105.57185204081632 -20.900518907320581 111.72795782312924 -20.900518907320567 117.88406343537415 -15.744843636005736
+		 130.4527794217687 -15.744843636005754 136.8653899659864 -8.4228167664787623 143.27799982993199 -13.254473142667669
+		 149.69060935374151 -13.254473142667715 162.51583010204081 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateX";
 	rename -uid "32FEE15E-4C91-802A-E050-B894401FEA2D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 0 73 0 97 0 146 0 171 0 196 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 99.415746428571424 0 105.57185204081632 0
+		 111.72795782312924 0 117.88406343537415 0 130.4527794217687 0 136.8653899659864 0
+		 143.27799982993199 0 149.69060935374151 0 162.51583010204081 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateY";
 	rename -uid "4F402079-489C-B750-80F6-CCB4750D374E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 0 73 0 97 0 146 0 171 0 196 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 99.415746428571424 0 105.57185204081632 0
+		 111.72795782312924 0 117.88406343537415 0 130.4527794217687 0 136.8653899659864 0
+		 143.27799982993199 0 149.69060935374151 0 162.51583010204081 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateZ";
 	rename -uid "D6C7D164-466E-627B-10F8-348B45A45D20";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 0 25 0 49 0 73 0 97 0 146 0 171 0 196 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 99.415746428571424 0 105.57185204081632 0
+		 111.72795782312924 0 117.88406343537415 0 130.4527794217687 0 136.8653899659864 0
+		 143.27799982993199 0 149.69060935374151 0 162.51583010204081 0;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleX";
 	rename -uid "2E9CF377-44A5-4EBD-C520-3489F9E7EB2C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 1 25 1 49 1 73 1 97 1 146 1 171 1 196 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 99.415746428571424 1 105.57185204081632 1
+		 111.72795782312924 1 117.88406343537415 1 130.4527794217687 1 136.8653899659864 1
+		 143.27799982993199 1 149.69060935374151 1 162.51583010204081 1;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleY";
 	rename -uid "8F21D4DE-40F7-AB56-0FDC-F483F7A220BE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 1 25 1 49 1 73 1 97 1 146 1 171 1 196 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 99.415746428571424 1 105.57185204081632 1
+		 111.72795782312924 1 117.88406343537415 1 130.4527794217687 1 136.8653899659864 1
+		 143.27799982993199 1 149.69060935374151 1 162.51583010204081 1;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleZ";
 	rename -uid "2DDA35BD-4A78-EACB-E9FC-718643F5A0A6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 8 ".ktv[0:7]"  1 1 25 1 49 1 73 1 97 1 146 1 171 1 196 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 99.415746428571424 1 105.57185204081632 1
+		 111.72795782312924 1 117.88406343537415 1 130.4527794217687 1 136.8653899659864 1
+		 143.27799982993199 1 149.69060935374151 1 162.51583010204081 1;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateX";
 	rename -uid "2335D134-428E-7806-665D-148076CD3D79";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 7.2522129907646471e-18
-		 97 0 121 4.2044568240682068e-17 146 15.739397339364331 171 -29.706937235440346 196 15.70262408167175;
+	setAttr -s 11 ".ktv[0:10]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 122.24463860544218 0 128.40074353741497 0 134.81335391156463 15.739397339364331
+		 141.22596462585034 -29.706937235440346 147.63857448979593 15.70262408167175 154.30768894557824 -3.6840453388934864
+		 166.87640442176871 0;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateY";
 	rename -uid "1F663C3F-4903-D5D9-86D5-55BA4EE2DDFB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 44.99999999999995 73 31.066493684951066
-		 97 97.130516867722932 121 287.18733911831458 146 376.49142734697875 171 360.63621046178662
-		 196 353.68016466789231;
+	setAttr -s 11 ".ktv[0:10]"  1 0 103.77632142857144 0 109.93242704081632 44.99999999999995
+		 116.08853282312926 31.066493684951066 122.24463860544218 97.130516867722932 128.40074353741497 287.18733911831458
+		 134.81335391156463 376.49142734697875 141.22596462585034 360.63621046178662 147.63857448979593 353.68016466789231
+		 154.30768894557824 353.68016466789231 166.87640442176871 0;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateZ";
 	rename -uid "54F82DA1-4B72-2173-71B7-D2ABB2ECBFE9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 15.489232505636178 25 -0.10943890483688709
-		 49 -0.10943890483688713 73 -0.10943890483689228 97 -0.10943890483687656 121 -0.1094389048368771
-		 146 -7.4699441237867514 171 1.8908351131028986 196 -0.059434163927377735;
+	setAttr -s 11 ".ktv[0:10]"  1 15.489232505636178 103.77632142857144 -0.10943890483688709
+		 109.93242704081632 -0.10943890483688713 116.08853282312926 -0.10943890483689228 122.24463860544218 -0.10943890483687656
+		 128.40074353741497 -0.1094389048368771 134.81335391156463 -7.4699441237867514 141.22596462585034 1.8908351131028986
+		 147.63857448979593 -0.059434163927377735 154.30768894557824 -0.059434163927378249
+		 166.87640442176871 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateX";
 	rename -uid "A34FC8C0-4059-5A11-E4ED-C6BA05D66E51";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 0 97 0 121 0 146 0 171 0
-		 196 0;
+	setAttr -s 11 ".ktv[0:10]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 122.24463860544218 0 128.40074353741497 0 134.81335391156463 0
+		 141.22596462585034 0 147.63857448979593 0 154.30768894557824 0 166.87640442176871 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateY";
 	rename -uid "3C0283B7-4471-9FD6-2229-EB8D7A3F1E98";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 0 97 0 121 0 146 0 171 0
-		 196 0;
+	setAttr -s 11 ".ktv[0:10]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 122.24463860544218 0 128.40074353741497 0 134.81335391156463 0
+		 141.22596462585034 0 147.63857448979593 0 154.30768894557824 0 166.87640442176871 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateZ";
 	rename -uid "B00F304C-4CC0-5264-3B33-97A31BF0647F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 0 25 0 49 0 73 0 97 0 121 0 146 0 171 0
-		 196 0;
+	setAttr -s 11 ".ktv[0:10]"  1 0 103.77632142857144 0 109.93242704081632 0
+		 116.08853282312926 0 122.24463860544218 0 128.40074353741497 0 134.81335391156463 0
+		 141.22596462585034 0 147.63857448979593 0 154.30768894557824 0 166.87640442176871 0;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleX";
 	rename -uid "9CDB9832-44A2-45B6-9B75-37BDD1F8F483";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 1 25 1 49 1 73 1 97 1 121 1 146 1 171 1
-		 196 1;
+	setAttr -s 11 ".ktv[0:10]"  1 1 103.77632142857144 1 109.93242704081632 1
+		 116.08853282312926 1 122.24463860544218 1 128.40074353741497 1 134.81335391156463 1
+		 141.22596462585034 1 147.63857448979593 1 154.30768894557824 1 166.87640442176871 1;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleY";
 	rename -uid "045B41BE-408E-5D74-B0FE-01810EDF25F6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 1 25 1 49 1 73 1 97 1 121 1 146 1 171 1
-		 196 1;
+	setAttr -s 11 ".ktv[0:10]"  1 1 103.77632142857144 1 109.93242704081632 1
+		 116.08853282312926 1 122.24463860544218 1 128.40074353741497 1 134.81335391156463 1
+		 141.22596462585034 1 147.63857448979593 1 154.30768894557824 1 166.87640442176871 1;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleZ";
 	rename -uid "A340BB45-4E30-ACC5-B25E-57B9F4DA050A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 9 ".ktv[0:8]"  1 1 25 1 49 1 73 1 97 1 121 1 146 1 171 1
-		 196 1;
+	setAttr -s 11 ".ktv[0:10]"  1 1 103.77632142857144 1 109.93242704081632 1
+		 116.08853282312926 1 122.24463860544218 1 128.40074353741497 1 134.81335391156463 1
+		 141.22596462585034 1 147.63857448979593 1 154.30768894557824 1 166.87640442176871 1;
 createNode animCurveTA -n "Torso_01_FK_Cntr_rotateX";
 	rename -uid "C1A6812C-4B0B-8822-6991-319052CC9AB0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 103.77632142857144 0 166.87640442176871 0;
 createNode animCurveTA -n "Torso_01_FK_Cntr_rotateY";
 	rename -uid "A3FCFE7C-467F-1C80-07FA-2EB0D723CA4D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 103.77632142857144 0 166.87640442176871 0;
 createNode animCurveTA -n "Torso_01_FK_Cntr_rotateZ";
 	rename -uid "EE6C7D62-4C3C-A096-0DF0-C8A3A1B8BC65";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 13.273398379634363 25 13.273398379634363;
+	setAttr -s 3 ".ktv[0:2]"  1 13.273398379634363 103.77632142857144 13.273398379634363
+		 166.87640442176871 0;
 createNode animCurveTL -n "Torso_01_FK_Cntr_translateX";
 	rename -uid "CB42F571-48BA-D694-A7C8-CDAB9886E69D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 103.77632142857144 0 166.87640442176871 0;
 createNode animCurveTL -n "Torso_01_FK_Cntr_translateY";
 	rename -uid "7B26DFE7-4DD9-90F3-6618-35AC8CD77BBA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 103.77632142857144 0 166.87640442176871 0;
 createNode animCurveTL -n "Torso_01_FK_Cntr_translateZ";
 	rename -uid "2CD5983E-4DC9-1BCD-E8EA-9CA3258AEAB6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 25 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 103.77632142857144 0 166.87640442176871 0;
 createNode animCurveTU -n "Torso_01_FK_Cntr_scaleX";
 	rename -uid "7C12FACD-431E-E75A-36A7-169E713572AE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 25 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 103.77632142857144 1 166.87640442176871 1;
 createNode animCurveTU -n "Torso_01_FK_Cntr_scaleY";
 	rename -uid "AC0F8231-4A25-A540-1E88-039083224061";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 25 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 103.77632142857144 1 166.87640442176871 1;
 createNode animCurveTU -n "Torso_01_FK_Cntr_scaleZ";
 	rename -uid "CD7AEB95-4DE4-AF1E-F115-C7B92A3AE555";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 25 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 103.77632142857144 1 166.87640442176871 1;
 createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateX";
 	rename -uid "F87B304A-473C-8E48-0CAA-419335773C7F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateY";
 	rename -uid "BB9E845A-4954-407A-CC7F-1E92C5756A99";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateZ";
 	rename -uid "6D226234-470C-98DF-DCD1-5BAAA6024CDF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 35.708159027838192 146 -29.18992720748302
-		 171 54.249517610863052;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 35.708159027838192
+		 134.81335425170067 -29.18992720748302 141.22596411564626 54.249517610863052 166.87640442176871 0;
 createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateX";
 	rename -uid "BB37AF69-4851-5834-A9B0-E7940C279017";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateY";
 	rename -uid "3ABD5662-4B1B-6475-15CA-3DB335E617DE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateZ";
 	rename -uid "061AC15A-4274-F758-1C29-BD94DB1CF79F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleX";
 	rename -uid "12A6D779-4D5B-5A17-7A7E-47B28ECE4B9E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 122.24463826530612 1 128.40074404761904 1
+		 134.81335425170067 1 141.22596411564626 1 166.87640442176871 1;
 createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleY";
 	rename -uid "1DCAF6EE-4723-A404-71DE-C2A55D2276DF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 122.24463826530612 1 128.40074404761904 1
+		 134.81335425170067 1 141.22596411564626 1 166.87640442176871 1;
 createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleZ";
 	rename -uid "41EAB06B-4E42-0909-767F-ADA0FA2A8AD7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 122.24463826530612 1 128.40074404761904 1
+		 134.81335425170067 1 141.22596411564626 1 166.87640442176871 1;
 createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateX";
 	rename -uid "1835B2EB-406E-4872-0F1E-A08022A606F8";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateY";
 	rename -uid "6C40D1C3-4303-4D28-A7C1-F5B68745099F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateZ";
 	rename -uid "3C3BBC0A-402A-119E-D9EF-C2B9066ACCF5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 -25.528312820779423 146 31.50621226932742
-		 171 -45.778723768512116;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 -25.528312820779423
+		 134.81335425170067 31.50621226932742 141.22596411564626 -45.778723768512116 166.87640442176871 0;
 createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateX";
 	rename -uid "7F8CDED2-4853-1D48-2AD2-F18078E0ADDE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateY";
 	rename -uid "A39D501D-46F3-75A8-5F80-E0A3E8E7CD88";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateZ";
 	rename -uid "95F7B0B5-4FD4-BB0C-5A7E-BE982ACD36C3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 97 0 121 0 146 0 171 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 122.24463826530612 0 128.40074404761904 0
+		 134.81335425170067 0 141.22596411564626 0 166.87640442176871 0;
 createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleX";
 	rename -uid "9E148043-4492-3DAD-C0B2-30A1392600EE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 122.24463826530612 1 128.40074404761904 1
+		 134.81335425170067 1 141.22596411564626 1 166.87640442176871 1;
 createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleY";
 	rename -uid "AFCBD129-4D6C-1CFD-879C-A9AC782B12F7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 122.24463826530612 1 128.40074404761904 1
+		 134.81335425170067 1 141.22596411564626 1 166.87640442176871 1;
 createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleZ";
 	rename -uid "9CBDAD1E-4ED3-05CD-110F-9A9B983192EE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 1 97 1 121 1 146 1 171 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 122.24463826530612 1 128.40074404761904 1
+		 134.81335425170067 1 141.22596411564626 1 166.87640442176871 1;
 createNode animCurveTA -n "COG_Cntr_rotateX";
 	rename -uid "A1ED37EB-4B72-19BB-4669-88B84C5315E6";
 	setAttr ".tan" 18;
@@ -50761,137 +50906,164 @@ createNode animCurveTL -n "L_Leg_01_FK_Cntr_translateX";
 	rename -uid "365D9546-4332-7837-16D6-43B1FD31C2E9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 134.81335408163267 0 141.48246870748298 0
+		 154.05118452380952 0 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Leg_01_FK_Cntr_translateY";
 	rename -uid "9075E63A-4A4E-AA33-B74A-4BBDADEA4805";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 134.81335408163267 0 141.48246870748298 0
+		 154.05118452380952 0 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Leg_01_FK_Cntr_translateZ";
 	rename -uid "5E0F002B-43B9-A953-09F6-9CBDFB4C0BEE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 134.81335408163267 0 141.48246870748298 0
+		 154.05118452380952 0 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_01_FK_Cntr_rotateX";
 	rename -uid "C8106853-405C-F034-9748-1F8B21296C9B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 -62.93636147871198;
+	setAttr -s 6 ".ktv[0:5]"  1 0 134.81335408163267 0 141.48246870748298 -62.93636147871198
+		 154.05118452380952 53.343723836482717 160.20729013605441 -62.590563922576258 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_01_FK_Cntr_rotateY";
 	rename -uid "BD000B7C-4CBF-9D0B-0DC8-3FA25B1D47DC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 134.81335408163267 0 141.48246870748298 0
+		 154.05118452380952 0 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_01_FK_Cntr_rotateZ";
 	rename -uid "561C8516-4187-AE98-006C-88A7346044BE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 146 0 172 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 134.81335408163267 0 141.48246870748298 0
+		 154.05118452380952 0 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTU -n "L_Leg_01_FK_Cntr_scaleX";
 	rename -uid "39E16CF6-43A2-1E3B-7E58-089B87CD3BFC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 146 1 172 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 134.81335408163267 1 141.48246870748298 1
+		 154.05118452380952 1 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Leg_01_FK_Cntr_scaleY";
 	rename -uid "0337CC5C-44BC-4A1D-1B75-61B7E6EC9169";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 146 1 172 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 134.81335408163267 1 141.48246870748298 1
+		 154.05118452380952 1 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Leg_01_FK_Cntr_scaleZ";
 	rename -uid "CB76085A-4B29-3F01-DA35-4FBD59367B3E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 146 1 172 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 134.81335408163267 1 141.48246870748298 1
+		 154.05118452380952 1 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTL -n "L_Leg_02_FK_Cntr_translateX";
 	rename -uid "90A11928-4503-C67E-31EB-B5B220F62954";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Leg_02_FK_Cntr_translateY";
 	rename -uid "C0A11A17-414C-44B1-46CC-28B6CB2E5E33";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Leg_02_FK_Cntr_translateZ";
 	rename -uid "0E92C2EA-406C-3CFD-5068-AA9E3E84C43E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_02_FK_Cntr_rotateX";
 	rename -uid "F3473CF6-45A5-745A-08EF-A887399AC453";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 64.727919845170248
+		 160.20729013605441 30.103065656202258 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_02_FK_Cntr_rotateY";
 	rename -uid "C310FBED-49BA-197A-316A-29A165CEDA30";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_02_FK_Cntr_rotateZ";
 	rename -uid "182404FF-40CD-45DC-3F0A-448B1874494E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTU -n "L_Leg_02_FK_Cntr_scaleX";
 	rename -uid "29F7A680-4E09-C3A4-AEB2-058CDA645FB7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 141.48246870748298 1 154.05118469387756 1
+		 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Leg_02_FK_Cntr_scaleY";
 	rename -uid "A40951EB-4EC4-8F9D-8EF8-0689385F54E3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 141.48246870748298 1 154.05118469387756 1
+		 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Leg_02_FK_Cntr_scaleZ";
 	rename -uid "6E7D8DC6-4772-E858-4B0A-55A404C3F19D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 141.48246870748298 1 154.05118469387756 1
+		 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTL -n "L_Leg_03_FK_Cntr_translateX";
 	rename -uid "1A73D3EA-4EBB-588A-4130-63814B793F40";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Leg_03_FK_Cntr_translateY";
 	rename -uid "30ADED26-4C78-58A2-01AE-1691DCCFA0C4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTL -n "L_Leg_03_FK_Cntr_translateZ";
 	rename -uid "05FE1939-4B1B-4ABA-6DC0-7BB6CD1451F3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_03_FK_Cntr_rotateX";
 	rename -uid "696CF666-49B7-F66B-3ADE-85B5860FF744";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 57.201880013863992
+		 160.20729013605441 -60.914274563185991 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_03_FK_Cntr_rotateY";
 	rename -uid "101F06A7-45E6-FF8B-AEEE-FC9643AEF55A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTA -n "L_Leg_03_FK_Cntr_rotateZ";
 	rename -uid "88FFBD6B-4836-EA19-AB73-A4B6406C65B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 141.48246870748298 0 154.05118469387756 0
+		 160.20729013605441 0 166.87640442176871 0;
 createNode animCurveTU -n "L_Leg_03_FK_Cntr_scaleX";
 	rename -uid "A0FA379E-402C-5388-E542-C7853B973834";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 141.48246870748298 1 154.05118469387756 1
+		 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Leg_03_FK_Cntr_scaleY";
 	rename -uid "4EF8FC69-41E8-9D65-49A3-7994894D6DBF";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 141.48246870748298 1 154.05118469387756 1
+		 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTU -n "L_Leg_03_FK_Cntr_scaleZ";
 	rename -uid "0ECC87F4-4583-C758-8CA8-07980A07DBAD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 141.48246870748298 1 154.05118469387756 1
+		 160.20729013605441 1 166.87640442176871 1;
 createNode animCurveTL -n "R_Leg_01_FK_Cntr_translateX";
 	rename -uid "00A45AD6-4D53-AD8B-6A9E-70841BE0A494";
 	setAttr ".tan" 18;
@@ -51523,22 +51695,22 @@ createNode animCurveTU -n "MainTVScreen_Color_emission";
 	rename -uid "58CF07EB-493B-8AFF-BD4A-F0821205BB4A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 40 ".ktv[0:39]"  1 1 5 1 10 1 15 1 20 0 25 0 30 0 35 0 40 1
+	setAttr -s 43 ".ktv[0:42]"  1 1 5 1 10 1 15 1 20 0 25 0 30 0 35 0 40 1
 		 45 1 50 1 55 1 60 0 65 0 70 0 75 0 80 1 90 1 95 1 100 0 105 0 110 0 115 0 120 1 125 1
 		 130 1 135 1 140 0 145 0 150 0 155 0 160 1 165 1 170 1 175 1 180 0 185 0 190 0 195 0
-		 200 1;
+		 200 0 215 1 260 1 271 0;
 createNode animCurveTU -n "BigTVScreen_Color_emission";
 	rename -uid "9C51DE92-44BF-638E-323A-839EC7C77EC6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 20 ".ktv[0:19]"  1 0 20 0 25 1 40 1 45 0 60 0 65 1 80 1 85 0
-		 100 0 105 1 120 1 125 0 140 0 145 1 160 1 165 0 180 0 185 1 200 1;
+	setAttr -s 23 ".ktv[0:22]"  1 0 20 0 25 1 40 1 45 0 60 0 65 1 80 1 85 0
+		 100 0 105 1 120 1 125 0 140 0 145 1 160 1 165 0 180 0 185 0 200 0 215 1 260 1 271 0;
 createNode animCurveTU -n "LargeTVScreen_Color_emission";
 	rename -uid "2BD3AE3D-44E2-5EA0-C068-03B600585ADE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 18 ".ktv[0:17]"  25 0 40 0 45 1 60 1 65 0 80 0 85 1 100 1
-		 105 0 120 0 125 1 140 1 145 0 160 0 165 1 180 1 185 0 200 0;
+	setAttr -s 21 ".ktv[0:20]"  25 0 40 0 45 1 60 1 65 0 80 0 85 1 100 1
+		 105 0 120 0 125 1 140 1 145 0 160 0 165 1 180 1 185 0 200 0 215 1 260 1 271 0;
 createNode animCurveTU -n "MediumTV_Color_emission";
 	rename -uid "1A6F5482-4F27-8F96-240A-92A43763661C";
 	setAttr ".tan" 18;
@@ -51548,14 +51720,16 @@ createNode animCurveTU -n "MediumTVScreen_Color_emission";
 	rename -uid "D7177F2E-4D24-9AB7-7DEB-90936136E04C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 21 ".ktv[0:20]"  1 0 15 0 20 1 35 1 40 0 55 0 60 1 75 1 80 0
-		 95 0 100 1 115 1 120 0 135 0 140 1 155 1 160 0 175 0 180 1 195 1 200 0;
+	setAttr -s 24 ".ktv[0:23]"  1 0 15 0 20 1 35 1 40 0 55 0 60 1 75 1 80 0
+		 95 0 100 1 115 1 120 0 135 0 140 1 155 1 160 0 175 0 180 1 195 1 200 0 215 1 260 1
+		 271 0;
 createNode animCurveTU -n "SmallTVScreen_Color_emission";
 	rename -uid "4A2D33B1-4AA3-DBB3-99C4-B2956D240E6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 21 ".ktv[0:20]"  10 0 15 1 30 1 35 0 50 0 55 1 60 0 75 0
-		 80 1 95 1 100 0 115 0 120 1 135 1 140 0 155 0 160 1 175 1 180 0 195 0 200 1;
+	setAttr -s 24 ".ktv[0:23]"  10 0 15 1 30 1 35 0 50 0 55 1 60 0 75 0
+		 80 1 95 1 100 0 115 0 120 1 135 1 140 0 155 0 160 1 175 1 180 0 195 0 200 0 215 1
+		 260 1 271 0;
 createNode aiStandardSurface -n "TV_Screen_Color";
 	rename -uid "74B1CF97-47B0-20AD-22BA-DD8DA5C093E7";
 	setAttr ".emission" 1;
@@ -51595,7 +51769,7 @@ createNode place2dTexture -n "place2dTexture4";
 createNode bump2d -n "bump2d1";
 	rename -uid "785743D9-46CB-DD55-41AF-35BB1F9FD15A";
 	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 1.9999999e-05 0 ;
+	setAttr ".vc1" -type "float3" 0 5.9999998e-05 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
 createNode file -n "file5";
 	rename -uid "5A6D2DA4-452F-5CB7-8BC0-4FB8DE03A492";
@@ -51603,9 +51777,111 @@ createNode file -n "file5";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture5";
 	rename -uid "BECB8A05-4158-E6A1-337B-429C68260ABB";
+createNode animCurveTA -n "Main_TV_rotateX";
+	rename -uid "9E9A504C-425A-F483-9D6D-A6A4214E0E81";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTA -n "Main_TV_rotateY";
+	rename -uid "F973D7ED-4E97-245D-C64D-9BB276D5DF3E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 53.872237941947461 271 53.872237941947461;
+createNode animCurveTA -n "Main_TV_rotateZ";
+	rename -uid "EA75F69C-449F-BD88-24C6-C4A80CA61CA3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTU -n "Main_TV_visibility";
+	rename -uid "7FF66377-408C-FD82-4F50-B28C7488E6A3";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "Main_TV_translateX";
+	rename -uid "CE4E3D83-40D6-46B2-2D27-59AAA9316F01";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTL -n "Main_TV_translateY";
+	rename -uid "243DEA53-4CFE-1E5F-74FC-719EA48F3755";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 185.94299088156933 271 185.94299088156933;
+createNode animCurveTL -n "Main_TV_translateZ";
+	rename -uid "FCF77F96-49FA-ED70-D8C4-02900744F664";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTU -n "Main_TV_scaleX";
+	rename -uid "58A1C1A5-4A80-DFBC-7B89-F48174834BED";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 19.208096435026572 271 19.208096435026572;
+createNode animCurveTU -n "Main_TV_scaleY";
+	rename -uid "12B3601C-4F57-A16B-D016-CA93254ECEDA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 19.208096435026572 271 19.208096435026572;
+createNode animCurveTU -n "Main_TV_scaleZ";
+	rename -uid "40622992-4C77-D83A-EB3B-51A98D4342A5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 19.208096435026572 271 19.208096435026572;
+createNode animCurveTA -n "persp_rotateX";
+	rename -uid "521949DF-44A8-CE48-7952-12A52EA10213";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 359.06164727007587 271 359.06164727007587;
+createNode animCurveTA -n "persp_rotateY";
+	rename -uid "9DA93719-4E72-5CF2-5A6D-BD932EB65033";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 54.200000000001467 271 54.200000000001467;
+createNode animCurveTA -n "persp_rotateZ";
+	rename -uid "3456DFCB-4A33-9B87-E8B2-1CAE20A14711";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 -8.4956859312864584e-17 271 -8.4956859312864584e-17;
+createNode animCurveTU -n "persp_visibility";
+	rename -uid "DC4C4712-47B9-35A7-7039-029546A40B16";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+	setAttr -s 2 ".kot[0:1]"  5 5;
+createNode animCurveTL -n "persp_translateX";
+	rename -uid "86F7D4C8-49FE-E86C-293F-CEA4383D03E5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 77.095744040476248 271 961.07141364773656;
+createNode animCurveTL -n "persp_translateY";
+	rename -uid "F2BFAB0D-4019-6221-7EF8-91A747C12352";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 189.16935418360225 271 207.02056191253521;
+createNode animCurveTL -n "persp_translateZ";
+	rename -uid "2A4CBA93-4F3A-991A-251B-6B992B8C83C2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 58.98431732783483 271 696.52767745829874;
+createNode animCurveTU -n "persp_scaleX";
+	rename -uid "A10A3627-4D36-C00A-2094-16AA82774E73";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
+createNode animCurveTU -n "persp_scaleY";
+	rename -uid "3AE04A9B-4554-F40D-19CB-04A5910313BC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
+createNode animCurveTU -n "persp_scaleZ";
+	rename -uid "6C283194-4F4B-365C-C651-C8A4A4C83FF7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 261;
+	setAttr ".unw" 261;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -51649,6 +51925,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "BaseShape.iog" "Mr_Limbo_ChairRN.phl[1]";
 connectAttr "StandShape.iog" "Mr_Limbo_ChairRN.phl[2]";
 connectAttr "BoardShape.iog" "Mr_Limbo_ChairRN.phl[3]";
@@ -51657,784 +51934,794 @@ connectAttr "FrontLegShape.iog" "Mr_Limbo_ChairRN.phl[5]";
 connectAttr "SideShape.iog" "Mr_Limbo_ChairRN.phl[6]";
 connectAttr "Side1Shape.iog" "Mr_Limbo_ChairRN.phl[7]";
 connectAttr "Base_HolderShape.iog" "Mr_Limbo_ChairRN.phl[8]";
-connectAttr "TV_SetsRN.phl[1]" "TV_BIgShape.iog.og[3].gco";
-connectAttr "TV_BIgShape.iog.og[3]" "TV_SetsRN.phl[2]";
-connectAttr "TV_BIgShape.ciog.cog[0]" "TV_SetsRN.phl[3]";
-connectAttr "groupId172.msg" "TV_SetsRN.phl[4]";
-connectAttr "groupId175.msg" "TV_SetsRN.phl[5]";
-connectAttr "TV_SetsRN.phl[6]" "TV_BIgShape.iog.og[4].gco";
-connectAttr "groupId173.msg" "TV_SetsRN.phl[7]";
-connectAttr "TV_BIgShape.iog.og[4]" "TV_SetsRN.phl[8]";
-connectAttr "BigTVScreen_Color_emission.o" "TV_SetsRN.phl[9]";
-connectAttr "TV_SetsRN.phl[10]" "TV_BIgShape.iog.og[5].gco";
-connectAttr "groupId174.msg" "TV_SetsRN.phl[11]";
-connectAttr "TV_BIgShape.iog.og[5]" "TV_SetsRN.phl[12]";
-connectAttr "TV_SetsRN.phl[13]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "Main_TV_translateX.o" "TV_SetsRN.phl[1]";
+connectAttr "Main_TV_translateY.o" "TV_SetsRN.phl[2]";
+connectAttr "Main_TV_translateZ.o" "TV_SetsRN.phl[3]";
+connectAttr "Main_TV_rotateX.o" "TV_SetsRN.phl[4]";
+connectAttr "Main_TV_rotateY.o" "TV_SetsRN.phl[5]";
+connectAttr "Main_TV_rotateZ.o" "TV_SetsRN.phl[6]";
+connectAttr "Main_TV_scaleX.o" "TV_SetsRN.phl[7]";
+connectAttr "Main_TV_scaleY.o" "TV_SetsRN.phl[8]";
+connectAttr "Main_TV_scaleZ.o" "TV_SetsRN.phl[9]";
+connectAttr "Main_TV_visibility.o" "TV_SetsRN.phl[10]";
+connectAttr "TV_SetsRN.phl[11]" "TV_BIgShape.iog.og[3].gco";
+connectAttr "TV_BIgShape.iog.og[3]" "TV_SetsRN.phl[12]";
+connectAttr "TV_BIgShape.ciog.cog[0]" "TV_SetsRN.phl[13]";
+connectAttr "groupId172.msg" "TV_SetsRN.phl[14]";
+connectAttr "groupId175.msg" "TV_SetsRN.phl[15]";
+connectAttr "TV_SetsRN.phl[16]" "TV_BIgShape.iog.og[4].gco";
+connectAttr "groupId173.msg" "TV_SetsRN.phl[17]";
+connectAttr "TV_BIgShape.iog.og[4]" "TV_SetsRN.phl[18]";
+connectAttr "BigTVScreen_Color_emission.o" "TV_SetsRN.phl[19]";
+connectAttr "TV_SetsRN.phl[20]" "TV_BIgShape.iog.og[5].gco";
+connectAttr "groupId174.msg" "TV_SetsRN.phl[21]";
+connectAttr "TV_BIgShape.iog.og[5]" "TV_SetsRN.phl[22]";
+connectAttr "TV_SetsRN.phl[23]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[14]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[24]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[15]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[25]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[16]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[26]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[17]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4].gco"
+connectAttr "TV_SetsRN.phl[27]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4].gco"
 		;
-connectAttr "TV_SetsRN.phl[18]" "|TV_Large|TV_LargeShape.iog.og[4].gco";
-connectAttr "TV_SetsRN.phl[19]" "TV_Large1Shape.iog.og[4].gco";
-connectAttr "TV_SetsRN.phl[20]" "TV_Large2Shape.iog.og[4].gco";
-connectAttr "TV_SetsRN.phl[21]" "TV_Large3Shape.iog.og[4].gco";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[22]";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[23]";
-connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[24]"
+connectAttr "TV_SetsRN.phl[28]" "|TV_Large|TV_LargeShape.iog.og[4].gco";
+connectAttr "TV_SetsRN.phl[29]" "TV_Large1Shape.iog.og[4].gco";
+connectAttr "TV_SetsRN.phl[30]" "TV_Large2Shape.iog.og[4].gco";
+connectAttr "TV_SetsRN.phl[31]" "TV_Large3Shape.iog.og[4].gco";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[32]";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[33]";
+connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[34]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[25]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[35]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[26]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[36]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[27]"
+connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[37]"
 		;
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[28]";
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[29]";
-connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[30]"
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[38]";
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[39]";
+connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[40]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[31]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[41]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[32]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[42]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[33]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[43]"
 		;
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[34]";
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[35]";
-connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[36]"
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[44]";
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[45]";
+connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[46]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[37]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[47]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[38]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[48]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[39]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[49]"
+		;
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[50]";
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[51]";
+connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[52]"
+		;
+connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[53]"
+		;
+connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[54]"
+		;
+connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[55]"
+		;
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[56]";
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[57]";
+connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[58]"
+		;
+connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[59]"
+		;
+connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[60]"
+		;
+connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[61]"
+		;
+connectAttr "|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[62]";
+connectAttr "|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[63]";
+connectAttr "|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[64]"
+		;
+connectAttr "|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[65]"
+		;
+connectAttr "|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[66]"
+		;
+connectAttr "|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[67]"
+		;
+connectAttr "TV_Large1Shape.iog.og[4]" "TV_SetsRN.phl[68]";
+connectAttr "TV_Large1Shape.ciog.cog[0]" "TV_SetsRN.phl[69]";
+connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[70]"
+		;
+connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[71]"
+		;
+connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[72]"
+		;
+connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[73]"
+		;
+connectAttr "TV_Large2Shape.iog.og[4]" "TV_SetsRN.phl[74]";
+connectAttr "TV_Large2Shape.ciog.cog[0]" "TV_SetsRN.phl[75]";
+connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[76]"
+		;
+connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[77]"
+		;
+connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[78]"
+		;
+connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[79]"
+		;
+connectAttr "TV_Large3Shape.iog.og[4]" "TV_SetsRN.phl[80]";
+connectAttr "TV_Large3Shape.ciog.cog[0]" "TV_SetsRN.phl[81]";
+connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[82]"
+		;
+connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[83]"
+		;
+connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[84]"
+		;
+connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[85]"
+		;
+connectAttr "groupId10.msg" "TV_SetsRN.phl[86]";
+connectAttr "groupId13.msg" "TV_SetsRN.phl[87]";
+connectAttr "groupId15.msg" "TV_SetsRN.phl[88]";
+connectAttr "groupId17.msg" "TV_SetsRN.phl[89]";
+connectAttr "groupId19.msg" "TV_SetsRN.phl[90]";
+connectAttr "groupId21.msg" "TV_SetsRN.phl[91]";
+connectAttr "groupId31.msg" "TV_SetsRN.phl[92]";
+connectAttr "groupId34.msg" "TV_SetsRN.phl[93]";
+connectAttr "groupId36.msg" "TV_SetsRN.phl[94]";
+connectAttr "groupId38.msg" "TV_SetsRN.phl[95]";
+connectAttr "groupId40.msg" "TV_SetsRN.phl[96]";
+connectAttr "groupId42.msg" "TV_SetsRN.phl[97]";
+connectAttr "groupId52.msg" "TV_SetsRN.phl[98]";
+connectAttr "groupId55.msg" "TV_SetsRN.phl[99]";
+connectAttr "groupId57.msg" "TV_SetsRN.phl[100]";
+connectAttr "groupId59.msg" "TV_SetsRN.phl[101]";
+connectAttr "groupId61.msg" "TV_SetsRN.phl[102]";
+connectAttr "groupId63.msg" "TV_SetsRN.phl[103]";
+connectAttr "groupId73.msg" "TV_SetsRN.phl[104]";
+connectAttr "groupId76.msg" "TV_SetsRN.phl[105]";
+connectAttr "groupId78.msg" "TV_SetsRN.phl[106]";
+connectAttr "groupId80.msg" "TV_SetsRN.phl[107]";
+connectAttr "groupId82.msg" "TV_SetsRN.phl[108]";
+connectAttr "groupId84.msg" "TV_SetsRN.phl[109]";
+connectAttr "groupId94.msg" "TV_SetsRN.phl[110]";
+connectAttr "groupId97.msg" "TV_SetsRN.phl[111]";
+connectAttr "groupId99.msg" "TV_SetsRN.phl[112]";
+connectAttr "groupId101.msg" "TV_SetsRN.phl[113]";
+connectAttr "groupId103.msg" "TV_SetsRN.phl[114]";
+connectAttr "groupId105.msg" "TV_SetsRN.phl[115]";
+connectAttr "groupId106.msg" "TV_SetsRN.phl[116]";
+connectAttr "groupId109.msg" "TV_SetsRN.phl[117]";
+connectAttr "groupId111.msg" "TV_SetsRN.phl[118]";
+connectAttr "groupId113.msg" "TV_SetsRN.phl[119]";
+connectAttr "groupId115.msg" "TV_SetsRN.phl[120]";
+connectAttr "groupId117.msg" "TV_SetsRN.phl[121]";
+connectAttr "groupId118.msg" "TV_SetsRN.phl[122]";
+connectAttr "groupId121.msg" "TV_SetsRN.phl[123]";
+connectAttr "groupId123.msg" "TV_SetsRN.phl[124]";
+connectAttr "groupId125.msg" "TV_SetsRN.phl[125]";
+connectAttr "groupId127.msg" "TV_SetsRN.phl[126]";
+connectAttr "groupId129.msg" "TV_SetsRN.phl[127]";
+connectAttr "groupId130.msg" "TV_SetsRN.phl[128]";
+connectAttr "groupId133.msg" "TV_SetsRN.phl[129]";
+connectAttr "groupId135.msg" "TV_SetsRN.phl[130]";
+connectAttr "groupId137.msg" "TV_SetsRN.phl[131]";
+connectAttr "groupId139.msg" "TV_SetsRN.phl[132]";
+connectAttr "groupId141.msg" "TV_SetsRN.phl[133]";
+connectAttr "groupId142.msg" "TV_SetsRN.phl[134]";
+connectAttr "groupId145.msg" "TV_SetsRN.phl[135]";
+connectAttr "groupId147.msg" "TV_SetsRN.phl[136]";
+connectAttr "groupId149.msg" "TV_SetsRN.phl[137]";
+connectAttr "groupId151.msg" "TV_SetsRN.phl[138]";
+connectAttr "groupId153.msg" "TV_SetsRN.phl[139]";
+connectAttr "TV_SetsRN.phl[140]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[40]";
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[41]";
-connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[42]"
+connectAttr "TV_SetsRN.phl[141]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[43]"
+connectAttr "TV_SetsRN.phl[142]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[44]"
+connectAttr "TV_SetsRN.phl[143]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[45]"
-		;
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[46]";
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[47]";
-connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[48]"
-		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[49]"
-		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[50]"
-		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[51]"
-		;
-connectAttr "|TV_Large|TV_LargeShape.iog.og[4]" "TV_SetsRN.phl[52]";
-connectAttr "|TV_Large|TV_LargeShape.ciog.cog[0]" "TV_SetsRN.phl[53]";
-connectAttr "|TV_Large|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[54]"
+connectAttr "TV_SetsRN.phl[144]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Large|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[55]"
+connectAttr "TV_SetsRN.phl[145]" "|TV_Large|TV_LargeShape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[146]" "TV_Large1Shape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[147]" "TV_Large2Shape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[148]" "TV_Large3Shape.iog.og[5].gco";
+connectAttr "groupId11.msg" "TV_SetsRN.phl[149]";
+connectAttr "groupId32.msg" "TV_SetsRN.phl[150]";
+connectAttr "groupId53.msg" "TV_SetsRN.phl[151]";
+connectAttr "groupId74.msg" "TV_SetsRN.phl[152]";
+connectAttr "groupId95.msg" "TV_SetsRN.phl[153]";
+connectAttr "groupId107.msg" "TV_SetsRN.phl[154]";
+connectAttr "groupId119.msg" "TV_SetsRN.phl[155]";
+connectAttr "groupId131.msg" "TV_SetsRN.phl[156]";
+connectAttr "groupId143.msg" "TV_SetsRN.phl[157]";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[158]";
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[159]";
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[160]";
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[161]";
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[162]";
+connectAttr "|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[163]";
+connectAttr "TV_Large1Shape.iog.og[5]" "TV_SetsRN.phl[164]";
+connectAttr "TV_Large2Shape.iog.og[5]" "TV_SetsRN.phl[165]";
+connectAttr "TV_Large3Shape.iog.og[5]" "TV_SetsRN.phl[166]";
+connectAttr "TV_SetsRN.phl[167]" "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "|TV_Large|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[56]"
+connectAttr "TV_SetsRN.phl[168]" "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "|TV_Large|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[57]"
-		;
-connectAttr "TV_Large1Shape.iog.og[4]" "TV_SetsRN.phl[58]";
-connectAttr "TV_Large1Shape.ciog.cog[0]" "TV_SetsRN.phl[59]";
-connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[60]"
-		;
-connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[61]"
-		;
-connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[62]"
-		;
-connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[63]"
-		;
-connectAttr "TV_Large2Shape.iog.og[4]" "TV_SetsRN.phl[64]";
-connectAttr "TV_Large2Shape.ciog.cog[0]" "TV_SetsRN.phl[65]";
-connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[66]"
-		;
-connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[67]"
-		;
-connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[68]"
-		;
-connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[69]"
-		;
-connectAttr "TV_Large3Shape.iog.og[4]" "TV_SetsRN.phl[70]";
-connectAttr "TV_Large3Shape.ciog.cog[0]" "TV_SetsRN.phl[71]";
-connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.ciog.cog[2]" "TV_SetsRN.phl[72]"
-		;
-connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.ciog.cog[2]" "TV_SetsRN.phl[73]"
-		;
-connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.ciog.cog[2]" "TV_SetsRN.phl[74]"
-		;
-connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.ciog.cog[2]" "TV_SetsRN.phl[75]"
-		;
-connectAttr "groupId10.msg" "TV_SetsRN.phl[76]";
-connectAttr "groupId13.msg" "TV_SetsRN.phl[77]";
-connectAttr "groupId15.msg" "TV_SetsRN.phl[78]";
-connectAttr "groupId17.msg" "TV_SetsRN.phl[79]";
-connectAttr "groupId19.msg" "TV_SetsRN.phl[80]";
-connectAttr "groupId21.msg" "TV_SetsRN.phl[81]";
-connectAttr "groupId31.msg" "TV_SetsRN.phl[82]";
-connectAttr "groupId34.msg" "TV_SetsRN.phl[83]";
-connectAttr "groupId36.msg" "TV_SetsRN.phl[84]";
-connectAttr "groupId38.msg" "TV_SetsRN.phl[85]";
-connectAttr "groupId40.msg" "TV_SetsRN.phl[86]";
-connectAttr "groupId42.msg" "TV_SetsRN.phl[87]";
-connectAttr "groupId52.msg" "TV_SetsRN.phl[88]";
-connectAttr "groupId55.msg" "TV_SetsRN.phl[89]";
-connectAttr "groupId57.msg" "TV_SetsRN.phl[90]";
-connectAttr "groupId59.msg" "TV_SetsRN.phl[91]";
-connectAttr "groupId61.msg" "TV_SetsRN.phl[92]";
-connectAttr "groupId63.msg" "TV_SetsRN.phl[93]";
-connectAttr "groupId73.msg" "TV_SetsRN.phl[94]";
-connectAttr "groupId76.msg" "TV_SetsRN.phl[95]";
-connectAttr "groupId78.msg" "TV_SetsRN.phl[96]";
-connectAttr "groupId80.msg" "TV_SetsRN.phl[97]";
-connectAttr "groupId82.msg" "TV_SetsRN.phl[98]";
-connectAttr "groupId84.msg" "TV_SetsRN.phl[99]";
-connectAttr "groupId94.msg" "TV_SetsRN.phl[100]";
-connectAttr "groupId97.msg" "TV_SetsRN.phl[101]";
-connectAttr "groupId99.msg" "TV_SetsRN.phl[102]";
-connectAttr "groupId101.msg" "TV_SetsRN.phl[103]";
-connectAttr "groupId103.msg" "TV_SetsRN.phl[104]";
-connectAttr "groupId105.msg" "TV_SetsRN.phl[105]";
-connectAttr "groupId106.msg" "TV_SetsRN.phl[106]";
-connectAttr "groupId109.msg" "TV_SetsRN.phl[107]";
-connectAttr "groupId111.msg" "TV_SetsRN.phl[108]";
-connectAttr "groupId113.msg" "TV_SetsRN.phl[109]";
-connectAttr "groupId115.msg" "TV_SetsRN.phl[110]";
-connectAttr "groupId117.msg" "TV_SetsRN.phl[111]";
-connectAttr "groupId118.msg" "TV_SetsRN.phl[112]";
-connectAttr "groupId121.msg" "TV_SetsRN.phl[113]";
-connectAttr "groupId123.msg" "TV_SetsRN.phl[114]";
-connectAttr "groupId125.msg" "TV_SetsRN.phl[115]";
-connectAttr "groupId127.msg" "TV_SetsRN.phl[116]";
-connectAttr "groupId129.msg" "TV_SetsRN.phl[117]";
-connectAttr "groupId130.msg" "TV_SetsRN.phl[118]";
-connectAttr "groupId133.msg" "TV_SetsRN.phl[119]";
-connectAttr "groupId135.msg" "TV_SetsRN.phl[120]";
-connectAttr "groupId137.msg" "TV_SetsRN.phl[121]";
-connectAttr "groupId139.msg" "TV_SetsRN.phl[122]";
-connectAttr "groupId141.msg" "TV_SetsRN.phl[123]";
-connectAttr "groupId142.msg" "TV_SetsRN.phl[124]";
-connectAttr "groupId145.msg" "TV_SetsRN.phl[125]";
-connectAttr "groupId147.msg" "TV_SetsRN.phl[126]";
-connectAttr "groupId149.msg" "TV_SetsRN.phl[127]";
-connectAttr "groupId151.msg" "TV_SetsRN.phl[128]";
-connectAttr "groupId153.msg" "TV_SetsRN.phl[129]";
-connectAttr "TV_SetsRN.phl[130]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[169]" "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[131]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[170]" "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[132]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[171]" "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[133]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[172]" "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[134]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5].gco"
+connectAttr "TV_SetsRN.phl[173]" "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[135]" "|TV_Large|TV_LargeShape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[136]" "TV_Large1Shape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[137]" "TV_Large2Shape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[138]" "TV_Large3Shape.iog.og[5].gco";
-connectAttr "groupId11.msg" "TV_SetsRN.phl[139]";
-connectAttr "groupId32.msg" "TV_SetsRN.phl[140]";
-connectAttr "groupId53.msg" "TV_SetsRN.phl[141]";
-connectAttr "groupId74.msg" "TV_SetsRN.phl[142]";
-connectAttr "groupId95.msg" "TV_SetsRN.phl[143]";
-connectAttr "groupId107.msg" "TV_SetsRN.phl[144]";
-connectAttr "groupId119.msg" "TV_SetsRN.phl[145]";
-connectAttr "groupId131.msg" "TV_SetsRN.phl[146]";
-connectAttr "groupId143.msg" "TV_SetsRN.phl[147]";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[148]";
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[149]";
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[150]";
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[151]";
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[152]";
-connectAttr "|TV_Large|TV_LargeShape.iog.og[5]" "TV_SetsRN.phl[153]";
-connectAttr "TV_Large1Shape.iog.og[5]" "TV_SetsRN.phl[154]";
-connectAttr "TV_Large2Shape.iog.og[5]" "TV_SetsRN.phl[155]";
-connectAttr "TV_Large3Shape.iog.og[5]" "TV_SetsRN.phl[156]";
-connectAttr "TV_SetsRN.phl[157]" "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[174]" "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[158]" "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[175]" "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[159]" "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[176]" "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[160]" "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[177]" "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[161]" "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[178]" "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[162]" "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[179]" "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[163]" "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[180]" "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[164]" "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[181]" "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[165]" "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[182]" "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[166]" "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[183]" "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[167]" "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[184]" "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[168]" "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[185]" "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[169]" "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[186]" "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[170]" "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[187]" "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[171]" "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[188]" "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[172]" "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[189]" "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[173]" "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[190]" "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[174]" "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[191]" "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[175]" "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[192]" "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[176]" "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[193]" "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[177]" "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[194]" "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[178]" "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[195]" "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[179]" "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[196]" "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[180]" "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[197]" "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[181]" "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[198]" "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[182]" "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[199]" "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[183]" "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[200]" "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[184]" "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[201]" "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[185]" "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "TV_SetsRN.phl[202]" "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1].gco"
 		;
-connectAttr "TV_SetsRN.phl[186]" "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[203]"
 		;
-connectAttr "TV_SetsRN.phl[187]" "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[204]"
 		;
-connectAttr "TV_SetsRN.phl[188]" "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[205]"
 		;
-connectAttr "TV_SetsRN.phl[189]" "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1].gco"
+connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[206]"
 		;
-connectAttr "TV_SetsRN.phl[190]" "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1].gco"
+connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[207]"
 		;
-connectAttr "TV_SetsRN.phl[191]" "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1].gco"
+connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[208]"
 		;
-connectAttr "TV_SetsRN.phl[192]" "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1].gco"
+connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[209]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[193]"
+connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[210]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[194]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[211]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[195]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[212]"
 		;
-connectAttr "|TV_Stand1|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[196]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[213]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[197]"
+connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[214]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[198]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[215]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[199]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[216]"
 		;
-connectAttr "|TV_Stand2|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[200]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[217]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[201]"
+connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[218]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[202]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[219]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[203]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[220]"
 		;
-connectAttr "|TV_Stand3|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[204]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[221]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[205]"
+connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[222]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[206]"
+connectAttr "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[223]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[207]"
+connectAttr "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[224]"
 		;
-connectAttr "|TV_Stand4|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[208]"
+connectAttr "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[225]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[209]"
+connectAttr "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[226]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[210]"
+connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[227]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[211]"
+connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[228]"
 		;
-connectAttr "|TV_Stand5|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[212]"
+connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[229]"
 		;
-connectAttr "|TV_Large|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[213]"
+connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[230]"
 		;
-connectAttr "|TV_Large|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[214]"
+connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[231]"
 		;
-connectAttr "|TV_Large|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[215]"
+connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[232]"
 		;
-connectAttr "|TV_Large|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[216]"
+connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[233]"
 		;
-connectAttr "|TV_Large1|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[217]"
+connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[234]"
 		;
-connectAttr "|TV_Large1|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[218]"
+connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[235]"
 		;
-connectAttr "|TV_Large1|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[219]"
+connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[236]"
 		;
-connectAttr "|TV_Large1|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[220]"
+connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[237]"
 		;
-connectAttr "|TV_Large2|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[221]"
+connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[238]"
 		;
-connectAttr "|TV_Large2|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[222]"
+connectAttr "groupId14.msg" "TV_SetsRN.phl[239]";
+connectAttr "groupId16.msg" "TV_SetsRN.phl[240]";
+connectAttr "groupId18.msg" "TV_SetsRN.phl[241]";
+connectAttr "groupId20.msg" "TV_SetsRN.phl[242]";
+connectAttr "groupId35.msg" "TV_SetsRN.phl[243]";
+connectAttr "groupId37.msg" "TV_SetsRN.phl[244]";
+connectAttr "groupId39.msg" "TV_SetsRN.phl[245]";
+connectAttr "groupId41.msg" "TV_SetsRN.phl[246]";
+connectAttr "groupId56.msg" "TV_SetsRN.phl[247]";
+connectAttr "groupId58.msg" "TV_SetsRN.phl[248]";
+connectAttr "groupId60.msg" "TV_SetsRN.phl[249]";
+connectAttr "groupId62.msg" "TV_SetsRN.phl[250]";
+connectAttr "groupId77.msg" "TV_SetsRN.phl[251]";
+connectAttr "groupId79.msg" "TV_SetsRN.phl[252]";
+connectAttr "groupId81.msg" "TV_SetsRN.phl[253]";
+connectAttr "groupId83.msg" "TV_SetsRN.phl[254]";
+connectAttr "groupId98.msg" "TV_SetsRN.phl[255]";
+connectAttr "groupId100.msg" "TV_SetsRN.phl[256]";
+connectAttr "groupId102.msg" "TV_SetsRN.phl[257]";
+connectAttr "groupId104.msg" "TV_SetsRN.phl[258]";
+connectAttr "groupId110.msg" "TV_SetsRN.phl[259]";
+connectAttr "groupId112.msg" "TV_SetsRN.phl[260]";
+connectAttr "groupId114.msg" "TV_SetsRN.phl[261]";
+connectAttr "groupId116.msg" "TV_SetsRN.phl[262]";
+connectAttr "groupId122.msg" "TV_SetsRN.phl[263]";
+connectAttr "groupId124.msg" "TV_SetsRN.phl[264]";
+connectAttr "groupId126.msg" "TV_SetsRN.phl[265]";
+connectAttr "groupId128.msg" "TV_SetsRN.phl[266]";
+connectAttr "groupId134.msg" "TV_SetsRN.phl[267]";
+connectAttr "groupId136.msg" "TV_SetsRN.phl[268]";
+connectAttr "groupId138.msg" "TV_SetsRN.phl[269]";
+connectAttr "groupId140.msg" "TV_SetsRN.phl[270]";
+connectAttr "groupId146.msg" "TV_SetsRN.phl[271]";
+connectAttr "groupId148.msg" "TV_SetsRN.phl[272]";
+connectAttr "groupId150.msg" "TV_SetsRN.phl[273]";
+connectAttr "groupId152.msg" "TV_SetsRN.phl[274]";
+connectAttr "LargeTVScreen_Color_emission.o" "TV_SetsRN.phl[275]";
+connectAttr "TV_SetsRN.phl[276]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Large2|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[223]"
+connectAttr "TV_SetsRN.phl[277]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Large2|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[224]"
+connectAttr "TV_SetsRN.phl[278]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Large3|pCylinder3|pCylinderShape3.iog.og[1]" "TV_SetsRN.phl[225]"
+connectAttr "TV_SetsRN.phl[279]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Large3|pCylinder4|pCylinderShape4.iog.og[1]" "TV_SetsRN.phl[226]"
+connectAttr "TV_SetsRN.phl[280]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Large3|pCylinder5|pCylinderShape5.iog.og[1]" "TV_SetsRN.phl[227]"
+connectAttr "TV_SetsRN.phl[281]" "|TV_Large|TV_LargeShape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[282]" "TV_Large1Shape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[283]" "TV_Large2Shape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[284]" "TV_Large3Shape.iog.og[6].gco";
+connectAttr "groupId12.msg" "TV_SetsRN.phl[285]";
+connectAttr "groupId33.msg" "TV_SetsRN.phl[286]";
+connectAttr "groupId54.msg" "TV_SetsRN.phl[287]";
+connectAttr "groupId75.msg" "TV_SetsRN.phl[288]";
+connectAttr "groupId96.msg" "TV_SetsRN.phl[289]";
+connectAttr "groupId108.msg" "TV_SetsRN.phl[290]";
+connectAttr "groupId120.msg" "TV_SetsRN.phl[291]";
+connectAttr "groupId132.msg" "TV_SetsRN.phl[292]";
+connectAttr "groupId144.msg" "TV_SetsRN.phl[293]";
+connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[294]";
+connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[295]";
+connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[296]";
+connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[297]";
+connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[298]";
+connectAttr "|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[299]";
+connectAttr "TV_Large1Shape.iog.og[6]" "TV_SetsRN.phl[300]";
+connectAttr "TV_Large2Shape.iog.og[6]" "TV_SetsRN.phl[301]";
+connectAttr "TV_Large3Shape.iog.og[6]" "TV_SetsRN.phl[302]";
+connectAttr "MediumTV_Color_emission.o" "TV_SetsRN.phl[303]";
+connectAttr "TV_SetsRN.phl[304]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "|TV_Large3|pCylinder6|pCylinderShape6.iog.og[1]" "TV_SetsRN.phl[228]"
+connectAttr "TV_SetsRN.phl[305]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "groupId14.msg" "TV_SetsRN.phl[229]";
-connectAttr "groupId16.msg" "TV_SetsRN.phl[230]";
-connectAttr "groupId18.msg" "TV_SetsRN.phl[231]";
-connectAttr "groupId20.msg" "TV_SetsRN.phl[232]";
-connectAttr "groupId35.msg" "TV_SetsRN.phl[233]";
-connectAttr "groupId37.msg" "TV_SetsRN.phl[234]";
-connectAttr "groupId39.msg" "TV_SetsRN.phl[235]";
-connectAttr "groupId41.msg" "TV_SetsRN.phl[236]";
-connectAttr "groupId56.msg" "TV_SetsRN.phl[237]";
-connectAttr "groupId58.msg" "TV_SetsRN.phl[238]";
-connectAttr "groupId60.msg" "TV_SetsRN.phl[239]";
-connectAttr "groupId62.msg" "TV_SetsRN.phl[240]";
-connectAttr "groupId77.msg" "TV_SetsRN.phl[241]";
-connectAttr "groupId79.msg" "TV_SetsRN.phl[242]";
-connectAttr "groupId81.msg" "TV_SetsRN.phl[243]";
-connectAttr "groupId83.msg" "TV_SetsRN.phl[244]";
-connectAttr "groupId98.msg" "TV_SetsRN.phl[245]";
-connectAttr "groupId100.msg" "TV_SetsRN.phl[246]";
-connectAttr "groupId102.msg" "TV_SetsRN.phl[247]";
-connectAttr "groupId104.msg" "TV_SetsRN.phl[248]";
-connectAttr "groupId110.msg" "TV_SetsRN.phl[249]";
-connectAttr "groupId112.msg" "TV_SetsRN.phl[250]";
-connectAttr "groupId114.msg" "TV_SetsRN.phl[251]";
-connectAttr "groupId116.msg" "TV_SetsRN.phl[252]";
-connectAttr "groupId122.msg" "TV_SetsRN.phl[253]";
-connectAttr "groupId124.msg" "TV_SetsRN.phl[254]";
-connectAttr "groupId126.msg" "TV_SetsRN.phl[255]";
-connectAttr "groupId128.msg" "TV_SetsRN.phl[256]";
-connectAttr "groupId134.msg" "TV_SetsRN.phl[257]";
-connectAttr "groupId136.msg" "TV_SetsRN.phl[258]";
-connectAttr "groupId138.msg" "TV_SetsRN.phl[259]";
-connectAttr "groupId140.msg" "TV_SetsRN.phl[260]";
-connectAttr "groupId146.msg" "TV_SetsRN.phl[261]";
-connectAttr "groupId148.msg" "TV_SetsRN.phl[262]";
-connectAttr "groupId150.msg" "TV_SetsRN.phl[263]";
-connectAttr "groupId152.msg" "TV_SetsRN.phl[264]";
-connectAttr "LargeTVScreen_Color_emission.o" "TV_SetsRN.phl[265]";
-connectAttr "TV_SetsRN.phl[266]" "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[306]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[267]" "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[307]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[268]" "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[308]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5].gco"
 		;
-connectAttr "TV_SetsRN.phl[269]" "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[309]" "|TV_Medium|TV_MediumShape.iog.og[5].gco";
+connectAttr "TV_SetsRN.phl[310]" "TV_Medium1Shape.iog.og[5].gco";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[311]"
 		;
-connectAttr "TV_SetsRN.phl[270]" "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6].gco"
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[312]"
 		;
-connectAttr "TV_SetsRN.phl[271]" "|TV_Large|TV_LargeShape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[272]" "TV_Large1Shape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[273]" "TV_Large2Shape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[274]" "TV_Large3Shape.iog.og[6].gco";
-connectAttr "groupId12.msg" "TV_SetsRN.phl[275]";
-connectAttr "groupId33.msg" "TV_SetsRN.phl[276]";
-connectAttr "groupId54.msg" "TV_SetsRN.phl[277]";
-connectAttr "groupId75.msg" "TV_SetsRN.phl[278]";
-connectAttr "groupId96.msg" "TV_SetsRN.phl[279]";
-connectAttr "groupId108.msg" "TV_SetsRN.phl[280]";
-connectAttr "groupId120.msg" "TV_SetsRN.phl[281]";
-connectAttr "groupId132.msg" "TV_SetsRN.phl[282]";
-connectAttr "groupId144.msg" "TV_SetsRN.phl[283]";
-connectAttr "|TV_Stand1|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[284]";
-connectAttr "|TV_Stand2|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[285]";
-connectAttr "|TV_Stand3|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[286]";
-connectAttr "|TV_Stand4|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[287]";
-connectAttr "|TV_Stand5|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[288]";
-connectAttr "|TV_Large|TV_LargeShape.iog.og[6]" "TV_SetsRN.phl[289]";
-connectAttr "TV_Large1Shape.iog.og[6]" "TV_SetsRN.phl[290]";
-connectAttr "TV_Large2Shape.iog.og[6]" "TV_SetsRN.phl[291]";
-connectAttr "TV_Large3Shape.iog.og[6]" "TV_SetsRN.phl[292]";
-connectAttr "MediumTV_Color_emission.o" "TV_SetsRN.phl[293]";
-connectAttr "TV_SetsRN.phl[294]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[313]"
 		;
-connectAttr "TV_SetsRN.phl[295]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[314]"
 		;
-connectAttr "TV_SetsRN.phl[296]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[315]"
 		;
-connectAttr "TV_SetsRN.phl[297]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[316]"
 		;
-connectAttr "TV_SetsRN.phl[298]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5].gco"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[317]"
 		;
-connectAttr "TV_SetsRN.phl[299]" "|TV_Medium|TV_MediumShape.iog.og[5].gco";
-connectAttr "TV_SetsRN.phl[300]" "TV_Medium1Shape.iog.og[5].gco";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[301]"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[318]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[302]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[319]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[303]"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[320]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[304]"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[321]";
+connectAttr "|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[322]";
+connectAttr "TV_Medium1Shape.iog.og[5]" "TV_SetsRN.phl[323]";
+connectAttr "TV_Medium1Shape.ciog.cog[0]" "TV_SetsRN.phl[324]";
+connectAttr "groupId4.msg" "TV_SetsRN.phl[325]";
+connectAttr "groupId9.msg" "TV_SetsRN.phl[326]";
+connectAttr "groupId25.msg" "TV_SetsRN.phl[327]";
+connectAttr "groupId30.msg" "TV_SetsRN.phl[328]";
+connectAttr "groupId46.msg" "TV_SetsRN.phl[329]";
+connectAttr "groupId51.msg" "TV_SetsRN.phl[330]";
+connectAttr "groupId67.msg" "TV_SetsRN.phl[331]";
+connectAttr "groupId72.msg" "TV_SetsRN.phl[332]";
+connectAttr "groupId88.msg" "TV_SetsRN.phl[333]";
+connectAttr "groupId93.msg" "TV_SetsRN.phl[334]";
+connectAttr "groupId166.msg" "TV_SetsRN.phl[335]";
+connectAttr "groupId171.msg" "TV_SetsRN.phl[336]";
+connectAttr "groupId182.msg" "TV_SetsRN.phl[337]";
+connectAttr "groupId187.msg" "TV_SetsRN.phl[338]";
+connectAttr "MediumTVScreen_Color_emission.o" "TV_SetsRN.phl[339]";
+connectAttr "TV_SetsRN.phl[340]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[305]"
+connectAttr "TV_SetsRN.phl[341]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[306]"
+connectAttr "TV_SetsRN.phl[342]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[307]"
+connectAttr "TV_SetsRN.phl[343]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[308]"
+connectAttr "TV_SetsRN.phl[344]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6].gco"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[309]"
+connectAttr "TV_SetsRN.phl[345]" "|TV_Medium|TV_MediumShape.iog.og[6].gco";
+connectAttr "TV_SetsRN.phl[346]" "TV_Medium1Shape.iog.og[6].gco";
+connectAttr "groupId5.msg" "TV_SetsRN.phl[347]";
+connectAttr "groupId26.msg" "TV_SetsRN.phl[348]";
+connectAttr "groupId47.msg" "TV_SetsRN.phl[349]";
+connectAttr "groupId68.msg" "TV_SetsRN.phl[350]";
+connectAttr "groupId89.msg" "TV_SetsRN.phl[351]";
+connectAttr "groupId167.msg" "TV_SetsRN.phl[352]";
+connectAttr "groupId183.msg" "TV_SetsRN.phl[353]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[354]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[310]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[355]"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[5]" "TV_SetsRN.phl[311]";
-connectAttr "|TV_Medium|TV_MediumShape.ciog.cog[0]" "TV_SetsRN.phl[312]";
-connectAttr "TV_Medium1Shape.iog.og[5]" "TV_SetsRN.phl[313]";
-connectAttr "TV_Medium1Shape.ciog.cog[0]" "TV_SetsRN.phl[314]";
-connectAttr "groupId4.msg" "TV_SetsRN.phl[315]";
-connectAttr "groupId9.msg" "TV_SetsRN.phl[316]";
-connectAttr "groupId25.msg" "TV_SetsRN.phl[317]";
-connectAttr "groupId30.msg" "TV_SetsRN.phl[318]";
-connectAttr "groupId46.msg" "TV_SetsRN.phl[319]";
-connectAttr "groupId51.msg" "TV_SetsRN.phl[320]";
-connectAttr "groupId67.msg" "TV_SetsRN.phl[321]";
-connectAttr "groupId72.msg" "TV_SetsRN.phl[322]";
-connectAttr "groupId88.msg" "TV_SetsRN.phl[323]";
-connectAttr "groupId93.msg" "TV_SetsRN.phl[324]";
-connectAttr "groupId166.msg" "TV_SetsRN.phl[325]";
-connectAttr "groupId171.msg" "TV_SetsRN.phl[326]";
-connectAttr "groupId182.msg" "TV_SetsRN.phl[327]";
-connectAttr "groupId187.msg" "TV_SetsRN.phl[328]";
-connectAttr "MediumTVScreen_Color_emission.o" "TV_SetsRN.phl[329]";
-connectAttr "TV_SetsRN.phl[330]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[356]"
 		;
-connectAttr "TV_SetsRN.phl[331]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[357]"
 		;
-connectAttr "TV_SetsRN.phl[332]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[358]"
 		;
-connectAttr "TV_SetsRN.phl[333]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[359]";
+connectAttr "TV_Medium1Shape.iog.og[6]" "TV_SetsRN.phl[360]";
+connectAttr "TV_SetsRN.phl[361]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "TV_SetsRN.phl[334]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6].gco"
+connectAttr "TV_SetsRN.phl[362]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "TV_SetsRN.phl[335]" "|TV_Medium|TV_MediumShape.iog.og[6].gco";
-connectAttr "TV_SetsRN.phl[336]" "TV_Medium1Shape.iog.og[6].gco";
-connectAttr "groupId5.msg" "TV_SetsRN.phl[337]";
-connectAttr "groupId26.msg" "TV_SetsRN.phl[338]";
-connectAttr "groupId47.msg" "TV_SetsRN.phl[339]";
-connectAttr "groupId68.msg" "TV_SetsRN.phl[340]";
-connectAttr "groupId89.msg" "TV_SetsRN.phl[341]";
-connectAttr "groupId167.msg" "TV_SetsRN.phl[342]";
-connectAttr "groupId183.msg" "TV_SetsRN.phl[343]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[344]"
+connectAttr "TV_SetsRN.phl[363]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[345]"
+connectAttr "TV_SetsRN.phl[364]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[346]"
+connectAttr "TV_SetsRN.phl[365]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7].gco"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[347]"
+connectAttr "TV_SetsRN.phl[366]" "|TV_Medium|TV_MediumShape.iog.og[7].gco";
+connectAttr "TV_SetsRN.phl[367]" "TV_Medium1Shape.iog.og[7].gco";
+connectAttr "groupId6.msg" "TV_SetsRN.phl[368]";
+connectAttr "groupId27.msg" "TV_SetsRN.phl[369]";
+connectAttr "groupId48.msg" "TV_SetsRN.phl[370]";
+connectAttr "groupId69.msg" "TV_SetsRN.phl[371]";
+connectAttr "groupId90.msg" "TV_SetsRN.phl[372]";
+connectAttr "groupId168.msg" "TV_SetsRN.phl[373]";
+connectAttr "groupId184.msg" "TV_SetsRN.phl[374]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[375]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[348]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[376]"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[6]" "TV_SetsRN.phl[349]";
-connectAttr "TV_Medium1Shape.iog.og[6]" "TV_SetsRN.phl[350]";
-connectAttr "TV_SetsRN.phl[351]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[377]"
 		;
-connectAttr "TV_SetsRN.phl[352]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[378]"
 		;
-connectAttr "TV_SetsRN.phl[353]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[379]"
 		;
-connectAttr "TV_SetsRN.phl[354]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[380]";
+connectAttr "TV_Medium1Shape.iog.og[7]" "TV_SetsRN.phl[381]";
+connectAttr "TV_SetsRN.phl[382]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "TV_SetsRN.phl[355]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7].gco"
+connectAttr "TV_SetsRN.phl[383]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "TV_SetsRN.phl[356]" "|TV_Medium|TV_MediumShape.iog.og[7].gco";
-connectAttr "TV_SetsRN.phl[357]" "TV_Medium1Shape.iog.og[7].gco";
-connectAttr "groupId6.msg" "TV_SetsRN.phl[358]";
-connectAttr "groupId27.msg" "TV_SetsRN.phl[359]";
-connectAttr "groupId48.msg" "TV_SetsRN.phl[360]";
-connectAttr "groupId69.msg" "TV_SetsRN.phl[361]";
-connectAttr "groupId90.msg" "TV_SetsRN.phl[362]";
-connectAttr "groupId168.msg" "TV_SetsRN.phl[363]";
-connectAttr "groupId184.msg" "TV_SetsRN.phl[364]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[365]"
+connectAttr "TV_SetsRN.phl[384]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[366]"
+connectAttr "TV_SetsRN.phl[385]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[367]"
+connectAttr "TV_SetsRN.phl[386]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8].gco"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[368]"
+connectAttr "TV_SetsRN.phl[387]" "|TV_Medium|TV_MediumShape.iog.og[8].gco";
+connectAttr "TV_SetsRN.phl[388]" "TV_Medium1Shape.iog.og[8].gco";
+connectAttr "groupId7.msg" "TV_SetsRN.phl[389]";
+connectAttr "groupId28.msg" "TV_SetsRN.phl[390]";
+connectAttr "groupId49.msg" "TV_SetsRN.phl[391]";
+connectAttr "groupId70.msg" "TV_SetsRN.phl[392]";
+connectAttr "groupId91.msg" "TV_SetsRN.phl[393]";
+connectAttr "groupId169.msg" "TV_SetsRN.phl[394]";
+connectAttr "groupId185.msg" "TV_SetsRN.phl[395]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[396]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[369]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[397]"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[7]" "TV_SetsRN.phl[370]";
-connectAttr "TV_Medium1Shape.iog.og[7]" "TV_SetsRN.phl[371]";
-connectAttr "TV_SetsRN.phl[372]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[398]"
 		;
-connectAttr "TV_SetsRN.phl[373]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[399]"
 		;
-connectAttr "TV_SetsRN.phl[374]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[400]"
 		;
-connectAttr "TV_SetsRN.phl[375]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[401]";
+connectAttr "TV_Medium1Shape.iog.og[8]" "TV_SetsRN.phl[402]";
+connectAttr "TV_SetsRN.phl[403]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "TV_SetsRN.phl[376]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8].gco"
+connectAttr "TV_SetsRN.phl[404]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "TV_SetsRN.phl[377]" "|TV_Medium|TV_MediumShape.iog.og[8].gco";
-connectAttr "TV_SetsRN.phl[378]" "TV_Medium1Shape.iog.og[8].gco";
-connectAttr "groupId7.msg" "TV_SetsRN.phl[379]";
-connectAttr "groupId28.msg" "TV_SetsRN.phl[380]";
-connectAttr "groupId49.msg" "TV_SetsRN.phl[381]";
-connectAttr "groupId70.msg" "TV_SetsRN.phl[382]";
-connectAttr "groupId91.msg" "TV_SetsRN.phl[383]";
-connectAttr "groupId169.msg" "TV_SetsRN.phl[384]";
-connectAttr "groupId185.msg" "TV_SetsRN.phl[385]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[386]"
+connectAttr "TV_SetsRN.phl[405]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[387]"
+connectAttr "TV_SetsRN.phl[406]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[388]"
+connectAttr "TV_SetsRN.phl[407]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9].gco"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[389]"
+connectAttr "TV_SetsRN.phl[408]" "|TV_Medium|TV_MediumShape.iog.og[9].gco";
+connectAttr "TV_SetsRN.phl[409]" "TV_Medium1Shape.iog.og[9].gco";
+connectAttr "groupId8.msg" "TV_SetsRN.phl[410]";
+connectAttr "groupId29.msg" "TV_SetsRN.phl[411]";
+connectAttr "groupId50.msg" "TV_SetsRN.phl[412]";
+connectAttr "groupId71.msg" "TV_SetsRN.phl[413]";
+connectAttr "groupId92.msg" "TV_SetsRN.phl[414]";
+connectAttr "groupId170.msg" "TV_SetsRN.phl[415]";
+connectAttr "groupId186.msg" "TV_SetsRN.phl[416]";
+connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[417]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[390]"
+connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[418]"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[8]" "TV_SetsRN.phl[391]";
-connectAttr "TV_Medium1Shape.iog.og[8]" "TV_SetsRN.phl[392]";
-connectAttr "TV_SetsRN.phl[393]" "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[419]"
 		;
-connectAttr "TV_SetsRN.phl[394]" "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[420]"
 		;
-connectAttr "TV_SetsRN.phl[395]" "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[421]"
 		;
-connectAttr "TV_SetsRN.phl[396]" "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[422]";
+connectAttr "TV_Medium1Shape.iog.og[9]" "TV_SetsRN.phl[423]";
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[424]"
 		;
-connectAttr "TV_SetsRN.phl[397]" "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9].gco"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[425]"
 		;
-connectAttr "TV_SetsRN.phl[398]" "|TV_Medium|TV_MediumShape.iog.og[9].gco";
-connectAttr "TV_SetsRN.phl[399]" "TV_Medium1Shape.iog.og[9].gco";
-connectAttr "groupId8.msg" "TV_SetsRN.phl[400]";
-connectAttr "groupId29.msg" "TV_SetsRN.phl[401]";
-connectAttr "groupId50.msg" "TV_SetsRN.phl[402]";
-connectAttr "groupId71.msg" "TV_SetsRN.phl[403]";
-connectAttr "groupId92.msg" "TV_SetsRN.phl[404]";
-connectAttr "groupId170.msg" "TV_SetsRN.phl[405]";
-connectAttr "groupId186.msg" "TV_SetsRN.phl[406]";
-connectAttr "|TV_Stand1|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[407]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[426]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[408]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[427]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[409]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[428]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[410]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[429]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[411]"
+connectAttr "|TV_Stand1|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[430]"
 		;
-connectAttr "|TV_Medium|TV_MediumShape.iog.og[9]" "TV_SetsRN.phl[412]";
-connectAttr "TV_Medium1Shape.iog.og[9]" "TV_SetsRN.phl[413]";
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[414]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[431]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[415]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[432]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[416]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[433]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[417]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[434]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[418]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[435]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[419]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[436]"
 		;
-connectAttr "|TV_Stand1|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[420]"
+connectAttr "|TV_Stand2|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[437]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[421]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[438]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[422]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[439]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[423]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[440]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[424]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[441]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[425]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[442]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[426]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[443]"
 		;
-connectAttr "|TV_Stand2|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[427]"
+connectAttr "|TV_Stand3|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[444]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[428]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[445]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[429]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[446]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[430]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[447]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[431]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[448]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[432]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[449]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[433]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[450]"
 		;
-connectAttr "|TV_Stand3|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[434]"
+connectAttr "|TV_Stand4|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[451]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[435]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[452]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[436]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[453]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[437]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[454]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[438]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[455]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[439]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[456]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[440]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[457]"
 		;
-connectAttr "|TV_Stand4|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[441]"
+connectAttr "|TV_Stand5|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[458]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[442]"
+connectAttr "|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[459]";
+connectAttr "|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[460]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[443]"
+connectAttr "|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[461]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[444]"
+connectAttr "|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[462]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[445]"
+connectAttr "|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[463]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[446]"
+connectAttr "|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[464]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[447]"
+connectAttr "|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[465]"
 		;
-connectAttr "|TV_Stand5|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[448]"
+connectAttr "|TV_Medium1|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[466]";
+connectAttr "|TV_Medium1|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[467]"
 		;
-connectAttr "|TV_Medium|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[449]";
-connectAttr "|TV_Medium|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[450]"
+connectAttr "|TV_Medium1|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[468]"
 		;
-connectAttr "|TV_Medium|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[451]"
+connectAttr "|TV_Medium1|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[469]"
 		;
-connectAttr "|TV_Medium|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[452]"
+connectAttr "|TV_Medium1|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[470]"
 		;
-connectAttr "|TV_Medium|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[453]"
+connectAttr "|TV_Medium1|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[471]"
 		;
-connectAttr "|TV_Medium|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[454]"
+connectAttr "|TV_Medium1|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[472]"
 		;
-connectAttr "|TV_Medium|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[455]"
+connectAttr "TV_SetsRN.phl[473]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "|TV_Medium1|Dial_Medium|Dial_MediumShape.iog" "TV_SetsRN.phl[456]";
-connectAttr "|TV_Medium1|Dial_Medium1|Dial_Medium1Shape.iog" "TV_SetsRN.phl[457]"
+connectAttr "TV_SetsRN.phl[474]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "|TV_Medium1|Dial_Medium2|Dial_Medium2Shape.iog" "TV_SetsRN.phl[458]"
+connectAttr "TV_SetsRN.phl[475]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "|TV_Medium1|Dial_Medium3|Dial_Medium3Shape.iog" "TV_SetsRN.phl[459]"
+connectAttr "TV_SetsRN.phl[476]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "|TV_Medium1|Dial_Medium4|Dial_Medium4Shape.iog" "TV_SetsRN.phl[460]"
+connectAttr "TV_SetsRN.phl[477]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "|TV_Medium1|Dial_Medium5|Dial_Medium5Shape.iog" "TV_SetsRN.phl[461]"
+connectAttr "TV_SetsRN.phl[478]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2].gco"
 		;
-connectAttr "|TV_Medium1|Dial_Medium6|Dial_Medium6Shape.iog" "TV_SetsRN.phl[462]"
+connectAttr "TV_SetsRN.phl[479]" "TV_Small1Shape.iog.og[2].gco";
+connectAttr "TV_SetsRN.phl[480]" "TV_Small2Shape.iog.og[2].gco";
+connectAttr "TV_SetsRN.phl[481]" "TV_Small3Shape.iog.og[2].gco";
+connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[482]";
+connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[483]"
 		;
-connectAttr "TV_SetsRN.phl[463]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[484]";
+connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[485]"
 		;
-connectAttr "TV_SetsRN.phl[464]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[486]";
+connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[487]"
 		;
-connectAttr "TV_SetsRN.phl[465]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[488]";
+connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[489]"
 		;
-connectAttr "TV_SetsRN.phl[466]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[490]";
+connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[491]"
 		;
-connectAttr "TV_SetsRN.phl[467]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[492]";
+connectAttr "|TV_Stand|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[493]";
+connectAttr "TV_Small1Shape.iog.og[2]" "TV_SetsRN.phl[494]";
+connectAttr "TV_Small1Shape.ciog.cog[0]" "TV_SetsRN.phl[495]";
+connectAttr "TV_Small2Shape.iog.og[2]" "TV_SetsRN.phl[496]";
+connectAttr "TV_Small2Shape.ciog.cog[0]" "TV_SetsRN.phl[497]";
+connectAttr "TV_Small3Shape.iog.og[2]" "TV_SetsRN.phl[498]";
+connectAttr "TV_Small3Shape.ciog.cog[0]" "TV_SetsRN.phl[499]";
+connectAttr "groupId1.msg" "TV_SetsRN.phl[500]";
+connectAttr "groupId3.msg" "TV_SetsRN.phl[501]";
+connectAttr "groupId22.msg" "TV_SetsRN.phl[502]";
+connectAttr "groupId24.msg" "TV_SetsRN.phl[503]";
+connectAttr "groupId43.msg" "TV_SetsRN.phl[504]";
+connectAttr "groupId45.msg" "TV_SetsRN.phl[505]";
+connectAttr "groupId64.msg" "TV_SetsRN.phl[506]";
+connectAttr "groupId66.msg" "TV_SetsRN.phl[507]";
+connectAttr "groupId85.msg" "TV_SetsRN.phl[508]";
+connectAttr "groupId87.msg" "TV_SetsRN.phl[509]";
+connectAttr "groupId176.msg" "TV_SetsRN.phl[510]";
+connectAttr "groupId178.msg" "TV_SetsRN.phl[511]";
+connectAttr "groupId179.msg" "TV_SetsRN.phl[512]";
+connectAttr "groupId181.msg" "TV_SetsRN.phl[513]";
+connectAttr "groupId188.msg" "TV_SetsRN.phl[514]";
+connectAttr "groupId190.msg" "TV_SetsRN.phl[515]";
+connectAttr "groupId191.msg" "TV_SetsRN.phl[516]";
+connectAttr "groupId193.msg" "TV_SetsRN.phl[517]";
+connectAttr "SmallTVScreen_Color_emission.o" "TV_SetsRN.phl[518]";
+connectAttr "TV_SetsRN.phl[519]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[468]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2].gco"
+connectAttr "TV_SetsRN.phl[520]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "TV_SetsRN.phl[469]" "TV_Small1Shape.iog.og[2].gco";
-connectAttr "TV_SetsRN.phl[470]" "TV_Small2Shape.iog.og[2].gco";
-connectAttr "TV_SetsRN.phl[471]" "TV_Small3Shape.iog.og[2].gco";
-connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[472]";
-connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[473]"
+connectAttr "TV_SetsRN.phl[521]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[474]";
-connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[475]"
+connectAttr "TV_SetsRN.phl[522]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[476]";
-connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[477]"
+connectAttr "TV_SetsRN.phl[523]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[478]";
-connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[479]"
+connectAttr "TV_SetsRN.phl[524]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3].gco"
 		;
-connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[480]";
-connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[481]"
-		;
-connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2]" "TV_SetsRN.phl[482]";
-connectAttr "|TV_Stand|TV_Small|TV_SmallShape.ciog.cog[0]" "TV_SetsRN.phl[483]";
-connectAttr "TV_Small1Shape.iog.og[2]" "TV_SetsRN.phl[484]";
-connectAttr "TV_Small1Shape.ciog.cog[0]" "TV_SetsRN.phl[485]";
-connectAttr "TV_Small2Shape.iog.og[2]" "TV_SetsRN.phl[486]";
-connectAttr "TV_Small2Shape.ciog.cog[0]" "TV_SetsRN.phl[487]";
-connectAttr "TV_Small3Shape.iog.og[2]" "TV_SetsRN.phl[488]";
-connectAttr "TV_Small3Shape.ciog.cog[0]" "TV_SetsRN.phl[489]";
-connectAttr "groupId1.msg" "TV_SetsRN.phl[490]";
-connectAttr "groupId3.msg" "TV_SetsRN.phl[491]";
-connectAttr "groupId22.msg" "TV_SetsRN.phl[492]";
-connectAttr "groupId24.msg" "TV_SetsRN.phl[493]";
-connectAttr "groupId43.msg" "TV_SetsRN.phl[494]";
-connectAttr "groupId45.msg" "TV_SetsRN.phl[495]";
-connectAttr "groupId64.msg" "TV_SetsRN.phl[496]";
-connectAttr "groupId66.msg" "TV_SetsRN.phl[497]";
-connectAttr "groupId85.msg" "TV_SetsRN.phl[498]";
-connectAttr "groupId87.msg" "TV_SetsRN.phl[499]";
-connectAttr "groupId176.msg" "TV_SetsRN.phl[500]";
-connectAttr "groupId178.msg" "TV_SetsRN.phl[501]";
-connectAttr "groupId179.msg" "TV_SetsRN.phl[502]";
-connectAttr "groupId181.msg" "TV_SetsRN.phl[503]";
-connectAttr "groupId188.msg" "TV_SetsRN.phl[504]";
-connectAttr "groupId190.msg" "TV_SetsRN.phl[505]";
-connectAttr "groupId191.msg" "TV_SetsRN.phl[506]";
-connectAttr "groupId193.msg" "TV_SetsRN.phl[507]";
-connectAttr "SmallTVScreen_Color_emission.o" "TV_SetsRN.phl[508]";
-connectAttr "TV_SetsRN.phl[509]" "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[510]" "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[511]" "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[512]" "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[513]" "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[514]" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3].gco"
-		;
-connectAttr "TV_SetsRN.phl[515]" "TV_Small1Shape.iog.og[3].gco";
-connectAttr "TV_SetsRN.phl[516]" "TV_Small2Shape.iog.og[3].gco";
-connectAttr "TV_SetsRN.phl[517]" "TV_Small3Shape.iog.og[3].gco";
-connectAttr "groupId2.msg" "TV_SetsRN.phl[518]";
-connectAttr "groupId23.msg" "TV_SetsRN.phl[519]";
-connectAttr "groupId44.msg" "TV_SetsRN.phl[520]";
-connectAttr "groupId65.msg" "TV_SetsRN.phl[521]";
-connectAttr "groupId86.msg" "TV_SetsRN.phl[522]";
-connectAttr "groupId177.msg" "TV_SetsRN.phl[523]";
-connectAttr "groupId180.msg" "TV_SetsRN.phl[524]";
-connectAttr "groupId189.msg" "TV_SetsRN.phl[525]";
-connectAttr "groupId192.msg" "TV_SetsRN.phl[526]";
-connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[527]";
-connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[528]";
-connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[529]";
-connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[530]";
-connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[531]";
-connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[532]";
-connectAttr "TV_Small1Shape.iog.og[3]" "TV_SetsRN.phl[533]";
-connectAttr "TV_Small2Shape.iog.og[3]" "TV_SetsRN.phl[534]";
-connectAttr "TV_Small3Shape.iog.og[3]" "TV_SetsRN.phl[535]";
-connectAttr "MainTVScreen_Color_emission.o" "TV_SetsRN.phl[536]";
+connectAttr "TV_SetsRN.phl[525]" "TV_Small1Shape.iog.og[3].gco";
+connectAttr "TV_SetsRN.phl[526]" "TV_Small2Shape.iog.og[3].gco";
+connectAttr "TV_SetsRN.phl[527]" "TV_Small3Shape.iog.og[3].gco";
+connectAttr "groupId2.msg" "TV_SetsRN.phl[528]";
+connectAttr "groupId23.msg" "TV_SetsRN.phl[529]";
+connectAttr "groupId44.msg" "TV_SetsRN.phl[530]";
+connectAttr "groupId65.msg" "TV_SetsRN.phl[531]";
+connectAttr "groupId86.msg" "TV_SetsRN.phl[532]";
+connectAttr "groupId177.msg" "TV_SetsRN.phl[533]";
+connectAttr "groupId180.msg" "TV_SetsRN.phl[534]";
+connectAttr "groupId189.msg" "TV_SetsRN.phl[535]";
+connectAttr "groupId192.msg" "TV_SetsRN.phl[536]";
+connectAttr "|TV_Stand1|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[537]";
+connectAttr "|TV_Stand2|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[538]";
+connectAttr "|TV_Stand3|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[539]";
+connectAttr "|TV_Stand4|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[540]";
+connectAttr "|TV_Stand5|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[541]";
+connectAttr "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3]" "TV_SetsRN.phl[542]";
+connectAttr "TV_Small1Shape.iog.og[3]" "TV_SetsRN.phl[543]";
+connectAttr "TV_Small2Shape.iog.og[3]" "TV_SetsRN.phl[544]";
+connectAttr "TV_Small3Shape.iog.og[3]" "TV_SetsRN.phl[545]";
+connectAttr "MainTVScreen_Color_emission.o" "TV_SetsRN.phl[546]";
 connectAttr "groupId194.id" "TeachBot_10_UVRN.phl[1]";
 connectAttr "TeachBot_10_UVRN.phl[2]" "TeachBot_10_UVRN.phl[3]";
 connectAttr "TeachBot_10_UVRN.phl[4]" "aiStandardSurface2SG.dsm" -na;
@@ -52743,6 +53030,16 @@ connectAttr "TeachBot_10_UVRN.phl[306]" "TeachBot_10_UVRN.phl[307]";
 connectAttr "TeachBot_10_UVRN.phl[308]" "TeachBot_10_UVRN.phl[309]";
 connectAttr "groupId194.msg" "TeachBot_10_UVRN.phl[310]";
 connectAttr "groupId195.msg" "TeachBot_10_UVRN.phl[311]";
+connectAttr "persp_rotateX.o" ":persp.rx";
+connectAttr "persp_rotateY.o" ":persp.ry";
+connectAttr "persp_rotateZ.o" ":persp.rz";
+connectAttr "persp_visibility.o" ":persp.v";
+connectAttr "persp_translateX.o" ":persp.tx";
+connectAttr "persp_translateY.o" ":persp.ty";
+connectAttr "persp_translateZ.o" ":persp.tz";
+connectAttr "persp_scaleX.o" ":persp.sx";
+connectAttr "persp_scaleY.o" ":persp.sy";
+connectAttr "persp_scaleZ.o" ":persp.sz";
 connectAttr "groupId176.id" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[2].gid";
 connectAttr "groupId177.id" "|TV_Stand|TV_Small|TV_SmallShape.iog.og[3].gid";
 connectAttr "groupId178.id" "|TV_Stand|TV_Small|TV_SmallShape.ciog.cog[0].cgid";
