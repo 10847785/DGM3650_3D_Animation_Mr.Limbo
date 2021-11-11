@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
 //Name: Mr.Limbo_Scene.ma
-//Last modified: Thu, Nov 11, 2021 11:27:04 AM
+//Last modified: Thu, Nov 11, 2021 01:58:35 PM
 //Codeset: 1252
 file -rdi 1 -ns "Mr_Limbo_Table1" -rfn "Mr_Limbo_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/git/DGM3650_3D_Animation_Mr.Limbo/Mr.Limbo_Table.ma";
@@ -40,32 +40,20 @@ fileInfo "product" "Maya 2022";
 fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202102181415-29bfc1879c";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19042)";
-fileInfo "UUID" "82622C17-4AA1-0E1D-0772-8B9BB713164C";
+fileInfo "UUID" "C759D732-43C2-A0FB-747E-F386786230A3";
 createNode transform -s -n "persp";
 	rename -uid "4CF4501C-4E3E-9D63-E74D-A5A01DC99A53";
-	setAttr ".t" -type "double3" 412.58893951148696 116.3656974719881 338.92097718040372 ;
-	setAttr -av ".tx";
-	setAttr -av ".ty";
-	setAttr -av ".tz";
-	setAttr ".r" -type "double3" 359.06164727007587 54.200000000001467 -8.4956859312864584e-17 ;
-	setAttr -av ".rx";
-	setAttr -av ".ry";
-	setAttr -av ".rz";
-	setAttr ".s" -type "double3" 1 1 1 ;
-	setAttr -av ".sx";
-	setAttr -av ".sy";
-	setAttr -av ".sz";
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "01F9766E-4609-8C91-9459-C98349CC9CF1";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1054.5077093424029;
+	setAttr ".coi" 268.56652252762092;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 192.23603414951708 0 ;
+	setAttr ".tp" -type "double3" -28.941199736717497 301.97267780867639 115.70263748842545 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".dr" yes;
 	setAttr ".ai_translator" -type "string" "perspective";
@@ -46510,19 +46498,19 @@ createNode mesh -n "Dial_Medium6Shape" -p "|TV_Medium1|Dial_Medium6";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "CE989EB1-4B29-3BEE-FB09-B1BC16D04962";
-	setAttr -s 189 ".lnk";
-	setAttr -s 189 ".slnk";
+	rename -uid "41E30D23-44A7-AAB5-48FD-709FF19ACD3E";
+	setAttr -s 132 ".lnk";
+	setAttr -s 132 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "5CAF6A89-4E7A-DA9D-C086-96A90C845017";
+	rename -uid "DA9BD29B-4C39-16BA-71EC-EBB1A838EEBD";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "797BAB6C-4826-5C23-9F7F-B894DA8306C2";
+	rename -uid "638365CC-4112-AF6F-AFC4-429D59658E49";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "39DF4E10-4E09-0222-813E-8DB4C5B99877";
+	rename -uid "CA3DBFC3-41AE-351C-55CA-2B9DBEE05C32";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "24D2B9D4-4A6E-F87C-5AA1-CBAC78668764";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "1FF5C367-443A-FB8B-8882-1EA16EDC1E21";
+	rename -uid "080D3E5E-4C24-EA2A-0F8B-21BC0C600B15";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "7E72AA68-496E-43E8-0C5D-4688F69E1DB6";
 	setAttr ".g" yes;
@@ -46542,7 +46530,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 616\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 578\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
@@ -46569,8 +46557,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
 		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
 		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 616\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 616\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 578\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 578\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -48804,7 +48792,6 @@ createNode reference -n "TeachBot_10_UVRN";
 	rename -uid "9DBE750B-44CD-694F-A3C3-86A9B9156234";
 	setAttr -s 311 ".phl";
 	setAttr ".phl[2]" 0;
-	setAttr ".phl[4]" -type "TdataCompound" ;
 	setAttr ".phl[306]" 0;
 	setAttr ".phl[308]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
@@ -49460,7 +49447,7 @@ createNode reference -n "Mr_Limbo_RoomRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Mr_Limbo_RoomRN"
 		"Mr_Limbo_RoomRN" 0
-		"Mr_Limbo_RoomRN" 24
+		"Mr_Limbo_RoomRN" 27
 		2 "|Mr_Limbo_Room:Room" "translate" " -type \"double3\" 0 298.75212117586016802 -507.56929253729157381"
 		
 		2 "|Mr_Limbo_Room:Room" "scale" " -type \"double3\" 6.51968839055594618 6.51968839055594618 6.51968839055594618"
@@ -49506,6 +49493,9 @@ createNode reference -n "Mr_Limbo_RoomRN";
 		
 		2 "|Mr_Limbo_Room:Room|Mr_Limbo_Room:DoorFrame" "scale" " -type \"double3\" 1 1 1"
 		
+		2 "|Mr_Limbo_Room:Room|Mr_Limbo_Room:DoorFrame" "scaleX" " -av"
+		2 "|Mr_Limbo_Room:Room|Mr_Limbo_Room:DoorFrame" "scaleY" " -av"
+		2 "|Mr_Limbo_Room:Room|Mr_Limbo_Room:DoorFrame" "scaleZ" " -av"
 		2 "|Mr_Limbo_Room:Room|Mr_Limbo_Room:DoorFrame1" "translate" " -type \"double3\" -29.30164372499796954 -5.54301129557384531 6.11538052824838907"
 		
 		2 "|Mr_Limbo_Room:Room|Mr_Limbo_Room:DoorFrame1" "scale" " -type \"double3\" 1 1 1"
@@ -51861,18 +51851,13 @@ createNode animCurveTL -n "persp_translateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 2 ".ktv[0:1]"  1 -89.230663018125995 271 769.42307734118788;
-createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "C70098BF-437E-66F0-5083-3C856F65F013";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -776.19044534743909 -44.642855368909458 ;
-	setAttr ".tgi[0].vh" -type "double2" 753.57139862719157 44.642855368909458 ;
 createNode reference -n "sharedReferenceNode";
 	rename -uid "E7EC0562-439B-A058-EF30-6FB2A1980A2B";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"sharedReferenceNode";
 createNode reference -n "TeachBot_12_UVRN";
 	rename -uid "8A696E93-4380-359C-C248-0498B410B17D";
-	setAttr -s 126 ".phl";
+	setAttr -s 162 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -51999,10 +51984,49 @@ createNode reference -n "TeachBot_12_UVRN";
 	setAttr ".phl[124]" 0;
 	setAttr ".phl[125]" 0;
 	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".phl[138]" 0;
+	setAttr ".phl[139]" 0;
+	setAttr ".phl[140]" 0;
+	setAttr ".phl[141]" 0;
+	setAttr ".phl[142]" 0;
+	setAttr ".phl[143]" 0;
+	setAttr ".phl[144]" 0;
+	setAttr ".phl[145]" 0;
+	setAttr ".phl[146]" 0;
+	setAttr ".phl[147]" 0;
+	setAttr ".phl[148]" 0;
+	setAttr ".phl[149]" 0;
+	setAttr ".phl[150]" 0;
+	setAttr ".phl[151]" 0;
+	setAttr ".phl[152]" 0;
+	setAttr ".phl[153]" 0;
+	setAttr ".phl[154]" 0;
+	setAttr ".phl[155]" 0;
+	setAttr ".phl[156]" 0;
+	setAttr ".phl[157]" 0;
+	setAttr ".phl[158]" 0;
+	setAttr ".phl[159]" 0;
+	setAttr ".phl[160]" 0;
+	setAttr ".phl[161]" 0;
+	setAttr ".phl[162]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"TeachBot_12_UVRN"
 		"TeachBot_12_UVRN" 0
-		"TeachBot_12_UVRN" 139
+		"TeachBot_12_UVRN" 169
+		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Skeleton|TeachBot_12_UV:Robot_IK_Jnt_Grp|TeachBot_12_UV:R_Arm_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.35925390500454635 29.51283481655058338 -0.094413933082955315"
+		
 		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr" 
 		"visibility" " 1"
 		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr" 
@@ -52011,24 +52035,9 @@ createNode reference -n "TeachBot_12_UVRN";
 		"rotate" " -type \"double3\" 0 29.51482442039610632 0"
 		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr" 
-		"translateX" " -av"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr" 
-		"translateZ" " -av"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr" 
-		"translateY" " -av"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr" 
-		"translateX" " -av"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr" 
-		"translateY" " -av"
-		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr" 
-		"translateZ" " -av"
 		2 "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_Base_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_Base_IK_Cntr" 
 		"translate" " -type \"double3\" 0 0 0"
+		2 "TeachBot_12_UV:Geometry_Layer" "displayType" " 2"
 		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[1]" ""
 		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr.translateY" 
@@ -52101,186 +52110,258 @@ createNode reference -n "TeachBot_12_UVRN";
 		"TeachBot_12_UVRN.placeHolderList[35]" ""
 		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[36]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[37]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[38]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[39]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[40]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[41]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[42]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[43]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[44]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[45]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[46]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[47]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[48]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[49]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[50]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[51]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[52]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[53]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[54]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[55]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[56]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[57]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[58]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[59]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[60]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[61]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[62]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_TopHand_01_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[63]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[64]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[65]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[66]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[67]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[68]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[69]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[70]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[71]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:L_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_01_FK_Cntr|TeachBot_12_UV:L_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_02_FK_Cntr|TeachBot_12_UV:L_Arm_3_FK_Cntr_Grp|TeachBot_12_UV:L_Arm_03_FK_Cntr|TeachBot_12_UV:L_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:L_BottomHand_01_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[72]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[73]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[74]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[75]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[76]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[77]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[78]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[79]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[80]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[81]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[82]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[83]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[84]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[85]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[86]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[87]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[88]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[89]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[90]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[91]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[92]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[93]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[94]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[95]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[96]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[97]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[98]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[99]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[100]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[101]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[102]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[103]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[104]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[105]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[106]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[107]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_TopHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_TopHand_01_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[108]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[109]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[110]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[111]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[112]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[113]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[114]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[115]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[116]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr_Grp|TeachBot_12_UV:Base_01_FK_Cntr|TeachBot_12_UV:Waist_01_FK_Cntr_Grp|TeachBot_12_UV:Waist_01_Cntr_Jnt|TeachBot_12_UV:Torso_01_FK_Cntr_Grp|TeachBot_12_UV:Torso_01_FK_Cntr|TeachBot_12_UV:R_Arm_01_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_01_FK_Cntr|TeachBot_12_UV:R_Arm_02_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_02_FK_Cntr|TeachBot_12_UV:R_Arm_03_FK_Cntr_Grp|TeachBot_12_UV:R_Arm_03_FK_Cntr|TeachBot_12_UV:R_BottomHand_01_FK_Cntr_Grp|TeachBot_12_UV:R_BottomHand_01_FK_Cntr.scaleZ" 
 		"TeachBot_12_UVRN.placeHolderList[117]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.translateX" 
 		"TeachBot_12_UVRN.placeHolderList[118]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.translateY" 
 		"TeachBot_12_UVRN.placeHolderList[119]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.translateZ" 
 		"TeachBot_12_UVRN.placeHolderList[120]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.rotateY" 
 		"TeachBot_12_UVRN.placeHolderList[121]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.rotateX" 
 		"TeachBot_12_UVRN.placeHolderList[122]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateZ" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.rotateZ" 
 		"TeachBot_12_UVRN.placeHolderList[123]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleX" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.scaleX" 
 		"TeachBot_12_UVRN.placeHolderList[124]" ""
-		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleY" 
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.scaleY" 
 		"TeachBot_12_UVRN.placeHolderList[125]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr_Grp|TeachBot_12_UV:ROOT_Cntr|TeachBot_12_UV:Pelvis_01_FK_Cntr_Grp|TeachBot_12_UV:Pelvis_01_FK_Cntr.scaleZ" 
+		"TeachBot_12_UVRN.placeHolderList[126]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateX" 
+		"TeachBot_12_UVRN.placeHolderList[127]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateY" 
+		"TeachBot_12_UVRN.placeHolderList[128]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateZ" 
+		"TeachBot_12_UVRN.placeHolderList[129]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateY" 
+		"TeachBot_12_UVRN.placeHolderList[130]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateX" 
+		"TeachBot_12_UVRN.placeHolderList[131]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateZ" 
+		"TeachBot_12_UVRN.placeHolderList[132]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleX" 
+		"TeachBot_12_UVRN.placeHolderList[133]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleY" 
+		"TeachBot_12_UVRN.placeHolderList[134]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleZ" 
+		"TeachBot_12_UVRN.placeHolderList[135]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateX" 
+		"TeachBot_12_UVRN.placeHolderList[136]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateY" 
+		"TeachBot_12_UVRN.placeHolderList[137]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateZ" 
+		"TeachBot_12_UVRN.placeHolderList[138]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateX" 
+		"TeachBot_12_UVRN.placeHolderList[139]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateY" 
+		"TeachBot_12_UVRN.placeHolderList[140]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateZ" 
+		"TeachBot_12_UVRN.placeHolderList[141]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleX" 
+		"TeachBot_12_UVRN.placeHolderList[142]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleY" 
+		"TeachBot_12_UVRN.placeHolderList[143]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:L_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleZ" 
+		"TeachBot_12_UVRN.placeHolderList[144]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateX" 
+		"TeachBot_12_UVRN.placeHolderList[145]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateY" 
+		"TeachBot_12_UVRN.placeHolderList[146]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.translateZ" 
+		"TeachBot_12_UVRN.placeHolderList[147]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateY" 
+		"TeachBot_12_UVRN.placeHolderList[148]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateX" 
+		"TeachBot_12_UVRN.placeHolderList[149]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.rotateZ" 
+		"TeachBot_12_UVRN.placeHolderList[150]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleX" 
+		"TeachBot_12_UVRN.placeHolderList[151]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleY" 
+		"TeachBot_12_UVRN.placeHolderList[152]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_IK_Cntr_Grp|TeachBot_12_UV:L_Leg_IK_Cntr.scaleZ" 
+		"TeachBot_12_UVRN.placeHolderList[153]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateX" 
+		"TeachBot_12_UVRN.placeHolderList[154]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateY" 
+		"TeachBot_12_UVRN.placeHolderList[155]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.translateZ" 
+		"TeachBot_12_UVRN.placeHolderList[156]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateX" 
+		"TeachBot_12_UVRN.placeHolderList[157]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateY" 
+		"TeachBot_12_UVRN.placeHolderList[158]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.rotateZ" 
+		"TeachBot_12_UVRN.placeHolderList[159]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleX" 
+		"TeachBot_12_UVRN.placeHolderList[160]" ""
+		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleY" 
+		"TeachBot_12_UVRN.placeHolderList[161]" ""
 		5 4 "TeachBot_12_UVRN" "|TeachBot_12_UV:Mr_Limbo|TeachBot_12_UV:Controls|TeachBot_12_UV:Transform_Cntr_Grp|TeachBot_12_UV:Transform_Cntr|TeachBot_12_UV:COG_Cntr_Grp|TeachBot_12_UV:COG_Cntr|TeachBot_12_UV:FK_Master_Cntr_Grp|TeachBot_12_UV:R_Leg_IK_Master_Grp|TeachBot_12_UV:L_Leg_PV_Cntr_Grp|TeachBot_12_UV:R_Leg_PV_Offset_Grp|TeachBot_12_UV:L_Leg_PV_Cntr.scaleZ" 
-		"TeachBot_12_UVRN.placeHolderList[126]" "";
+		"TeachBot_12_UVRN.placeHolderList[162]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode animCurveTA -n "Base_01_FK_Cntr_rotateX1";
@@ -52332,401 +52413,789 @@ createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateX1";
 	rename -uid "75CFB2AE-4D44-92A7-FF81-54A95D400A96";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 10.49162019535262 69 10.49162019535262
-		 73 5.0543413781706956 95.222221938775505 41.929166762675074 106.11111071428572 -10.90972444777646
-		 112.33333214285715 25.769512356354301 124 -25.873843855220862;
+	setAttr -s 18 ".ktv[0:17]"  1 10.49162019535262 69 10.49162019535262
+		 73 5.0543413781706965 95.222221938775505 41.929166762675074 106.11111071428572 -10.90972444777646
+		 112.33333214285715 25.769512356354301 124 -25.873843855220862 128 25.848082486507789
+		 133 -8.6345621943866391 138 20.961570803994928 157 -4.9947818508756869 169 -21.210492214510179
+		 179 -32.123924015889408 184 -27.73897529798441 189 -31.844143805524308 214 -14.553566140129337
+		 263 -14.553566140129337 271 8.557654106715157;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateY1";
 	rename -uid "2407A999-4BAD-3244-4D10-BF9E120B2FE6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -46.484725664562703 69 -46.484725664562703
+	setAttr -s 18 ".ktv[0:17]"  1 -46.484725664562703 69 -46.484725664562703
 		 73 -52.657745415098567 95.222221938775505 -67.134039302970592 106.11111071428572 -44.521166831693407
-		 112.33333214285715 2.4143418879495133 124 -18.420982647497276;
+		 112.33333214285715 2.4143418879495133 124 -18.420982647497276 128 -33.49216711189797
+		 133 -33.492167111897977 138 -33.492167111897906 157 49.649479579154729 169 -84.70902267881948
+		 179 -30.122223533171884 184 -13.230429962524159 189 -39.013760575628268 214 -26.684228728555937
+		 263 -26.684228728555937 271 -26.684228728555951;
 createNode animCurveTA -n "Waist_01_Cntr_Jnt_rotateZ1";
 	rename -uid "96EDDEBC-458F-E972-24B6-0E9BEB82CD16";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -12.271212747370305 69 -12.271212747370305
+	setAttr -s 18 ".ktv[0:17]"  1 -12.271212747370305 69 -12.271212747370305
 		 73 -13.062249269349945 95.222221938775505 -32.038358126587809 106.11111071428572 -9.7718485975498304
-		 112.33333214285715 4.904814649079646 124 0.89556658059179561;
+		 112.33333214285715 4.904814649079646 124 0.89556658059179561 128 -2.6151218586269245
+		 133 -2.6151218586269156 138 -2.6151218586269014 157 -11.416794443622763 169 16.957146826418011
+		 179 -0.092445401109321326 184 -9.4390544938248713 189 6.1310554858254864 214 0.80498352146747598
+		 263 0.80498352146747598 271 0.80498352146747176;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateX1";
 	rename -uid "C7DDB4A7-47B2-F2B3-B616-57BBCFE9C904";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0 124 0;
+	setAttr -s 18 ".ktv[0:17]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 138 0 157 0 169 0 179 0 184 0 189 0 214 0
+		 263 0 271 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateY1";
 	rename -uid "CE366043-4230-FE38-EBAC-D0AF2A696027";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0 124 0;
+	setAttr -s 18 ".ktv[0:17]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 138 0 157 0 169 0 179 0 184 0 189 0 214 0
+		 263 0 271 0;
 createNode animCurveTL -n "Waist_01_Cntr_Jnt_translateZ1";
 	rename -uid "E32C6BA7-4F3A-2384-85F9-76A4A80C8663";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0 124 0;
+	setAttr -s 18 ".ktv[0:17]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 138 0 157 0 169 0 179 0 184 0 189 0 214 0
+		 263 0 271 0;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleX1";
 	rename -uid "5D373C1A-4732-2E46-C45D-74A0BBE9878C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1 124 1;
+	setAttr -s 18 ".ktv[0:17]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 138 1 157 1 169 1 179 1 184 1 189 1 214 1
+		 263 1 271 1;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleY1";
 	rename -uid "30451CA2-4134-E878-0011-BBB837C8ABF5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1 124 1;
+	setAttr -s 18 ".ktv[0:17]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 138 1 157 1 169 1 179 1 184 1 189 1 214 1
+		 263 1 271 1;
 createNode animCurveTU -n "Waist_01_Cntr_Jnt_scaleZ1";
 	rename -uid "9102AA2D-4097-867E-A858-6C8FF68D787D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1 124 1;
+	setAttr -s 18 ".ktv[0:17]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 138 1 157 1 169 1 179 1 184 1 189 1 214 1
+		 263 1 271 1;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateX1";
 	rename -uid "7ACB5795-40EB-4139-6B03-6E980AEABA25";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 33.079922086797502
-		 106.11111071428572 -2.373858942836784 112.33333214285715 26.641738896100019;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 33.079922086797502
+		 106.11111071428572 -2.373858942836784 112.33333214285715 26.641738896100019 124 -8.7504876286862494
+		 128 113.69778235766496 133 -16.692220096715438 157 39.870824894511131 214 -14.637547017589625
+		 263 -14.637547017589625 271 -12.163977964678688;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateY1";
 	rename -uid "E24BA242-4446-37C8-47B6-A182E5DE5691";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 -5.6939271319332496
-		 106.11111071428572 -5.6939271319332603 112.33333214285715 -40.170272323352485;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 -5.6939271319332505
+		 106.11111071428572 -5.6939271319332603 112.33333214285715 -40.170272323352485 124 -49.867519760560938
+		 128 -42.277293977806444 133 4.8557509985659593 157 -4.6604943410255588 214 -40.170272323352485
+		 263 -40.170272323352485 271 1.1866952646501396;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTA -n "R_Arm_01_FK_Cntr_rotateZ1";
 	rename -uid "4E210F44-455E-9B1F-04F8-3C88C3876082";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 -37.955224957998446 69 -37.955224957998446
+	setAttr -s 13 ".ktv[0:12]"  1 -37.955224957998446 69 -37.955224957998446
 		 73 -45.648819078306069 95.222221938775505 -35.050824030797649 106.11111071428572 -35.050824030797656
-		 112.33333214285715 24.264377147418319;
+		 112.33333214285715 24.264377147418319 124 -11.971464885693859 128 -136.92894634040439
+		 133 -9.5145049489163238 157 -13.150730180372875 214 -26.719269667848998 263 -26.719269667848998
+		 271 -6.11317610373544;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateX1";
 	rename -uid "EE3F028F-42A0-3414-ED2F-FAB56CAD33BD";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 157 0 214 0 263 0 271 0;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateY1";
 	rename -uid "5DBF547A-445F-6682-34B6-168946BAF781";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 157 0 214 0 263 0 271 0;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTL -n "R_Arm_01_FK_Cntr_translateZ1";
 	rename -uid "4E598C18-4EBC-DF3F-FA0B-F8BFBC7100C1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 157 0 214 0 263 0 271 0;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleX1";
 	rename -uid "3BCB70B3-4912-7C80-1A05-4A8BEE9E5B94";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1;
+	setAttr -s 13 ".ktv[0:12]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 157 1 214 1 263 1 271 1;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleY1";
 	rename -uid "6A8B52EB-4A36-8DEA-64CB-B18EC57CE873";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1;
+	setAttr -s 13 ".ktv[0:12]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 157 1 214 1 263 1 271 1;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTU -n "R_Arm_01_FK_Cntr_scaleZ1";
 	rename -uid "3FA54C55-4909-6D93-3153-B8A4FCFC442D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1;
+	setAttr -s 13 ".ktv[0:12]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 157 1 214 1 263 1 271 1;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateX1";
 	rename -uid "7F59A15B-4E06-9788-AD28-5DAB6351324C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 23.734880748870356
-		 106.11111071428572 9.8199425740056565 112.33333214285715 48.512449919014543;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 23.734880748870356
+		 106.11111071428572 9.8199425740056565 112.33333214285715 48.512449919014543 124 -19.285033298965299
+		 128 10.999728488398965 133 -34.525385407372717 157 43.274036598676453 214 -11.840681387202473
+		 263 -11.840681387202473 271 -4.5019782052272266;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateY1";
 	rename -uid "45CE85B7-497B-499E-BBEC-7CA2F1739CA2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 11.155430907563314
-		 106.11111071428572 24.289847302378107 112.33333214285715 24.289847302378114;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 11.155430907563314
+		 106.11111071428572 24.289847302378107 112.33333214285715 24.289847302378114 124 24.289847302378103
+		 128 6.1404554727217997 133 13.315908221311139 157 11.377388273951583 214 24.289847302378114
+		 263 24.289847302378114 271 -11.546371242887231;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTA -n "R_Arm_02_FK_Cntr_rotateZ1";
 	rename -uid "C9050ACE-4B57-EF26-7090-5EA77E86899D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 75.973960297183822 69 75.973960297183822
+	setAttr -s 13 ".ktv[0:12]"  1 75.973960297183822 69 75.973960297183822
 		 73 56.229250025829849 95.222221938775505 32.479191442652379 106.11111071428572 -10.950435381369974
-		 112.33333214285715 -10.950435381370006;
+		 112.33333214285715 -10.950435381370008 124 -11.686934152235121 128 -51.701029974927231
+		 133 -3.4806294591546338 157 -45.767581229436786 214 -31.137755579309157 263 -31.137755579309157
+		 271 -64.874344845309153;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  0.99001844898780444 1;
+	setAttr -s 13 ".kiy[11:12]"  -0.14093782552523554 0;
+	setAttr -s 13 ".kox[11:12]"  0.99001844898780467 1;
+	setAttr -s 13 ".koy[11:12]"  -0.14093782552523557 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateX1";
 	rename -uid "AC4CA337-4FF9-D2A1-22CE-5FBC1C7909E4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 157 0 214 0 263 0 271 0;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateY1";
 	rename -uid "905D4B7E-42A4-EFD9-4A4F-8FA81689D109";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 157 0 214 0 263 0 271 0;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTL -n "R_Arm_02_FK_Cntr_translateZ1";
 	rename -uid "764C821D-45D5-3B12-7697-A59BB3F1CEC7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
-		 112.33333214285715 0;
+	setAttr -s 13 ".ktv[0:12]"  1 0 69 0 73 0 95.222221938775505 0 106.11111071428572 0
+		 112.33333214285715 0 124 0 128 0 133 0 157 0 214 0 263 0 271 0;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleX1";
 	rename -uid "8C5F548D-44B4-0AAF-4908-54AC9EE8886B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1;
+	setAttr -s 13 ".ktv[0:12]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 157 1 214 1 263 1 271 1;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleY1";
 	rename -uid "C7946F41-4E5D-CE74-B469-0BAFB9B64B5A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1;
+	setAttr -s 13 ".ktv[0:12]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 157 1 214 1 263 1 271 1;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTU -n "R_Arm_02_FK_Cntr_scaleZ1";
 	rename -uid "3EAA5578-4A3F-8B92-865C-44ACBC2A410A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
-		 112.33333214285715 1;
+	setAttr -s 13 ".ktv[0:12]"  1 1 69 1 73 1 95.222221938775505 1 106.11111071428572 1
+		 112.33333214285715 1 124 1 128 1 133 1 157 1 214 1 263 1 271 1;
+	setAttr -s 13 ".kit[11:12]"  1 18;
+	setAttr -s 13 ".kot[11:12]"  1 18;
+	setAttr -s 13 ".kix[11:12]"  1 1;
+	setAttr -s 13 ".kiy[11:12]"  0 0;
+	setAttr -s 13 ".kox[11:12]"  1 1;
+	setAttr -s 13 ".koy[11:12]"  0 0;
 createNode animCurveTA -n "R_TopHand_01_FK_Cntr_rotateX1";
 	rename -uid "72E7FFAC-43E7-81C8-7306-FA98B0F7E897";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 -2.151391301219909e-16
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTA -n "R_TopHand_01_FK_Cntr_rotateY1";
 	rename -uid "51AF7B13-4368-2CF2-4125-4DBF59714056";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 -22.484664731551472
+		 128 29.915369436298935 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTA -n "R_TopHand_01_FK_Cntr_rotateZ1";
 	rename -uid "C3B72940-4C5C-DC0B-1B65-7F94764B4F42";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 30.938373435915839 69 30.938373435915839
-		 73 -23.172974938243499 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 30.938373435915839 69 30.938373435915839
+		 73 -23.172974938243499 95.222221938775505 0 124 -5.1680328432121652 128 -6.4158059644528231
+		 133 0 214 -35 263 -35 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTL -n "R_TopHand_01_FK_Cntr_translateX1";
 	rename -uid "A6ABE79B-45C3-F6E0-4F8B-4FBDA0E3E7FA";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 0
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTL -n "R_TopHand_01_FK_Cntr_translateY1";
 	rename -uid "10249C1F-4220-F3C6-02D4-F5B259176C34";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 0
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTL -n "R_TopHand_01_FK_Cntr_translateZ1";
 	rename -uid "EDAF68DC-4CB0-CDD8-EA33-5C8FF6F0663B";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 0
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTU -n "R_TopHand_01_FK_Cntr_scaleX1";
 	rename -uid "ED1F94ED-496C-83C8-CF99-EC8924DA4502";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 69 1 73 1 95.222221938775505 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 69 1 73 1 95.222221938775505 1 124 1
+		 128 1 133 1 214 1 263 1 271 1;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTU -n "R_TopHand_01_FK_Cntr_scaleY1";
 	rename -uid "6FD7CA3E-4149-168F-A3A0-D990CA733671";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 69 1 73 1 95.222221938775505 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 69 1 73 1 95.222221938775505 1 124 1
+		 128 1 133 1 214 1 263 1 271 1;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTU -n "R_TopHand_01_FK_Cntr_scaleZ1";
 	rename -uid "30E5D609-4ACC-E226-263C-05B777FD53DC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 69 1 73 1 95.222221938775505 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 69 1 73 1 95.222221938775505 1 124 1
+		 128 1 133 1 214 1 263 1 271 1;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateX1";
 	rename -uid "909E1C4A-4931-547E-FEEA-569BEDDCAA27";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 2.151391301219909e-16
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateY1";
 	rename -uid "56EEFA13-4DFA-8210-D6CE-40841A00376A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 -22.484664731551472
+		 128 29.915369436298935 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTA -n "R_BottomHand_01_FK_Cntr_rotateZ1";
 	rename -uid "E08D6DDE-4AD0-E461-D191-178A1428642C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 -27.982242720057602 69 -27.982242720057602
-		 73 13.577890626322725 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 -27.982242720057602 69 -27.982242720057602
+		 73 13.577890626322727 95.222221938775505 0 124 5.1680328432121652 128 6.4158059644528231
+		 133 0 214 35 263 35 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTL -n "R_BottomHand_01_FK_Cntr_translateX1";
 	rename -uid "520C1E8E-4055-1442-A684-1AB65DCC3AE1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 0
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTL -n "R_BottomHand_01_FK_Cntr_translateY1";
 	rename -uid "A9C33ACB-4502-2950-C48B-E68112B8CDDB";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 0
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTL -n "R_BottomHand_01_FK_Cntr_translateZ1";
 	rename -uid "CBE0F422-4E5C-0F1F-D2FA-D78AFE7EAE6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 69 0 73 0 95.222221938775505 0;
+	setAttr -s 10 ".ktv[0:9]"  1 0 69 0 73 0 95.222221938775505 0 124 0
+		 128 0 133 0 214 0 263 0 271 0;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTU -n "R_BottomHand_01_FK_Cntr_scaleX1";
 	rename -uid "679E27CC-418B-73E4-BC91-E9AA31FDE9B1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 69 1 73 1 95.222221938775505 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 69 1 73 1 95.222221938775505 1 124 1
+		 128 1 133 1 214 1 263 1 271 1;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTU -n "R_BottomHand_01_FK_Cntr_scaleY1";
 	rename -uid "CD50BC1C-49A3-FA83-86DF-EDB66DBD530E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 69 1 73 1 95.222221938775505 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 69 1 73 1 95.222221938775505 1 124 1
+		 128 1 133 1 214 1 263 1 271 1;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTU -n "R_BottomHand_01_FK_Cntr_scaleZ1";
 	rename -uid "B8701456-475E-1AFD-1093-39AA9B9C9660";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 1 69 1 73 1 95.222221938775505 1;
+	setAttr -s 10 ".ktv[0:9]"  1 1 69 1 73 1 95.222221938775505 1 124 1
+		 128 1 133 1 214 1 263 1 271 1;
+	setAttr -s 10 ".kit[8:9]"  1 18;
+	setAttr -s 10 ".kot[8:9]"  1 18;
+	setAttr -s 10 ".kix[8:9]"  1 1;
+	setAttr -s 10 ".kiy[8:9]"  0 0;
+	setAttr -s 10 ".kox[8:9]"  1 1;
+	setAttr -s 10 ".koy[8:9]"  0 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateX1";
 	rename -uid "8E8202F1-414A-D5BD-F8C2-47A98E4DD719";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateY1";
 	rename -uid "E9B28238-4975-B53C-9C89-4E88626527F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
 createNode animCurveTA -n "L_Arm_01_FK_Cntr_rotateZ1";
 	rename -uid "05218C28-4C9D-0372-14DF-91B0D0D1F0D0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 -41.216529864707766;
+	setAttr -s 3 ".ktv[0:2]"  1 -41.216529864707766 124 52.867872157753077
+		 271 -33.30466479432836;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateX1";
 	rename -uid "1241FBF1-4165-C51A-8AA2-7BBB193E082D";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateY1";
 	rename -uid "B6EC519B-458A-348F-17D2-2495AE3BDCB3";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
 createNode animCurveTL -n "L_Arm_01_FK_Cntr_translateZ1";
 	rename -uid "49FBC6F6-459E-E84B-53ED-148267EAA6A5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleX1";
 	rename -uid "6A162D66-4867-667C-6CF8-68A6538DF318";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleY1";
 	rename -uid "92B24B35-4619-0B5F-C162-D2BE9220B67C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
 createNode animCurveTU -n "L_Arm_01_FK_Cntr_scaleZ1";
 	rename -uid "10900029-49C6-AB80-D0E4-57A60F161CD9";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateX1";
 	rename -uid "F8B62DEF-4BFB-F3C6-9EB9-658B6D9EA3AE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 -0.20465035254704858 107 23.443114232270649
-		 124 -32.657851669240024;
+	setAttr -s 9 ".ktv[0:8]"  1 -0.20465035254704858 107 23.443114232270652
+		 124 -32.657851669240024 128 34.55125758202761 133 -23.156792534744227 138 5.4713671841951168
+		 214 -7.2125002170052603 263 -7.2125002170052603 271 11.754010228021315;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateY1";
 	rename -uid "5B3378F5-4679-75D4-F313-96896D47AB60";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0.8667631507941348 107 -2.3627689632454612
-		 124 -2.3627689632454651;
+	setAttr -s 9 ".ktv[0:8]"  1 0.86676315079413491 107 -2.3627689632454612
+		 124 -2.3627689632454651 128 -2.3627689632454669 133 -2.362768963245466 138 -2.3627689632454638
+		 214 -2.3627689632454638 263 -2.3627689632454638 271 -2.3627689632454643;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTA -n "Neck_01_FK_Cntr_rotateZ1";
 	rename -uid "C0499478-421B-91AD-F4A5-4AA4FBA56375";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 -12.785829381426044 107 -0.70488060156394705
-		 124 -0.70488060156395027;
+	setAttr -s 9 ".ktv[0:8]"  1 -12.785829381426044 107 -0.70488060156394705
+		 124 -0.70488060156395027 128 -0.70488060156395127 133 -0.7048806015639536 138 -0.70488060156395371
+		 214 -0.70488060156395371 263 -0.70488060156395371 271 -0.70488060156395382;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateX1";
 	rename -uid "5760E2B0-4EB3-CC88-302F-218364F172F2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 107 0 124 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 107 0 124 0 128 0 133 0 138 0 214 0
+		 263 0 271 0;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateY1";
 	rename -uid "BDEC4325-4EFB-134F-662D-1EA98EAB24CC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 107 0 124 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 107 0 124 0 128 0 133 0 138 0 214 0
+		 263 0 271 0;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTL -n "Neck_01_FK_Cntr_translateZ1";
 	rename -uid "D1552462-469E-A3F8-780F-D0BAFB890D9E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 107 0 124 0;
+	setAttr -s 9 ".ktv[0:8]"  1 0 107 0 124 0 128 0 133 0 138 0 214 0
+		 263 0 271 0;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleX1";
 	rename -uid "E73479E0-41A9-E751-ACD0-4785C82CAC35";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 107 1 124 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 107 1 124 1 128 1 133 1 138 1 214 1
+		 263 1 271 1;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleY1";
 	rename -uid "422CF40F-41EA-408F-1EDE-25A45CADAB60";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 107 1 124 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 107 1 124 1 128 1 133 1 138 1 214 1
+		 263 1 271 1;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTU -n "Neck_01_FK_Cntr_scaleZ1";
 	rename -uid "B13C1F63-4F03-00BF-DE1A-54B90407E574";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 107 1 124 1;
+	setAttr -s 9 ".ktv[0:8]"  1 1 107 1 124 1 128 1 133 1 138 1 214 1
+		 263 1 271 1;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateX1";
 	rename -uid "D31A3C2E-410E-AC73-2139-EC8DCD783793";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 0 73 0 93 10.540843475858702 115 7.57623578319276
-		 136 56.268902659323089;
+	setAttr -s 9 ".ktv[0:8]"  69 0 73 0 93 10.540843475858702 115 7.57623578319276
+		 124 -17.563763522540707 133 -40.143860621299176 214 -7.0416723476677578 263 -7.0416723476677578
+		 271 -9.4079753183017267;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  0.99864201376269857 1;
+	setAttr -s 9 ".kiy[7:8]"  -0.052097296935464874 0;
+	setAttr -s 9 ".kox[7:8]"  0.99864201376269868 1;
+	setAttr -s 9 ".koy[7:8]"  -0.052097296935464887 0;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateY1";
 	rename -uid "8AC05968-4945-0843-2965-518784FFB763";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 0 73 0 93 0 115 7.3502123446792273 136 7.3502123446792185;
+	setAttr -s 9 ".ktv[0:8]"  69 0 73 0 93 0 115 7.3502123446792273 124 7.3502123446792034
+		 133 7.3502123446791865 214 7.3502123446792185 263 7.3502123446792185 271 3.8681969281273063;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTA -n "R_Arm_03_FK_Cntr_rotateZ1";
 	rename -uid "5DC0457D-4F53-5720-6D7B-70AB8FE706B5";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 4.756615580369103 73 41.457149851765323
-		 93 28.403764015270724 115 -15.482577349178452 136 -15.482577349178522;
+	setAttr -s 9 ".ktv[0:8]"  69 4.756615580369103 73 41.457149851765323
+		 93 28.403764015270724 115 -15.482577349178452 124 -15.482577349178529 133 -15.482577349178566
+		 214 -21.378748910882319 263 -21.378748910882319 271 -45.229993890849393;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  0.99576733369054782 1;
+	setAttr -s 9 ".kiy[7:8]"  -0.091909831654818058 0;
+	setAttr -s 9 ".kox[7:8]"  0.99576733369054793 1;
+	setAttr -s 9 ".koy[7:8]"  -0.091909831654818058 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateX1";
 	rename -uid "49DFA983-4746-4438-FBC6-BC960C4A23A1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 0 73 0 93 0 115 0 136 0;
+	setAttr -s 9 ".ktv[0:8]"  69 0 73 0 93 0 115 0 124 0 133 0 214 0 263 0
+		 271 0;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateY1";
 	rename -uid "957F139F-4648-28F6-8D29-D588A9CE43B7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 0 73 0 93 0 115 0 136 0;
+	setAttr -s 9 ".ktv[0:8]"  69 0 73 0 93 0 115 0 124 0 133 0 214 0 263 0
+		 271 0;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTL -n "R_Arm_03_FK_Cntr_translateZ1";
 	rename -uid "E6336076-4641-C1E6-489A-D1A0DE518D6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 0 73 0 93 0 115 0 136 0;
+	setAttr -s 9 ".ktv[0:8]"  69 0 73 0 93 0 115 0 124 0 133 0 214 0 263 0
+		 271 0;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleX1";
 	rename -uid "CCEE9D8A-43E9-1489-3C99-FA8BE0786BE2";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 1 73 1 93 1 115 1 136 1;
+	setAttr -s 9 ".ktv[0:8]"  69 1 73 1 93 1 115 1 124 1 133 1 214 1 263 1
+		 271 1;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleY1";
 	rename -uid "AE7DBF07-4DEE-FB79-2541-7F8715BF85D1";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 1 73 1 93 1 115 1 136 1;
+	setAttr -s 9 ".ktv[0:8]"  69 1 73 1 93 1 115 1 124 1 133 1 214 1 263 1
+		 271 1;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTU -n "R_Arm_03_FK_Cntr_scaleZ1";
 	rename -uid "CA6553EB-4225-88C3-FE40-3A9239E60B66";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  69 1 73 1 93 1 115 1 136 1;
+	setAttr -s 9 ".ktv[0:8]"  69 1 73 1 93 1 115 1 124 1 133 1 214 1 263 1
+		 271 1;
+	setAttr -s 9 ".kit[7:8]"  1 18;
+	setAttr -s 9 ".kot[7:8]"  1 18;
+	setAttr -s 9 ".kix[7:8]"  1 1;
+	setAttr -s 9 ".kiy[7:8]"  0 0;
+	setAttr -s 9 ".kox[7:8]"  1 1;
+	setAttr -s 9 ".koy[7:8]"  0 0;
 createNode animCurveTA -n "Pelvis_01_FK_Cntr_rotateX1";
 	rename -uid "824052ED-4545-66E2-93FD-878DC84A6030";
 	setAttr ".tan" 18;
@@ -52917,50 +53386,235 @@ createNode animCurveTL -n "L_Leg_IK_Cntr_translateX1";
 	rename -uid "32B13F92-43DC-36D7-933B-2EBFE5366D09";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 127 25.981607222386547;
+	setAttr -s 3 ".ktv[0:2]"  1 0 127 25.981607222386547 271 0;
 createNode animCurveTL -n "L_Leg_IK_Cntr_translateY1";
 	rename -uid "E776AAA1-4CD9-E4AA-A043-CBB1ABDFF134";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 127 26.783240212916695;
+	setAttr -s 3 ".ktv[0:2]"  1 0 127 26.783240212916695 271 0;
 createNode animCurveTL -n "L_Leg_IK_Cntr_translateZ1";
 	rename -uid "6C46955F-400C-EAEB-7A1D-8FB7E5EEEC68";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 127 14.708561565487294;
+	setAttr -s 3 ".ktv[0:2]"  1 0 127 14.708561565487294 271 0;
 createNode animCurveTA -n "L_Leg_IK_Cntr_rotateX1";
 	rename -uid "369CC311-4EDB-21B7-D065-729655E20941";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 127 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 127 0 271 0;
 createNode animCurveTA -n "L_Leg_IK_Cntr_rotateY1";
 	rename -uid "010CA927-4757-373A-09ED-39A0700998C7";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 127 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 127 0 271 0;
 createNode animCurveTA -n "L_Leg_IK_Cntr_rotateZ1";
 	rename -uid "CC684833-4C68-976B-4325-1EB0D74707F4";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 127 0;
+	setAttr -s 3 ".ktv[0:2]"  1 0 127 0 271 0;
 createNode animCurveTU -n "L_Leg_IK_Cntr_scaleX1";
 	rename -uid "1CF69523-4613-1FAA-4845-A284CFEC17EC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 127 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 127 1 271 1;
 createNode animCurveTU -n "L_Leg_IK_Cntr_scaleY1";
 	rename -uid "D12DC29D-48C6-B4C6-14FE-A4925605262A";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 127 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 127 1 271 1;
 createNode animCurveTU -n "L_Leg_IK_Cntr_scaleZ1";
 	rename -uid "4AA910ED-400D-3753-93CA-F39F99EB0A31";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 127 1;
+	setAttr -s 3 ".ktv[0:2]"  1 1 127 1 271 1;
+createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
+	rename -uid "7BD7F8F4-4357-B39D-B51C-5FB749BB264F";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -776.19044534743921 -54.103574764753922 ;
+	setAttr ".tgi[0].vh" -type "double2" 754.7618747703624 51.722622478412092 ;
+createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateX1";
+	rename -uid "71BBAD25-4FE8-242C-5444-6E80C7CD3242";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateY1";
+	rename -uid "579E8E2B-40AC-66BC-48F6-17AEB8B6162F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTA -n "L_Arm_02_FK_Cntr_rotateZ1";
+	rename -uid "402D0608-46E0-6C72-D54C-8E82A8335C59";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 30.065874765505871 271 0;
+createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateX1";
+	rename -uid "704293E5-45DF-3279-EA44-A69E4EB3C57A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateY1";
+	rename -uid "54297BBE-4439-6DB0-04FA-D29D388873D1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTL -n "L_Arm_02_FK_Cntr_translateZ1";
+	rename -uid "594589A5-4947-D38C-7B40-72988105DD8D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleX1";
+	rename -uid "33856014-43E9-1E9C-95D7-85852401426D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleY1";
+	rename -uid "6B3538B5-47CE-04C7-0DE0-08B9E9EDCA10";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTU -n "L_Arm_02_FK_Cntr_scaleZ1";
+	rename -uid "C0F8DBDD-4CA9-2EB3-BB81-B6A48E7EC27D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateX1";
+	rename -uid "FBD7FFF8-4619-E4DB-8BEF-519716DC7D31";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateY1";
+	rename -uid "E3A27562-44E2-348A-F3C6-ECB844A40FD9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTA -n "L_TopHand_01_FK_Cntr_rotateZ1";
+	rename -uid "7B3CBD55-4151-4720-0878-0E9D7C7472C3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 34.445029221816185 271 0;
+createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateX1";
+	rename -uid "4907D981-45DA-7822-EDAD-3BBB9B1B0D9A";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateY1";
+	rename -uid "C066906C-45A2-AFCD-E8F8-70804ACEF01C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTL -n "L_TopHand_01_FK_Cntr_translateZ1";
+	rename -uid "47526826-47CE-8C64-C3D4-26B4445EDCEA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleX1";
+	rename -uid "958C6191-42BC-99EB-A4E3-36B0AD7A8F10";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleY1";
+	rename -uid "F9517423-4350-D8D0-63F6-EA8B1A1A96CE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTU -n "L_TopHand_01_FK_Cntr_scaleZ1";
+	rename -uid "E08EEB2A-47B8-5D52-575A-3480B98E1512";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateX1";
+	rename -uid "FA33A640-47DC-9D97-36DA-D9B0BCE98CD3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateY1";
+	rename -uid "D4BAE96C-4E92-1F0A-8C2D-A68F93415F32";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTA -n "L_BottomHand_01_FK_Cntr_rotateZ1";
+	rename -uid "8BF6B7D9-4546-2E49-6713-09965B3B8CEE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 -34.445 271 0;
+createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateX1";
+	rename -uid "BD4CC20F-4137-E307-83A6-308D7AFD2A70";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateY1";
+	rename -uid "80C253B9-46C9-514E-8101-73B08DFCCD73";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTL -n "L_BottomHand_01_FK_Cntr_translateZ1";
+	rename -uid "4C0AC297-4950-5E80-AFCD-E28F0E39953F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 0 124 0 271 0;
+createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleX1";
+	rename -uid "53B6E3D6-4D4C-2D26-45FA-95999B693772";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleY1";
+	rename -uid "FE05FDE3-4E90-512E-7225-8C988995A874";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTU -n "L_BottomHand_01_FK_Cntr_scaleZ1";
+	rename -uid "B62A531C-4C23-C978-C4AA-DF9497F2CAC3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  1 1 124 1 271 1;
+createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateX1";
+	rename -uid "07AEAA13-4BA9-6673-0B70-1289DF87A60C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateY1";
+	rename -uid "082A7BC9-48D8-267B-349C-F19DDB24C924";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTA -n "L_Arm_03_FK_Cntr_rotateZ1";
+	rename -uid "DC470445-42C1-FF41-A66D-77AE42939AD6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 -34.966205106830266;
+createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateX1";
+	rename -uid "B94536B8-4B46-B6C0-92B1-A4A8BAFBA838";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateY1";
+	rename -uid "9676D0DC-4E4C-588D-A264-2F9D3E04B72C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTL -n "L_Arm_03_FK_Cntr_translateZ1";
+	rename -uid "072D59C2-48FF-7C80-A9FA-A1BA968707CE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 0 271 0;
+createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleX1";
+	rename -uid "B2992505-4494-8397-C416-5499546258FA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
+createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleY1";
+	rename -uid "138793EC-4B66-6473-A487-EE8B4164CCC5";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
+createNode animCurveTU -n "L_Arm_03_FK_Cntr_scaleZ1";
+	rename -uid "67D07854-4E6E-1067-8D79-E3AFA7C458AD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  1 1 271 1;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 223;
+	setAttr ".unw" 223;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -53836,96 +54490,132 @@ connectAttr "L_Arm_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[33]";
 connectAttr "L_Arm_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[34]";
 connectAttr "L_Arm_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[35]";
 connectAttr "L_Arm_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[36]";
-connectAttr "R_Arm_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[37]";
-connectAttr "R_Arm_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[38]";
-connectAttr "R_Arm_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[39]";
-connectAttr "R_Arm_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[40]";
-connectAttr "R_Arm_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[41]";
-connectAttr "R_Arm_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[42]";
-connectAttr "R_Arm_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[43]";
-connectAttr "R_Arm_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[44]";
-connectAttr "R_Arm_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[45]";
-connectAttr "R_Arm_02_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[46]";
-connectAttr "R_Arm_02_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[47]";
-connectAttr "R_Arm_02_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[48]";
-connectAttr "R_Arm_02_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[49]";
-connectAttr "R_Arm_02_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[50]";
-connectAttr "R_Arm_02_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[51]";
-connectAttr "R_Arm_02_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[52]";
-connectAttr "R_Arm_02_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[53]";
-connectAttr "R_Arm_02_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[54]";
-connectAttr "R_Arm_03_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[55]";
-connectAttr "R_Arm_03_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[56]";
-connectAttr "R_Arm_03_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[57]";
-connectAttr "R_Arm_03_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[58]";
-connectAttr "R_Arm_03_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[59]";
-connectAttr "R_Arm_03_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[60]";
-connectAttr "R_Arm_03_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[61]";
-connectAttr "R_Arm_03_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[62]";
-connectAttr "R_Arm_03_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[63]";
-connectAttr "R_TopHand_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[64]";
-connectAttr "R_TopHand_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[65]";
-connectAttr "R_TopHand_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[66]";
-connectAttr "R_TopHand_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[67]";
-connectAttr "R_TopHand_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[68]";
-connectAttr "R_TopHand_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[69]";
-connectAttr "R_TopHand_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[70]";
-connectAttr "R_TopHand_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[71]";
-connectAttr "R_TopHand_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[72]";
-connectAttr "R_BottomHand_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[73]";
-connectAttr "R_BottomHand_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[74]";
-connectAttr "R_BottomHand_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[75]";
-connectAttr "R_BottomHand_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[76]";
-connectAttr "R_BottomHand_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[77]";
-connectAttr "R_BottomHand_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[78]";
-connectAttr "R_BottomHand_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[79]";
-connectAttr "R_BottomHand_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[80]";
-connectAttr "R_BottomHand_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[81]";
-connectAttr "Pelvis_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[82]";
-connectAttr "Pelvis_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[83]";
-connectAttr "Pelvis_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[84]";
-connectAttr "Pelvis_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[85]";
-connectAttr "Pelvis_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[86]";
-connectAttr "Pelvis_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[87]";
-connectAttr "Pelvis_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[88]";
-connectAttr "Pelvis_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[89]";
-connectAttr "Pelvis_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[90]";
-connectAttr "L_Leg_IK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[91]";
-connectAttr "L_Leg_IK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[92]";
-connectAttr "L_Leg_IK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[93]";
-connectAttr "L_Leg_IK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[94]";
-connectAttr "L_Leg_IK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[95]";
-connectAttr "L_Leg_IK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[96]";
-connectAttr "L_Leg_IK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[97]";
-connectAttr "L_Leg_IK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[98]";
-connectAttr "L_Leg_IK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[99]";
-connectAttr "L_Leg_PV_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[100]";
-connectAttr "L_Leg_PV_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[101]";
-connectAttr "L_Leg_PV_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[102]";
-connectAttr "L_Leg_PV_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[103]";
-connectAttr "L_Leg_PV_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[104]";
-connectAttr "L_Leg_PV_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[105]";
-connectAttr "L_Leg_PV_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[106]";
-connectAttr "L_Leg_PV_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[107]";
-connectAttr "L_Leg_PV_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[108]";
-connectAttr "L_Leg_IK_Cntr_translateX.o" "TeachBot_12_UVRN.phl[109]";
-connectAttr "L_Leg_IK_Cntr_translateY.o" "TeachBot_12_UVRN.phl[110]";
-connectAttr "L_Leg_IK_Cntr_translateZ.o" "TeachBot_12_UVRN.phl[111]";
-connectAttr "L_Leg_IK_Cntr_rotateY.o" "TeachBot_12_UVRN.phl[112]";
-connectAttr "L_Leg_IK_Cntr_rotateX.o" "TeachBot_12_UVRN.phl[113]";
-connectAttr "L_Leg_IK_Cntr_rotateZ.o" "TeachBot_12_UVRN.phl[114]";
-connectAttr "L_Leg_IK_Cntr_scaleX.o" "TeachBot_12_UVRN.phl[115]";
-connectAttr "L_Leg_IK_Cntr_scaleY.o" "TeachBot_12_UVRN.phl[116]";
-connectAttr "L_Leg_IK_Cntr_scaleZ.o" "TeachBot_12_UVRN.phl[117]";
-connectAttr "L_Leg_PV_Cntr_translateX.o" "TeachBot_12_UVRN.phl[118]";
-connectAttr "L_Leg_PV_Cntr_translateY.o" "TeachBot_12_UVRN.phl[119]";
-connectAttr "L_Leg_PV_Cntr_translateZ.o" "TeachBot_12_UVRN.phl[120]";
-connectAttr "L_Leg_PV_Cntr_rotateX.o" "TeachBot_12_UVRN.phl[121]";
-connectAttr "L_Leg_PV_Cntr_rotateY.o" "TeachBot_12_UVRN.phl[122]";
-connectAttr "L_Leg_PV_Cntr_rotateZ.o" "TeachBot_12_UVRN.phl[123]";
-connectAttr "L_Leg_PV_Cntr_scaleX.o" "TeachBot_12_UVRN.phl[124]";
-connectAttr "L_Leg_PV_Cntr_scaleY.o" "TeachBot_12_UVRN.phl[125]";
-connectAttr "L_Leg_PV_Cntr_scaleZ.o" "TeachBot_12_UVRN.phl[126]";
+connectAttr "L_Arm_02_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[37]";
+connectAttr "L_Arm_02_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[38]";
+connectAttr "L_Arm_02_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[39]";
+connectAttr "L_Arm_02_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[40]";
+connectAttr "L_Arm_02_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[41]";
+connectAttr "L_Arm_02_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[42]";
+connectAttr "L_Arm_02_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[43]";
+connectAttr "L_Arm_02_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[44]";
+connectAttr "L_Arm_02_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[45]";
+connectAttr "L_Arm_03_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[46]";
+connectAttr "L_Arm_03_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[47]";
+connectAttr "L_Arm_03_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[48]";
+connectAttr "L_Arm_03_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[49]";
+connectAttr "L_Arm_03_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[50]";
+connectAttr "L_Arm_03_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[51]";
+connectAttr "L_Arm_03_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[52]";
+connectAttr "L_Arm_03_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[53]";
+connectAttr "L_Arm_03_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[54]";
+connectAttr "L_TopHand_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[55]";
+connectAttr "L_TopHand_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[56]";
+connectAttr "L_TopHand_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[57]";
+connectAttr "L_TopHand_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[58]";
+connectAttr "L_TopHand_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[59]";
+connectAttr "L_TopHand_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[60]";
+connectAttr "L_TopHand_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[61]";
+connectAttr "L_TopHand_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[62]";
+connectAttr "L_TopHand_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[63]";
+connectAttr "L_BottomHand_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[64]";
+connectAttr "L_BottomHand_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[65]";
+connectAttr "L_BottomHand_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[66]";
+connectAttr "L_BottomHand_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[67]";
+connectAttr "L_BottomHand_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[68]";
+connectAttr "L_BottomHand_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[69]";
+connectAttr "L_BottomHand_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[70]";
+connectAttr "L_BottomHand_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[71]";
+connectAttr "L_BottomHand_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[72]";
+connectAttr "R_Arm_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[73]";
+connectAttr "R_Arm_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[74]";
+connectAttr "R_Arm_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[75]";
+connectAttr "R_Arm_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[76]";
+connectAttr "R_Arm_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[77]";
+connectAttr "R_Arm_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[78]";
+connectAttr "R_Arm_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[79]";
+connectAttr "R_Arm_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[80]";
+connectAttr "R_Arm_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[81]";
+connectAttr "R_Arm_02_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[82]";
+connectAttr "R_Arm_02_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[83]";
+connectAttr "R_Arm_02_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[84]";
+connectAttr "R_Arm_02_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[85]";
+connectAttr "R_Arm_02_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[86]";
+connectAttr "R_Arm_02_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[87]";
+connectAttr "R_Arm_02_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[88]";
+connectAttr "R_Arm_02_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[89]";
+connectAttr "R_Arm_02_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[90]";
+connectAttr "R_Arm_03_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[91]";
+connectAttr "R_Arm_03_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[92]";
+connectAttr "R_Arm_03_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[93]";
+connectAttr "R_Arm_03_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[94]";
+connectAttr "R_Arm_03_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[95]";
+connectAttr "R_Arm_03_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[96]";
+connectAttr "R_Arm_03_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[97]";
+connectAttr "R_Arm_03_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[98]";
+connectAttr "R_Arm_03_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[99]";
+connectAttr "R_TopHand_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[100]";
+connectAttr "R_TopHand_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[101]";
+connectAttr "R_TopHand_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[102]";
+connectAttr "R_TopHand_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[103]";
+connectAttr "R_TopHand_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[104]";
+connectAttr "R_TopHand_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[105]";
+connectAttr "R_TopHand_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[106]";
+connectAttr "R_TopHand_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[107]";
+connectAttr "R_TopHand_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[108]";
+connectAttr "R_BottomHand_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[109]";
+connectAttr "R_BottomHand_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[110]";
+connectAttr "R_BottomHand_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[111]";
+connectAttr "R_BottomHand_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[112]";
+connectAttr "R_BottomHand_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[113]";
+connectAttr "R_BottomHand_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[114]";
+connectAttr "R_BottomHand_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[115]";
+connectAttr "R_BottomHand_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[116]";
+connectAttr "R_BottomHand_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[117]";
+connectAttr "Pelvis_01_FK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[118]";
+connectAttr "Pelvis_01_FK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[119]";
+connectAttr "Pelvis_01_FK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[120]";
+connectAttr "Pelvis_01_FK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[121]";
+connectAttr "Pelvis_01_FK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[122]";
+connectAttr "Pelvis_01_FK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[123]";
+connectAttr "Pelvis_01_FK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[124]";
+connectAttr "Pelvis_01_FK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[125]";
+connectAttr "Pelvis_01_FK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[126]";
+connectAttr "L_Leg_IK_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[127]";
+connectAttr "L_Leg_IK_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[128]";
+connectAttr "L_Leg_IK_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[129]";
+connectAttr "L_Leg_IK_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[130]";
+connectAttr "L_Leg_IK_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[131]";
+connectAttr "L_Leg_IK_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[132]";
+connectAttr "L_Leg_IK_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[133]";
+connectAttr "L_Leg_IK_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[134]";
+connectAttr "L_Leg_IK_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[135]";
+connectAttr "L_Leg_PV_Cntr_translateX1.o" "TeachBot_12_UVRN.phl[136]";
+connectAttr "L_Leg_PV_Cntr_translateY1.o" "TeachBot_12_UVRN.phl[137]";
+connectAttr "L_Leg_PV_Cntr_translateZ1.o" "TeachBot_12_UVRN.phl[138]";
+connectAttr "L_Leg_PV_Cntr_rotateX1.o" "TeachBot_12_UVRN.phl[139]";
+connectAttr "L_Leg_PV_Cntr_rotateY1.o" "TeachBot_12_UVRN.phl[140]";
+connectAttr "L_Leg_PV_Cntr_rotateZ1.o" "TeachBot_12_UVRN.phl[141]";
+connectAttr "L_Leg_PV_Cntr_scaleX1.o" "TeachBot_12_UVRN.phl[142]";
+connectAttr "L_Leg_PV_Cntr_scaleY1.o" "TeachBot_12_UVRN.phl[143]";
+connectAttr "L_Leg_PV_Cntr_scaleZ1.o" "TeachBot_12_UVRN.phl[144]";
+connectAttr "L_Leg_IK_Cntr_translateX.o" "TeachBot_12_UVRN.phl[145]";
+connectAttr "L_Leg_IK_Cntr_translateY.o" "TeachBot_12_UVRN.phl[146]";
+connectAttr "L_Leg_IK_Cntr_translateZ.o" "TeachBot_12_UVRN.phl[147]";
+connectAttr "L_Leg_IK_Cntr_rotateY.o" "TeachBot_12_UVRN.phl[148]";
+connectAttr "L_Leg_IK_Cntr_rotateX.o" "TeachBot_12_UVRN.phl[149]";
+connectAttr "L_Leg_IK_Cntr_rotateZ.o" "TeachBot_12_UVRN.phl[150]";
+connectAttr "L_Leg_IK_Cntr_scaleX.o" "TeachBot_12_UVRN.phl[151]";
+connectAttr "L_Leg_IK_Cntr_scaleY.o" "TeachBot_12_UVRN.phl[152]";
+connectAttr "L_Leg_IK_Cntr_scaleZ.o" "TeachBot_12_UVRN.phl[153]";
+connectAttr "L_Leg_PV_Cntr_translateX.o" "TeachBot_12_UVRN.phl[154]";
+connectAttr "L_Leg_PV_Cntr_translateY.o" "TeachBot_12_UVRN.phl[155]";
+connectAttr "L_Leg_PV_Cntr_translateZ.o" "TeachBot_12_UVRN.phl[156]";
+connectAttr "L_Leg_PV_Cntr_rotateX.o" "TeachBot_12_UVRN.phl[157]";
+connectAttr "L_Leg_PV_Cntr_rotateY.o" "TeachBot_12_UVRN.phl[158]";
+connectAttr "L_Leg_PV_Cntr_rotateZ.o" "TeachBot_12_UVRN.phl[159]";
+connectAttr "L_Leg_PV_Cntr_scaleX.o" "TeachBot_12_UVRN.phl[160]";
+connectAttr "L_Leg_PV_Cntr_scaleY.o" "TeachBot_12_UVRN.phl[161]";
+connectAttr "L_Leg_PV_Cntr_scaleZ.o" "TeachBot_12_UVRN.phl[162]";
 connectAttr "persp_translateX.o" ":persp.tx";
 connectAttr "persp_translateY.o" ":persp.ty";
 connectAttr "persp_translateZ.o" ":persp.tz";
